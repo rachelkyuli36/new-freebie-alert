@@ -27,7 +27,7 @@ Branch to grade: iteration1
 
 `bundle install`
 
-`bundle exec rake db:setup`
+`bundle exec rake db:drop db:setup`
 
 `rails server -b 0.0.0.0`
 
