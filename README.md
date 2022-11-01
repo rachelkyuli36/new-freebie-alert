@@ -1,6 +1,15 @@
 ## Freebie Alert: Everyone wants more free stuff!
 Freebie Alert is a web app where students can share information about giveaways/free merch events around campus. 
 
+## Team
+Rachel Chung (rkc2134)
+
+Ruth Lee (rsl2159)
+
+Youngseo Lee (yl4652)
+
+Ariel Goldman (apg2164)
+
 ## Info
 Ruby version: 2.6.6
 
