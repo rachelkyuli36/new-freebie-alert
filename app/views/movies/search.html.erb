@@ -1,0 +1,12 @@
+<!--  app/views/movies/search.html.erb -->
+<h2>Similar movies to #{@movie.title}</h2>
+
+<ul>
+  <%= @similar_movies.each do |movie| %>
+    <li>
+      <%= movie %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', movies_path %>
