@@ -1,0 +1,62 @@
+<!--  This file is app/views/events/index.html.erb -->
+<h2>All Events</h2>
+
+<%#  Part 2: Start here... %>
+
+<%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+  <%= hidden_field_tag 'sort_by', @sort_by %>
+  Include:
+  <% @all_freebies.each do |freebie| %>
+    <div class="form-check  form-check-inline">
+      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+      <%= check_box_tag "freebies[#{freebie}]", '1', (@freebies_to_show_hash.include?(freebie)),
+        class: 'form-check-input' %>
+    </div>
+  <% end %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary' %>
+<% end %>
+
+<table class="table table-striped col-md-12" id="events">
+  <thead>
+    <tr>
+      <th>
+        <%= link_to 'Event Title', events_path({sort_by: 'title', freebies: @freebies_to_show_hash}),
+                      id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
+      </th>
+      <th>Type</th>
+      <th>
+        <%= link_to 'Event Date',
+              events_path({sort_by: 'event_date', freebies: @freebies_to_show_hash}),
+              id: 'event_date_header', class: ('bg-warning hilite' if @sort_by == 'event_date') %>
+      </th>
+      <th>Time</th>
+      <th>Affiliation</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= event.title %>
+        </td>
+        <td>
+          <%= event.freebie %>
+        </td>
+        <td>
+          <%= event.event_date %>
+        </td>
+        <td>
+          <%= event.event_time %>
+        </td>
+        <td>
+          <%= event.affiliation %>
+        </td>
+        <td>
+          <%= link_to "More about #{event.title}", event_path(event) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning' %>
