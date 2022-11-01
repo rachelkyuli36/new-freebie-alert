@@ -1,1 +1,27 @@
-# new-freebie-alert
+## Freebie Alert: Everyone wants more free stuff!
+Freebie Alert is a web app where students can share information about giveaways/free merch events around campus. 
+
+## Info
+Ruby version: 2.6.6
+
+Machine OS:
+
+Branch to grade: iteration1
+
+## How to run the app in codio
+
+`git clone https://github.com/rachelkyuli36/new-freebie-alert.git`
+
+`cd new-freebie-alert`
+
+`git checkout iteration1`
+
+`bundle install`
+
+`bundle exec rake db:setup`
+
+`rails server -b 0.0.0.0`
+
+Box URL button on top to run the app
+
+## Heroku deployment link
