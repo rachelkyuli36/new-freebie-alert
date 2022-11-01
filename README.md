@@ -34,3 +34,7 @@ Branch to grade: iteration1
 Box URL button on top to run the app
 
 ## Heroku deployment link
+
+## Github repo link
+
+https://github.com/rachelkyuli36/new-freebie-alert/blob/main/README.md 
