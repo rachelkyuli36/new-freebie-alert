@@ -694,3 +694,32 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (1.3ms)
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 160.39.210.234 at 2022-11-02 15:15:12 +0000
+
+
+Started GET "/events" for 160.39.210.234 at 2022-11-02 15:15:12 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.234 at 2022-11-02 15:15:12 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 214ms (Views: 191.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 160.39.210.234 at 2022-11-02 15:15:13 +0000
+
+
+Started GET "/events/new" for 160.39.210.234 at 2022-11-02 15:15:14 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 27.3ms | ActiveRecord: 0.0ms)
