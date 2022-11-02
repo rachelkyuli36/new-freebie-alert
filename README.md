@@ -35,6 +35,8 @@ Box URL button on top to run the app
 
 ## Heroku deployment link
 
+https://gentle-ridge-98936.herokuapp.com
+
 ## Github repo link
 
 https://github.com/rachelkyuli36/new-freebie-alert/blob/main/README.md 
