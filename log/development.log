@@ -1417,3 +1417,165 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (13.2ms)
   Rendered layouts/_flash.erb (0.3ms)
 Completed 200 OK in 225ms (Views: 188.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 160.39.210.234 at 2022-11-02 19:00:53 +0000
+
+
+Started GET "/events" for 160.39.210.234 at 2022-11-02 19:00:53 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.234 at 2022-11-02 19:00:53 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 207ms (Views: 169.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/5" for 160.39.210.234 at 2022-11-02 19:00:57 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered events/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/events/5" for 160.39.210.234 at 2022-11-02 19:00:59 +0000
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"e6AJHyDSoARIU/oem/EeMip3eaI+NZnQiFvpF50BbXSiblCG2pd2vOCsS2DQnAWI5P1/eX+GoPb1fjQTIGgxwg==", "id"=>"5"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 5]]
+  [1m[35m (66.7ms)[0m  commit transaction
+Redirected to https://milanmirage-floodfast-3000.codio.io/events
+Completed 302 Found in 69ms (ActiveRecord: 67.1ms)
+
+
+Started GET "/events" for 160.39.210.234 at 2022-11-02 19:00:59 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.234 at 2022-11-02 19:00:59 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (66.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (68.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (63.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (66.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (61.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (65.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (63.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (70.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (62.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (60.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (58.9ms)[0m  commit transaction
+  [1m[36m (61.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (66.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (72.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (65.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (61.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (59.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (64.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (64.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (60.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (73.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (65.6ms)[0m  commit transaction
+  [1m[36m (76.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (65.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (66.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (65.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (68.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (64.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (61.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (64.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (64.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (67.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (72.2ms)[0m  commit transaction
+  [1m[36m (66.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (73.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (66.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (70.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (69.4ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (62.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (64.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (66.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (61.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (71.4ms)[0m  commit transaction
+
+
+Started GET "/" for 160.39.210.234 at 2022-11-02 19:17:19 +0000
+
+
+Started GET "/events" for 160.39.210.234 at 2022-11-02 19:17:20 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.234 at 2022-11-02 19:17:20 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 235ms (Views: 199.1ms | ActiveRecord: 1.6ms)

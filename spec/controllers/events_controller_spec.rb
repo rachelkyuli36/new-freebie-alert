@@ -12,7 +12,7 @@ describe EventsController, :type => :controller do
 
     describe 'create new event' do
         it 'should create a new event' do
-          get :create, {:event => {:title => 'Pepper Spray on Low', :freebie => 'OTHER', :event_date => '2022-11-17', :event_time => '12:00-2:00PM'}}
+          get :create, {:event => {:id => 13, :title => 'Pepper Spray on Low', :freebie => 'OTHER', :event_date => '2022-11-17', :event_time => '12:00-2:00PM'}}
           expect(response).to redirect_to events_path
           expect(flash[:notice]).to match(/Pepper Spray on Low was successfully created./)
           Event.find_by_title('Pepper Spray on Low').destroy
@@ -36,6 +36,14 @@ describe EventsController, :type => :controller do
         end
     end
 
+    before (:all) do
+        if !Event.where(:title => 'Frich Giveaway').empty?
+            Event.find_by_title('Frich Giveaway').destroy
+        end
+        if !Event.where(:title => 'WiCS Tabling').empty?
+            Event.find_by_title('WiCS Tabling').destroy
+        end
+    end
 end
 
         
