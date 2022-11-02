@@ -1213,3 +1213,22 @@ ActiveRecord::ConnectionNotEstablished (No connection pool for ActiveRecord::Bas
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
   Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.2ms)
+
+
+Started GET "/" for 160.39.210.234 at 2022-11-02 16:01:41 +0000
+
+
+Started GET "/events" for 160.39.210.234 at 2022-11-02 16:01:41 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.234 at 2022-11-02 16:01:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 233ms (Views: 204.0ms | ActiveRecord: 3.8ms)
