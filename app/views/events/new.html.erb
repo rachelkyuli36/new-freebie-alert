@@ -2,15 +2,15 @@
 
 <%= form_tag events_path, class: 'form' do %>
   <%= label :event, :title, 'Title', class: 'col-form-label' %>
-  <%= text_field :event, :title, class: 'form-control' %>
+  <%= text_field :event, :title, class: 'form-control', required: true %>
   <%= label :event, :affiliation, 'Affiliation', class: 'col-form-label' %>
   <%= text_field :event, :affiliation, class: 'form-control col-2 d-inline' %><br/>
   <%= label :event, :freebie, 'Type', class: 'col-form-label' %>
-  <%= select :event, :freebie, ['FOOD', 'MERCH', 'OTHER'], {}, {class: 'form-control col-1'} %>
+  <%= select :event, :freebie, ['OTHER', 'FOOD', 'MERCH'], {}, {class: 'form-control col-1'} %>
   <%= label :event, :event_date, 'Event On', class: 'col-form-label' %>
   <%= date_select :event, :event_date, {}, class: 'form-control col-2 d-inline' %><br/>
   <%= label :event, :event_time, 'Time of Event', class: 'col-form-label' %>
-  <%= text_field :event, :event_time, class: 'form-control col-2 d-inline' %>
+  <%= text_field :event, :event_time, class: 'form-control col-2 d-inline', required: true %>
   <br/>
   <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>

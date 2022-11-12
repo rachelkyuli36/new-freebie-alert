@@ -1598,3 +1598,459 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (14.6ms)
   Rendered layouts/_flash.erb (0.4ms)
 Completed 200 OK in 277ms (Views: 243.9ms | ActiveRecord: 1.6ms)
+  [1m[36m (73.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (71.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (59.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (57.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (61.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (60.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (57.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (64.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (63.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (64.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (63.7ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:17:52 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 33ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:17:53 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 225ms (Views: 220.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 129.236.226.247 at 2022-11-12 19:17:53 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 129.236.226.247 at 2022-11-12 19:17:53 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 129.236.226.247 at 2022-11-12 19:17:53 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 129.236.226.247 at 2022-11-12 19:17:53 +0000
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:17:56 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 129.236.226.247 at 2022-11-12 19:17:57 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cph63qa/TqQ03YBb66wmoB3b65vPLN/fFl1/ncpsynKlgYsAPwHy8oY6wJ7s3+F+X2S9IXs77MZc6mXw16QG1Q==", "event"=>{"title"=>"", "affiliation"=>"", "freebie"=>"FOOD", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"12", "event_time"=>""}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_time", "affiliation", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["freebie", "FOOD"], ["event_time", ""], ["affiliation", ""], ["event_date", "2022-11-12"]]
+  [1m[35m (83.7ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 89ms (ActiveRecord: 84.1ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:17:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:17:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/4" for 129.236.226.247 at 2022-11-12 19:18:02 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/4" for 129.236.226.247 at 2022-11-12 19:18:05 +0000
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"f4EjdjwynUxepljPlK31vF1aZ90Ai3yKiAxN0f83uMComNKopYwhGuxBGAqT3jJiH+UxZ7ScT5PCu1e84v90Zw==", "id"=>"4"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 4]]
+  [1m[35m (62.9ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 65ms (ActiveRecord: 63.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:18:05 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:18:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:20:37 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:20:38 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:20:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 298ms (Views: 262.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:20:39 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+...nt, :required => true,  :title, class: 'form-control' );@out...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:9: syntax error, unexpected ',', expecting =>
+...ue, ['FOOD', 'MERCH', 'OTHER'], {}, {class: 'form-control co...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+...:required => true, :event_date, {}, class: 'form-control col...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:12: syntax error, unexpected ',', expecting =>
+...uired => true, 'Time of Event', class: 'col-form-label' );@o...
+...                              ^):
+  app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:9: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:12: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:22:20 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:22:21 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:22:21 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 244ms (Views: 209.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:22:22 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+...nt, :required => true,  :title, class: 'form-control' );@out...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:9: syntax error, unexpected ',', expecting =>
+...ue, ['FOOD', 'MERCH', 'OTHER'], {}, {class: 'form-control co...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+...:required => true, :event_date, {}, class: 'form-control col...
+...                              ^):
+  app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:9: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:23:09 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:23:09 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:23:09 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:23:11 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+...nt, :required => true,  :title, class: 'form-control' );@out...
+...                              ^
+/home/codio/workspace/new-freebie-alert/app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+...:required => true, :event_date, {}, class: 'form-control col...
+...                              ^):
+  app/views/events/new.html.erb:5: syntax error, unexpected ',', expecting =>
+  app/views/events/new.html.erb:11: syntax error, unexpected ',', expecting =>
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:24:14 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:24:14 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:24:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 226ms (Views: 194.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:24:16 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 129.236.226.247 at 2022-11-12 19:24:22 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1FdqYwSFzved0ZrN/7G7Po/C3SeC4VFbWGORQL5RCAEDTpu9nTtyoS822gj4wnzgzX2LnTb2YkIS1Isto5nEpg==", "event"=>{"title"=>"example", "affiliation"=>"", "freebie"=>"FOOD", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"12", "event_time"=>""}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_time", "affiliation", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["title", "example"], ["freebie", "FOOD"], ["event_time", ""], ["affiliation", ""], ["event_date", "2022-11-12"]]
+  [1m[35m (68.1ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 74ms (ActiveRecord: 68.5ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:24:22 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:24:22 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:24:45 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:24:45 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:24:45 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 226ms (Views: 194.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:24:48 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:25:14 +0000
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:25:14 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:25:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 218ms (Views: 195.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 19:25:16 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 129.236.226.247 at 2022-11-12 19:25:23 +0000
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yFd3NY+N/gbpTcKpw2EK0PaL7st+WHTYhHDZkJ37y1QfTobrFjNCUFuqgmzEEs0OtDS4ccpPR8HOx8P9gDMH8w==", "event"=>{"title"=>"testing", "affiliation"=>"", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"12", "event_time"=>"12pm"}, "commit"=>"Save Changes"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_time", "affiliation", "event_date") VALUES (?, ?, ?, ?, ?)[0m  [["title", "testing"], ["freebie", "OTHER"], ["event_time", "12pm"], ["affiliation", ""], ["event_date", "2022-11-12"]]
+  [1m[35m (61.3ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 67ms (ActiveRecord: 61.7ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:25:23 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:25:23 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/5" for 129.236.226.247 at 2022-11-12 19:25:26 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/events/5" for 129.236.226.247 at 2022-11-12 19:25:28 +0000
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tye1dqTKTm1KatVWIFE+HK59pFcau3vdXJ/CXMN8GoBgPkSoPXTyO/iNlZMnIvnC7MLy7a6sSMQWKNgx3rTWJw==", "id"=>"5"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 5]]
+  [1m[35m (71.4ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 74ms (ActiveRecord: 71.7ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:25:29 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:25:29 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/6" for 129.236.226.247 at 2022-11-12 19:25:30 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/events/6" for 129.236.226.247 at 2022-11-12 19:25:33 +0000
+Processing by EventsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UQuF2kX0e2/EG2u+m9DkrMdrZBob6XCySTNUJBXgW++GEnQE3ErHOXb8K3ucoyNyhdQyoK/+Q6sDhE5JCCiXSA==", "id"=>"6"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 6]]
+  [1m[35m (61.1ms)[0m  commit transaction
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 64ms (ActiveRecord: 61.6ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:25:33 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:25:33 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms)
