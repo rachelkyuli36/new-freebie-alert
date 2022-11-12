@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :force_index_redirect, only: [:index]
 
   def show
+    @user = User.find_by_id(session[:user_id])
     id = params[:id] # retrieve event ID from URI route
     @event = Event.find(id) # look up event by unique ID
     # will render app/views/events/show.<extension> by default
@@ -12,6 +13,7 @@ class EventsController < ApplicationController
     @events = Event.with_freebies(freebies_list, sort_by)
     @freebies_to_show_hash = freebies_hash
     @sort_by = sort_by
+    @user = User.find_by_id(session[:user_id])
     # remember the correct settings for next time
     session['freebies'] = freebies_list
     session['sort_by'] = @sort_by
@@ -22,6 +24,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    @user = User.find_by_id(session[:user_id])
     @event = Event.create!(event_params)
     flash[:notice] = "#{@event.title} was successfully created."
     redirect_to events_path
@@ -29,9 +32,11 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find params[:id]
+    @user = User.find_by_id(session[:user_id])
   end
 
   def update
+    @user = User.find_by_id(session[:user_id])
     @event = Event.find params[:id]
     @event.update_attributes!(event_params)
     flash[:notice] = "#{@event.title} was successfully updated."
@@ -39,6 +44,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @user = User.find_by_id(session[:user_id])
     @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Event '#{@event.title}' deleted."

@@ -2054,3 +2054,2542 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (1.8ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20221112192950)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20221112192950"]]
+  [1m[36m (63.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:40:41 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:40:41 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (21.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 262ms (Views: 261.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:40:57 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:41:39 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 19:41:40 +0000
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.7ms)
+
+ActionView::MissingTemplate (Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
+  * "/home/codio/workspace/new-freebie-alert/app/views"
+):
+  actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.10) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.10) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.10) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.10) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.10) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.10) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.10) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.10) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.10) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.10) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.10) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.10) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.10) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.10) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.10) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.10) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:43:13 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:43:13 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 214ms (Views: 213.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 19:43:15 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 22.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 19:43:27 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7lEp6HL4W628VthaKQ0ngGXRRZdK6LiNL2apd396Rys5SNg260bn+w6xmJ8ufuBeJ24TLf7/i5Rl0bMaYrKLjA==", "user"=>{"username"=>"rchung", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "rchung"], ["password_digest", "$2a$12$2sTS4IBDvJIzcBtKdM1j3.iXRSouG1SlZ1pUf7IwACu3EpnytrvcG"], ["created_at", "2022-11-12 19:43:27.572861"], ["updated_at", "2022-11-12 19:43:27.572861"]]
+  [1m[36m (61.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events
+Completed 302 Found in 393ms (ActiveRecord: 61.8ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 19:43:27 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 19:43:27 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:45:16 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:45:16 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 236ms (Views: 235.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 19:45:22 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v9duh/He6CqL+n9aOY3HsTaWKIHdzSoL7X+8kiRY1ptozp9ZaGBUfDkdP58+/gBvdCl+O2naGRKnyKb/OZAaPA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 1.8ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:46:55 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:46:56 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 201ms (Views: 200.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 19:47:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"axxDtZzpT3zPqIJZgKgblYbNHacSgCZF8qFVOt0/pOa8BbJrBVfzKn1PwpyH29xLxHJLHaaXFVy4Fk9XwPdoQQ==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 1.5ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:50:55 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:50:55 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 199ms (Views: 198.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 19:51:02 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VF9LUrpMeDNL/pTF+aVKIwJl07DxUA0LJcO5rmTEZaODRrqMI/LEZfkZ1AD+1o39QNqFCkVHPhJvdKPDeQypBA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 1.8ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:51:52 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:51:53 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 201ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 19:51:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dGLzqerslOzSksF1+ZMUwAE3LBxUz80CP12y+6NZyzujewJ3c1IoumB1gbD+4NMeQ4h6puDY/ht16qiWvpEHnA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users
+Completed 302 Found in 326ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 129.236.226.247 at 2022-11-12 19:51:59 +0000
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:53:28 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:53:28 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 201ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 19:53:34 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVTiMwXqdvE1prGp5RylPq2lUrOrLJyH8HayA3Q6GqMSTRPtnFTKp4dB8Wzib2Lg7xoECR87r566wahuafLWBA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 1.6ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/sessions_controller.rb:7:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:56:00 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:56:00 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 222ms (Views: 221.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 19:56:03 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 23.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 19:56:09 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jO4JcjKIV33P5tdtDSDurVhGKpkRwsOHfANgNWZ+T/9b9/isqzbrK30Bl6gKUylzGvl8I6XV8J42tHpYe7aDWA==", "user"=>{"username"=>"testing", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$YPqSOZyaR9Hiyhd3e6ovqeV/V2Q./9q6anBnnhhiyod0h1x4CQmF2"], ["created_at", "2022-11-12 19:56:10.250626"], ["updated_at", "2022-11-12 19:56:10.250626"]]
+  [1m[36m (59.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/2
+Completed 302 Found in 356ms (ActiveRecord: 59.8ms)
+
+
+Started GET "/users/2" for 129.236.226.247 at 2022-11-12 19:56:10 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f3e19eb9a48>):
+    1: <%= content_tag :h1, current_user.welcome %>
+    2: <%= link_to "Sign out", session_path, method:"delete" %>
+  app/models/user.rb:5:in `welcome'
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___2239498424519734093_69952349754180'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:57:17 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:57:17 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 206ms (Views: 205.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 19:57:19 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f6681c30e30>):
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+    7:     <%= f.text_field :username %><br>
+    8:     <%= f.label :password %>
+  app/views/users/new.html.erb:5:in `block in _app_views_users_new_html_erb__4415853157810736261_70039120399740'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__4415853157810736261_70039120399740'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+  [1m[36m (61.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (64.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (66.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (58.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221112192950')[0m
+  [1m[35m (57.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (67.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (62.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (64.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (62.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (63.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221112192950')[0m
+  [1m[35m (62.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (61.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (64.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (65.3ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 19:59:35 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 19:59:35 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 237ms (Views: 237.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 19:59:37 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x00007f22fdc2d748>):
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+    7:     <%= f.text_field :username %><br>
+    8:     <%= f.label :password %>
+  app/views/users/new.html.erb:5:in `block in _app_views_users_new_html_erb__2944871869257813353_69894131692000'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2944871869257813353_69894131692000'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (77.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (68.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEvents (20221030220816)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030220816"]]
+  [1m[35m (67.3ms)[0m  commit transaction
+Migrating to CreateUsers (20221112192950)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221112192950"]]
+  [1m[35m (65.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[36m (61.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[35m (60.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[36m (60.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:01:19 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:01:19 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 211ms (Views: 210.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:01:21 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 25.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:01:30 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"doW32bt6qwAUkL9uWGRktf7lyAsyus3PAS1ajMHdVdOhnEYHIsQXVqZ3/6tfF6NrvFqesYat/tZLmkDh3BWZdA==", "user"=>{"email"=>"test@columbia.edu", "username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "test"], ["password_digest", "$2a$12$kj.mJ81NgLm3KK1eE2J3uuCzFbuUYNEIqWaK8Q6n0VHCt8m9jQHEK"], ["email", "test@columbia.edu"], ["created_at", "2022-11-12 20:01:30.468885"], ["updated_at", "2022-11-12 20:01:30.468885"]]
+  [1m[36m (65.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/1
+Completed 302 Found in 361ms (ActiveRecord: 65.6ms)
+
+
+Started GET "/users/1" for 129.236.226.247 at 2022-11-12 20:01:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `session_path' for #<#<Class:0x00007f77d5c81b68>:0x00007f77d5ebeb88>):
+    1: <%= content_tag :h1, current_user.welcome %>
+    2: <%= link_to "Sign out", session_path, method:"delete" %>
+  app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__2062884958792314630_70076333419840'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:04:18 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:04:18 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 200ms (Views: 199.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:04:20 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 22.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:04:29 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VBsjWaYWszwm/cHVLLAMceaEitxLCMST8meAquZ7IaGDAtKHP6gPapQagRArw8uvpDvcZv8f94q40JrH+7PtBg==", "user"=>{"email"=>"testing@columbia.edu", "username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "test"], ["password_digest", "$2a$12$vkJ7oa46mDWFSLsUtiyfpORGmF92eZBUmKuSKU3clIW//6MzXTSQe"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-12 20:04:30.208690"], ["updated_at", "2022-11-12 20:04:30.208690"]]
+  [1m[36m (65.2ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/2
+Completed 302 Found in 379ms (ActiveRecord: 65.7ms)
+
+
+Started GET "/users/2" for 129.236.226.247 at 2022-11-12 20:04:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `stringify_keys' for "Account deleted":String):
+    1: <%= content_tag :h1, current_user.welcome %>
+    2: <%= link_to "Sign out", login_path, flash[:notice]='Account deleted' %>
+  app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__235773153627947676_69833835583020'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:05:05 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:05:05 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 203ms (Views: 202.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:05:07 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 24.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:05:16 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cw6TUBACCntH/JssJlvNYPhei1637+7n0lq3rKYHRiKkF2KOiby2LfUb2+khKAq+uuHd5AP43f6Y7a3Bu8+KhQ==", "user"=>{"email"=>"testing@columbia.edu", "username"=>"testing", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$CbMjv1607WYrsWujwDseRuuTrO0vu/zz6oMgQwWL9wS4Nq/57vJe."], ["email", "testing@columbia.edu"], ["created_at", "2022-11-12 20:05:17.140569"], ["updated_at", "2022-11-12 20:05:17.140569"]]
+  [1m[36m (63.4ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 361ms (ActiveRecord: 63.8ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:05:17 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `stringify_keys' for "Account deleted":String):
+    1: <%= content_tag :h1, current_user.welcome %>
+    2: <%= link_to "Sign out", login_path, flash[:notice]="Account deleted" %>
+  app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb___2410033472673244993_69944196016800'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:09:11 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:09:11 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 202ms (Views: 201.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:09:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 23.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:09:22 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VI+q0RFVh5SU4jGHiy7RcloxIVLNdDarwXPdff5dWD6DllsPiOs7wiYFcUKMXRasGI536HljBbKLxMcQ45WUmQ==", "user"=>{"email"=>"testing@columbia.edu", "username"=>"testing", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$A34KzhAZs7SOl4aNMQFF9uzPSahyUgNZisg.msNTqHO4UiTFwIuJO"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-12 20:09:22.514669"], ["updated_at", "2022-11-12 20:09:22.514669"]]
+  [1m[36m (68.7ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/4
+Completed 302 Found in 365ms (ActiveRecord: 69.2ms)
+
+
+Started GET "/users/4" for 129.236.226.247 at 2022-11-12 20:09:22 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:09:24 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:11:29 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:11:30 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.6ms)
+  Rendered sessions/login.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 260ms (Views: 259.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:11:32 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 32.5ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:11:43 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ogU5blfMZcJxvwVIqY9rhUu4t2gwaFvHka2WdvxIFPZ1HMiwznLZlMNYRY2u/KxbCQfh0oR/aN7bGowb4YDYUQ==", "user"=>{"email"=>"testing@columbia.edu", "username"=>"testing", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$0T/nSrmBaLYR4L.FK7xQluTZHkAY3EKLe/zyP71qti6/ApTIpgOOW"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-12 20:11:43.703359"], ["updated_at", "2022-11-12 20:11:43.703359"]]
+  [1m[36m (62.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/5
+Completed 302 Found in 360ms (ActiveRecord: 62.7ms)
+
+
+Started GET "/users/5" for 129.236.226.247 at 2022-11-12 20:11:43 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:11:49 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:11:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0AyMzXZWzZB6cgbj+NNMOCOGcqDr8WE0TBOPJJ6KaVkHFX0T7+hxxsiVRib/oIvmYTkkGl/mUi0GpJVJg0Kl/g==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 295ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:11:54 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:15:02 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:15:02 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.4ms)
+  Rendered sessions/login.html.erb within layouts/application (22.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 276ms (Views: 275.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:15:08 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HQaCdc+mkOYnGj2tpZiBRJ7Oyg6uzNrT7tGGS36WWW3KH3OrVhgssJX9fWii60aa3HGctBrb6cqkZpwmY16Vyg==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 376ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:15:08 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:3: syntax error, unexpected '<'
+<%= link_to "Sign out", login_...
+^
+/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tput_buffer = _old_virtual_path, _old_output_buffer
+...              ^~~~~~~~~~~~~~~~~
+/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:5: syntax error, unexpected '\n', expecting '='):
+  app/views/users/show.html.erb:3: syntax error, unexpected '<'
+  app/views/users/show.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/show.html.erb:5: syntax error, unexpected '\n', expecting '='
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:16:11 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:16:11 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.4ms)
+  Rendered sessions/login.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 240ms (Views: 239.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:16:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 27.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:16:19 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OhRwqn26rHWvtCXHAY5mSZ7weWRfLxoIqsvijjfIUTLtDYF05AQQIx1TZQIG/aGX3E8v3us4KRHgfPjjKgCdlQ==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 328ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:16:19 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:3: syntax error, unexpected '<'
+<%= link_to "Sign out", login_...
+^
+/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tput_buffer = _old_virtual_path, _old_output_buffer
+...              ^~~~~~~~~~~~~~~~~
+/home/codio/workspace/new-freebie-alert/app/views/users/show.html.erb:5: syntax error, unexpected '\n', expecting '='):
+  app/views/users/show.html.erb:3: syntax error, unexpected '<'
+  app/views/users/show.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/users/show.html.erb:5: syntax error, unexpected '\n', expecting '='
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:16:45 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:16:45 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.7ms)
+  Rendered sessions/login.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 331ms (Views: 330.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:16:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0BIa8syKIemAikRJv2854IjKe29LK3NGVhVfaBwtUAkHC+ssVTSdvzJtBIy4HP4+ynUt1f88QF8cokUFAeWcrg==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 372ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:16:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/3" for 129.236.226.247 at 2022-11-12 20:16:54 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lDyV1rv+X328pOkniqoTqlgHGz6gM1jllKMcK0YbyWhDJWQIIkDjKw5DqeKN2dR0GrhNhBQka/zeFAZGW9MFzw==", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `username' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `destroy'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:17:30 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:17:30 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.4ms)
+  Rendered sessions/login.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 251ms (Views: 251.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:17:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V/FsmtISCeIkMmGkjf+/b1Bpz8qOxalGn4cj7APBHv+A6J1ES6y1tJbVIWGKjHixEtaZcDrSml/VMDmBHgnSWA==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/login
+Completed 302 Found in 345ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:17:34 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:17:37 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PJ4YiuJ0sfiam4eGoEOEkmDOoxD/ZXmY/fJYO61ZFvPrh+lUe8oNrih8x0OnMENMInH1qktySoG3RUJWsJHaVA==", "username"=>"", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", ""]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:17:37 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:17:41 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oh+AtWnR9vzAS0ZZhE2er2HYR9u1MWwjyL+nHBovYHd1BnFr8G9KqnKsBpyDPllxI2cRYQEmXzqCCL1xB+es0A==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 304ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:17:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/3" for 129.236.226.247 at 2022-11-12 20:17:44 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VSIt8yiPkDNrC30qmBMpYU56Gjnv+n3RPG194VJwGOmCO9wtsTEsZdnsPe+fYO6/DMVMg1vtTsh22meMT7jUTg==", "id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `destroy'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:22:48 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:22:48 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.5ms)
+  Rendered sessions/login.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 218ms (Views: 218.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:22:54 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kqMCpYyf3dp/RuWLOmwtSGIRj4vGH+zh8rGxvGtvV79FuvN7FSFhjM2hpU49H+qWIK7ZMXII3/i4BqvRdqebGA==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 326ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:22:54 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/3" for 129.236.226.247 at 2022-11-12 20:22:56 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2p0qFBP6XjZ9dG6ooKlS39hrL00WGbQ4ZSbkeqcO3IINhNvKikTiYM+TLm2n2pUBmtR596IOhyEvkf4XusYQJQ==", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `delete' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `destroy'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:23:29 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:23:30 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.6ms)
+  Rendered sessions/login.html.erb within layouts/application (22.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 246ms (Views: 245.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:23:33 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QowEhZOCQswlux06U2K/wL4j0puRalvbY7PmYLiOkkWVlfVbCjz+mpdcXf9UEXge/JyEISV9aMIpBPwNpUZe4g==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 348ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:23:34 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/3" for 129.236.226.247 at 2022-11-12 20:23:36 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"02b6/E8a7V+ThiSDhHPzWBeybZ/H+tWG3NquOT2w2HsEfwsi1qRRCSFhZEaDADSGVQ07JXPt5p+WbbRUIHgU3A==", "id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+NoMethodError (undefined method `delete' for nil:NilClass):
+  app/controllers/users_controller.rb:23:in `destroy'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:25:07 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:25:08 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.5ms)
+  Rendered sessions/login.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 227ms (Views: 227.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:25:13 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3oiw3gkDhjRKQiELTKYXyc4hRSoG1QpFLTXFwxK7DTcJkUEAkL06YvilYc5L1dAXjJ4TkLLCOVxngt+uD3PBkA==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 330ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:25:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/3" for 129.236.226.247 at 2022-11-12 20:25:16 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZOWZFy6yVZfoMFyV0zrXR6qM+f8PCzaWWj3Sw5srG3yz/GjJtwzpwVrXHFDUSRCZ6DOvRbscBY8QisiuhuPX2w==", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:22:in `destroy'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:26:52 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:26:52 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.6ms)
+  Rendered sessions/login.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 282ms (Views: 275.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:26:55 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cmpcyBQ7u3+UAtIsh6eia2QLFpxD1Km13iO4pCtPMI2lc60WjYUHKSblkumA1GW1JrRAJvfDmqyUlKLJNof8Kg==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 343ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:26:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:26:57 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:27:41 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:27:41 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.3ms)
+  Rendered sessions/login.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 232ms (Views: 225.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:27:45 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rP0KjbD9CLKkgEsTkN5yGhzwsHAL7Fi9lk1aglfHv9175PtTKUO05BZnC9aXrbXEXk/myr/7a6Tc+kDvSg9zeg==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 335ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:27:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:28:31 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:28:31 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.4ms)
+  Rendered sessions/login.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 232ms (Views: 222.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:28:35 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QgTHPMfLo8g3Z144rQmV6UWrxkxTrfTsxRq1pzI+Fw6VHTbiXnUfnoWAHv2qelI3BxSQ9ue6x/WPra/KL/bbqQ==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 335ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:28:35 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:29:57 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:29:57 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.6ms)
+  Rendered sessions/login.html.erb within layouts/application (38.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 347ms (Views: 335.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:30:01 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CyceLveV3mGw/iqOTRza53atazxVJKGVS6aF36N4B6TcPu/wbitiNwIZaktKbx05NBI9huEzkowBEZ+yvrDLAw==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/login
+Completed 302 Found in 68ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:30:01 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:30:05 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8c9bWjvhUq3RgdiK4FdN7b7MU4G8j9uSzO85ZbQ0GY4m1qqEol/u+2NmmE/nJIoz/HMFOwiY6IuGWCMIqfzVKQ==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 314ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:30:06 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:30:09 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:30:10 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (37.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 48ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:30:19 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eo7KYhrPRvoUoUeWlvjX0Cp4PZ4ozEcrqdiJc1zFYErFlzu8g3H6rKZGB1ORixAOaMdrJJzbdDLjb5MeQQ2s7Q==", "user"=>{"email"=>"r@columbia.edu", "username"=>"rchung", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "rchung"], ["password_digest", "$2a$12$.Pv282GTmUw6a/A8z3d6GOE7aLRyQh1eqIU.nmnW6FFg6K5LnokLu"], ["email", "r@columbia.edu"], ["created_at", "2022-11-12 20:30:20.000665"], ["updated_at", "2022-11-12 20:30:20.000665"]]
+  [1m[36m (69.5ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 373ms (ActiveRecord: 69.9ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:30:20 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:31:06 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:31:06 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.4ms)
+  Rendered sessions/login.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 229ms (Views: 222.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:31:10 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+Do/KQgcfOjeIXarwhCazHd2aDVRzwxOtGGvNsdFGqA+RkiPZ7NpRGfxR+oe4W1c2KPGmFQDyhwZpzRxtXYzQ==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/login
+Completed 302 Found in 332ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:31:11 +0000
+Processing by SessionsController#login as HTML
+  Rendered layouts/_flash.erb (0.1ms)
+  Rendered sessions/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:31:15 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1qNimhIHbKuh0jwhO6AUWe8gvJTAS9gCaWh7p9NUdAUBupNEi7nQ/RM1fOQ809OHrZ/qLnRc6xsj32HKzpy4og==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 308ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:31:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:31:17 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:31:17 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:32:43 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:32:44 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 274ms (Views: 268.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-12 20:32:45 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 34.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-12 20:32:54 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i40b4QOchawDQAA8aBE9gHZVEMKsCToaYJsq/s1VyOlclOo/miI5+rGnQPlvYvpeNOpGeBgeCQMqLDCT0J0ETg==", "user"=>{"email"=>"rchung@columbia.edu", "username"=>"rchung", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "rchung"], ["password_digest", "$2a$12$5JAXbp6grH0WaMiwy0ZBA.GSx5t5EcXRp1vsObn4aFBtZNW.S0NnK"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-12 20:32:55.146140"], ["updated_at", "2022-11-12 20:32:55.146140"]]
+  [1m[36m (61.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/7
+Completed 302 Found in 384ms (ActiveRecord: 62.1ms)
+
+
+Started GET "/users/7" for 129.236.226.247 at 2022-11-12 20:32:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:32:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:32:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:36:54 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:36:55 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 254ms (Views: 246.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:36:59 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8wmJVgX3DADrJWK4aGZObYMy0acZf7OBcDuMCH0P21wkEHiInEmwVlnCIn1vFYmzwY2HHa1ogJg6jJZlYMcX+w==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 360ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:36:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    3: <%= link_to "Sign out", login_path, class: 'btn btn-primary col-2' %>
+    4: 
+    5: <tbody>
+    6:     <% @users.each do |u| %>
+    7:       <tr>
+    8:         <td>
+    9:           <%= u.username %>
+  app/views/users/show.html.erb:6:in `_app_views_users_show_html_erb___3226085867972076826_70010700085520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:37:47 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:37:47 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 240ms (Views: 232.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:37:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2kxSg/qlWHNo+4V34+2QrxkzVFRYg7H08GjYv7umA2gNVaNdYxvkJdocxbLknldxW4wC7uyUgu2638LSpm7Pzw==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 352ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:37:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:37:53 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:37:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O+FiqOC2oPMIH59TGt1vLx/ORh1xFILyfASHwUfoL7Ls+JN2eQgcpbr435YdrqjxXXEQp8UDses2s52sWiDjFQ==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 300ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:37:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:37:59 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:37:59 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:39:31 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:39:32 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 222ms (Views: 215.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:39:36 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:39:37 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 30.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:44:42 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:44:42 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 346ms (Views: 337.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:44:47 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AT2ByIdWwYmHzFYw0ZzOd1dHcQksf0sq41PTX4OpdavWJHAWHuh93zUrFvXW7wmpFfgns5hoeDOp5MkynmG5DA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 354ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:44:47 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:44:49 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:44:49 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil} missing required keys: [:id]):
+    3: 
+    4: <%#  Part 2: Start here... %>
+    5: 
+    6: <%= link_to "My profile", user_path(@user), class: 'btn btn-primary col-2 float:right' %>
+    7: 
+    8: <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+    9:   <%= hidden_field_tag 'sort_by', @sort_by %>
+  app/views/events/index.html.erb:6:in `_app_views_events_index_html_erb___4568500605906029722_69954832522780'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:47:59 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:47:59 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 295ms (Views: 287.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:48:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+9YtQm8S2BNffKX/PA4RkEIrZAlP+JM/gGlAf+1ry+49qlrkAL3Nv+aslL7g/+YA7f7KpEo0VW0tr9s4n1jiA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 479ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:48:04 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:48:05 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:48:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  Rendered events/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    3: 
+    4: <%#  Part 2: Start here... %>
+    5: 
+    6: <%= link_to "My profile", user_path, class: 'btn btn-primary col-2 float:right' %>
+    7: 
+    8: <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+    9:   <%= hidden_field_tag 'sort_by', @sort_by %>
+  app/views/events/index.html.erb:6:in `_app_views_events_index_html_erb___4368244014901851168_70296215291440'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:50:07 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:50:07 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 340ms (Views: 324.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:50:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NQ46FMlxr59I0OuCXJoqywVrmKXg4TujmHR8m3+dSuLiF8vKUM8Tyfo3q0db6e0VR9TOH1T2CLrSw2b2YlWGRQ==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 635ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:50:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=):
+  app/controllers/users_controller.rb:20:in `show'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:50:50 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:50:51 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 275ms (Views: 267.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:50:55 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KwkxJdixN0GzzUTlsGChb1tzdL1Zl5zrzGI6PoOqT5z8EMD7QQ+LFwEqBCC3E2axGcwiB+2Ar/KG1SBTnmKDOw==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 359ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:50:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:50:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:50:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  Rendered events/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    3: 
+    4: <%#  Part 2: Start here... %>
+    5: 
+    6: <%= link_to "My profile", user_path, class: 'btn btn-primary col-2 float:right' %>
+    7: 
+    8: <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+    9:   <%= hidden_field_tag 'sort_by', @sort_by %>
+  app/views/events/index.html.erb:6:in `_app_views_events_index_html_erb___1628829895425623282_70245011219700'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:51:33 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:51:33 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 272ms (Views: 264.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:51:38 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B14pR6sW4vx+5L+8EoIKekzwpBrZ+aOvKIupn1gPBeHQR9iZMqheqswD/3kV8c2kDk/yoG3ukLZiPLPyRcfJRg==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 347ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:51:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:52:23 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:52:23 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 261ms (Views: 254.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:52:27 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JlT/Fc3CWtLuSH2kvk2lC08ExxP1lMkbPCP06m0v4aHxTQ7LVHzmhFyvPWG5PmLVDbuRqUGD+gJ2lO6HcOctBg==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 364ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:52:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:52:28 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:52:28 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    3: 
+    4: <%#  Part 2: Start here... %>
+    5: 
+    6: <%= link_to "My profile", user_path, class: 'btn btn-primary col-2 float:right' %>
+    7: 
+    8: <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+    9:   <%= hidden_field_tag 'sort_by', @sort_by %>
+  app/views/events/index.html.erb:6:in `_app_views_events_index_html_erb__1620571253736549535_70112068575660'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:54:54 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:54:54 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 231ms (Views: 225.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:54:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MduquK4LxbHByQG1TDtWFmTLRUp//Ig3e4YLl3mz2yrmwltmN7V553MuQXBLSJHIJnQT8Mvruy4xMRH6ZHsXjQ==", "username"=>"testing", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "testing"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/3
+Completed 302 Found in 344ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/3" for 129.236.226.247 at 2022-11-12 20:54:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:55:00 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:55:00 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil} missing required keys: [:id]):
+    3: 
+    4: <%#  Part 2: Start here... %>
+    5: 
+    6: <%= link_to "My profile", user_path(@user), class: 'btn btn-primary col-2 float:right' %>
+    7: 
+    8: <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
+    9:   <%= hidden_field_tag 'sort_by', @sort_by %>
+  app/views/events/index.html.erb:6:in `_app_views_events_index_html_erb___2977850684112943720_70095828225220'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:55:50 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:55:50 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 230ms (Views: 222.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:55:56 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LrgVERu/445umsf6phrfMPsiS9v/kISSpvQiRFdA8O75oeTPggFf2Nx9hz+haRjuuZ0dYUuHt4vsQzgpSog8SQ==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 343ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:55:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:55:58 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:55:58 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:55:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:56:01 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:56:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:57:09 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:57:09 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 244ms (Views: 238.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:57:15 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xlERK/WyTY7ZCPz3xHZJearQVu2q46ae9nW5GaQIkpsRSOD1bAzx2GvvvDLDBY6n6G8AVx70lYe8wqN0ucBePA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 368ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:57:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:57:16 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:57:16 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:57:23 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:57:24 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:57:24 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:57:53 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:57:53 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 293ms (Views: 284.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:57:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w+aSJ/jyxOgdbbQWAqK9v+kpEDNYcL57VJyOHTtAybAU/2P5YUx4vq+K9NMF0Xphq5ZGiexnjWIeK5RwJogFFw==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 368ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:57:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:58:00 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:58:00 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:58:54 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:58:54 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 308ms (Views: 299.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:58:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iYpQgWb1ysP0EH35Arxe4d8TbsI6c6QfIybivgJmXTtek6Ff/0t2lUb3PTwFz5k/naw4eI5klwZpkfjTH66RnA==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 348ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:58:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:58:59 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:58:59 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:59:00 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:59:01 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:59:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 129.236.226.247 at 2022-11-12 20:59:03 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil} missing required keys: [:id]):
+    1: <!--  app/views/events/show.html.erb -->
+    2: <%= link_to "My profile", user_path(@user), class: 'btn btn-primary' %>
+    3: <h2>Details about <em><%= @event.title %></em></h2>
+    4: 
+    5: <ul id="details">
+  app/views/events/show.html.erb:2:in `_app_views_events_show_html_erb__4394754550747048564_70309302912520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 20:59:48 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 20:59:48 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 281ms (Views: 273.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 20:59:52 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YyxCqrXDWdviN7l5EOWrqc38H+KYMCrq1UaTTyALw0u0NbN0LH3ljVDQ+bwXlmx3j0NJWCwnGfOf8YkiPcMP7A==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 361ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:59:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:59:53 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:59:54 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 129.236.226.247 at 2022-11-12 20:59:56 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 20:59:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 20:59:58 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.247 at 2022-11-12 20:59:58 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=title" for 129.236.226.247 at 2022-11-12 21:00:00 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"title"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY title[0m
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-12 21:00:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 129.236.226.247 at 2022-11-12 21:00:02 +0000
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil} missing required keys: [:id]):
+    1: <%= link_to "My profile", user_path(@user), class: 'btn btn-primary' %>
+    2: <h2>Create New Event</h2>
+    3: 
+    4: <%= form_tag events_path, class: 'form' do %>
+  app/views/events/new.html.erb:1:in `_app_views_events_new_html_erb___379830594416750192_69941305196060'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-12 21:00:59 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-12 21:00:59 +0000
+Processing by SessionsController#login as HTML
+  Rendered sessions/login.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 223ms (Views: 217.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-12 21:01:03 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o7Ui0cdUmd2BsLoSi8X+/HfhgZb+9DOMn6QnNqi3C+V0rNMPXuolizNX+teMtjkiNV7XLErjAJXVEz1btX/HQg==", "username"=>"rchung", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "rchung"]]
+Redirected to https://tridentlearn-towertemple-3000.codio.io/users/6
+Completed 302 Found in 358ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 21:01:04 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 21:01:05 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-12 21:01:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 129.236.226.247 at 2022-11-12 21:01:06 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 21:01:07 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-12 21:01:07 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-12 21:01:08 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-12 21:01:09 +0000
+Processing by EventsController#index as HTML
+Redirected to https://tridentlearn-towertemple-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-12 21:01:09 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
