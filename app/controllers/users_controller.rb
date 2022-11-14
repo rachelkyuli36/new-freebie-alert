@@ -1,11 +1,29 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:username,        
-   :password))
-   session[:user_id] = @user.id
-   redirect_to '/events'
+    @user = User.create(user_params)
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
+  end
+
+  def show
+    id = params[:id] 
+    @user = User.find(id) 
+  end
+  
+  def destroy
+    @user = User.find(params[:username])
+    @user.destroy
+    message = "Account '#{@user.id}' deleted."
+    redirect_to login_path, notice: message
+  end
+  
+  private
+  
+  def user_params
+    params.require(:user).permit(:username, :password, :email)
   end
 end

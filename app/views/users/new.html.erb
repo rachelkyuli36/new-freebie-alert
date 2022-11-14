@@ -1,2 +1,11 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Create Account Page</h1>
+
+<%= form_for @user do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Create Account" %>
+<% end %>

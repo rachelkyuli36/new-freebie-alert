@@ -1,9 +1,13 @@
 Rottenpotatoes::Application.routes.draw do
-  get 'users/new'
+  # get 'users/new'
 
-  get 'users/create'
+  # get 'users/show'
+
+  # get 'users/create'
 
   get 'sessions/new'
+
+  resources :users, only: [:new, :create, :show]
 
   resources :events
   # map '/' to be a redirect to '/movies'

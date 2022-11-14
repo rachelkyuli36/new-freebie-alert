@@ -2119,3 +2119,898 @@ Processing by UsersController#new as HTML
   Rendered users/new.html.erb within layouts/application (0.4ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 19:48:39 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 19:48:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 320ms (Views: 319.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 19:48:41 +0000
+Processing by UsersController#new as HTML
+Completed 400 Bad Request in 44ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  app/controllers/users_controller.rb:6:in `new'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 19:49:22 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 19:49:22 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (46.6ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 392ms (Views: 391.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 19:49:24 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Create Account Page</h1>
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__123290268400318538_69956374381740'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 19:51:13 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 19:51:13 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (44.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 346ms (Views: 345.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 19:51:14 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.9ms)
+
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x00007f7329cf3d68>:0x00007f7329cf0dc0>):
+    1: <h1>Create Account Page</h1>
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___1475492959356105142_70066299731500'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 19:54:42 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 19:54:42 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (22.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 267ms (Views: 266.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 19:54:44 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x00007fedf1cfa440>:0x00007fedf1d0b448>):
+    1: <h1>Create Account Page</h1>
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__761679599570128634_70329970479520'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.2ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:01:15 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:01:16 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (26.7ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 330ms (Views: 330.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:01:18 +0000
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+LoadError (cannot load such file -- bcrypt):
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:3:in `new'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:01:55 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:01:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (40.4ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 357ms (Views: 357.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:01:57 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (34.3ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x00007f33f9cf30d0>:0x00007f33f9cf0128>):
+    1: <h1>Create Account Page</h1>
+    2: 
+    3: <%= form_for @user do |f| %>
+    4:     <%= f.label :email %>
+    5:     <%= f.text_field :email %><br>
+    6:     <%= f.label :username %>
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___3466831284982317704_69930605606900'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:03:41 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:03:42 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (52.4ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `users_new_path' for #<#<Class:0x000055b8d9ef36b0>:0x000055b8d9f017d8>):
+    14:       <%= f.submit "Log in", class: "btn btn-primary" %>
+    15:     <% end %>
+    16: 
+    17:     <p>New user? <%= link_to "Sign up now!", users_new_path %></p>
+    18:   </div>
+    19: </div>
+  app/views/sessions/new.html.erb:17:in `_app_views_sessions_new_html_erb___4203700480340330984_47126209500360'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:04:33 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:04:34 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (53.0ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 367ms (Views: 366.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:04:42 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4ru+fEvUEiD8wJuUGXgp8Hu4/As6xjTve1QgerSdz/qAmEg7i5JXKwBQAnQH385H399ZytLiQtyf4EIWsVzGQ==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 20.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:04:43 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 56ms (Views: 47.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:04:53 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EqA/V5r4QBE+HLwlQw4s43uFlyI+hvASZdrZPzz1LbybKLCOhflZBRHu/kLDdLN9pRQJtTkmYcqqSAi2jOIpmg==", "user"=>{"email"=>"test123@columbia.edu", "username"=>"test123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "test123"], ["password_digest", "$2a$12$nNPY84GEJ77qmJOUvQrLKOb7mdJS6w8LekKx1ifxysUEUBpQomTP2"], ["email", "test123@columbia.edu"], ["created_at", "2022-11-14 20:04:53.521245"], ["updated_at", "2022-11-14 20:04:53.521245"]]
+  [1m[35m (68.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 69.0ms)
+
+NoMethodError (undefined method `users_show_path' for #<UsersController:0x00007f8b69f14068>):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (46.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.9ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:05:54 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:05:54 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (36.9ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 344ms (Views: 343.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:05:56 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 96ms (Views: 38.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:06:04 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VwX+jOy3b97CPNpnVfYbjXOJ9H+SKGcVCfeINWthw0vejXFV87Z2yu3OmADVjIQTrRhq6JWI9s3GZVm823bHbQ==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$hLfuDURrtH2m94E7ncNhteo.qJ8Q3aFbUm74CDTJHUbZzX4AnEvr."], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:06:05.349883"], ["updated_at", "2022-11-14 20:06:05.349883"]]
+  [1m[36m (87.9ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 88.4ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:07:10 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:07:11 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.0ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 286ms (Views: 285.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:07:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 19.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:07:20 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uU3VylwZiGGU5T5015TGjxZMg/TF1mvdxxodi2TuCBEwxVoTQxiRdbsXfBNX7lkRyN0dY8J2+gUIiMwC1PkMNw==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$K/ch1c7wksQG1nrHpbyS..XvJ6O4gJQkomKjxhSb7FnYjsGwNGHfC"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:07:21.098482"], ["updated_at", "2022-11-14 20:07:21.098482"]]
+  [1m[36m (93.3ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 455ms (ActiveRecord: 93.9ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:08:38 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:08:38 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 219ms (Views: 219.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:08:40 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 21.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:08:51 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Sh8Ug6cbEtRhQU9jj6Ll0JL26Sy8YfqfHFugNR0xuLXDl5tauBoLwE6zDQQP2HpOTGd3u7vBa0fTyXG8rSa8kw==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$GgbXdUM7R/StX0XvAQlG1.s1TtbBCMQL07Ryh0GpzT86Le0Akeo6S"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:08:51.340575"], ["updated_at", "2022-11-14 20:08:51.340575"]]
+  [1m[36m (67.5ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 372ms (ActiveRecord: 68.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:09:38 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:09:38 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 219ms (Views: 218.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:09:39 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 21.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:09:49 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMAlu3pl3AO6Ki7Mb0d8V7Z9ry1mEzThBuoK2CRtpD0BSKpiZWTFF5XYbKvvPePJaOwxumGzpTnJeNtRlHqgGw==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$Urjg6uiNqYb7mKwl0hBYmOxehfHFiPiVmzTbacCW01bcDyiUF1Wma"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:09:50.094983"], ["updated_at", "2022-11-14 20:09:50.094983"]]
+  [1m[36m (73.7ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 403ms (ActiveRecord: 74.4ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.8ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:11:40 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:11:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:11:50 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/hIBy4jM91iNySa8EajUC9DoVHeM8YUulpetDPV6QZR3mo4Sl83uTKI7ZNuR0kuVDnnK4ItRFPZZBXyFRW1Fsg==", "session"=>{"email"=>"test@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "test@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (68.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (62.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (68.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$udw2Bf9wGfw84emlls4uHe90UfuuZdtqKJ8KVsMStE4Iq6n0OYE/G"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-14 20:12:06.651469"], ["updated_at", "2022-11-14 20:12:06.651469"]]
+  [1m[36m (70.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$K5B4qoaKZhvr7npMxOc9tuEW80nFXOOkQMbBWKyieVpV1V2qm88Hy"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-14 20:12:07.032075"], ["updated_at", "2022-11-14 20:12:07.032075"]]
+  [1m[35m (66.8ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:12:49 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:12:50 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (49.2ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 399ms (Views: 398.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:12:58 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8z1hHHTuDrCUOZSAHn31YMXwIkc1aLoiBdkuvF12AJB6te7Fa+8XpLvL1ueeB2r+G2G80DLIK/rKS/817WEEtg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 1.9ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.5ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:13:40 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:13:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:13:49 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZAPn0HmfT3cIFS2Z14IjOWeFSVnleLvxqhIUSpFMGEMGIBGXudkKfPSFtHnJJcSOw+LsmA1czcJOpnYmlI0Rw==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Completed 500 Internal Server Error in 297ms (ActiveRecord: 0.1ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:14:12 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:14:12 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.7ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 250ms (Views: 249.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:14:22 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"It0gZgBERdcb6hK+04Ou0tVdATHXMKNRBJQM2jAdyhOrVa+/H0VcwzQYUNlT+TFMC8yfptCQMonLBt1TgArONQ==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 2.0ms)
+
+NoMethodError (undefined method `username' for nil:NilClass):
+  app/controllers/sessions_controller.rb:11:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.4ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:15:49 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:15:49 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 270ms (Views: 269.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:15:57 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmEPjpoEdpiWzSh/b81x2isK8d1QVok4T63M4LmFSk8f6YBXhQVvjLk/ahjvt+5E9ZtvSlf2GOCAPx1pCZJOaQ==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/6
+Completed 302 Found in 346ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-14 20:15:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-14 20:15:59 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-14 20:15:59 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:16:08 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:16:08 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:16:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BbBj0Kf+VC41zP2qXcTKOoXKk8yMCPwTcIFzYuLy3meMOOwJuP9NOho+v83dvlWkW1sNW4uobcu/E6LrUuXaQQ==", "session"=>{"email"=>"test@colubmaied.eud", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "test@colubmaied.eud"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:16:18 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:16:29 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qKKYwrYuU3EhstmqpBGfla4g5Qbp3MkFHbKrKUe2hQwhKhcbqS9KZQ5Am80kawALcLF7ke58WN3SIHqg96GBKg==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "testing123"], ["password_digest", "$2a$12$FYWPbqdH8NxDtZJGNeJo8OErPUQEeEQyVAgSuxANL8jPDE5wLc/oC"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:16:29.876030"], ["updated_at", "2022-11-14 20:16:29.876030"]]
+  [1m[35m (62.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 382ms (ActiveRecord: 62.7ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:18:40 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:18:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (29.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 324ms (Views: 323.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:18:43 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 23.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:18:53 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9SSs6mL8MuBP8Vlbdc8eujgEFtw7IJH/7CXXuwCgsMV8rCMzff0r9GADGzz1tYEk5pWISzyAACcjtwYysLe04w==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$rVMiYTEnu3PdZNmq06kq3.75WzwHi7RQZyFGSfND42T/CEJiENnEG"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:18:53.580823"], ["updated_at", "2022-11-14 20:18:53.580823"]]
+  [1m[36m (85.5ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 407ms (ActiveRecord: 86.1ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x00007f8bede1c208>):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:19:24 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:19:25 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (36.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 252ms (Views: 251.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:19:26 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 21.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:19:35 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ont7CdKqmYXKS8SEzTyQyifjLM95bAHCpilJbHQg6F0r8/TQzauAkeW5huNNRg9U+XKyWH7MkBppu5jlxDfsew==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$EatnFQwncxR5VpBzFakqY.lrYidsMPD3B7cf3fuOqpbY1AwSo4Mf6"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:19:35.884106"], ["updated_at", "2022-11-14 20:19:35.884106"]]
+  [1m[36m (67.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 389ms (ActiveRecord: 67.6ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x00007f90c1e1b8e8>):
+  app/controllers/users_controller.rb:10:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.7ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:19:55 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:19:56 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 308ms (Views: 307.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:19:57 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 25.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:20:06 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsdamopw4Z6fkIvdq7ll/l1ZFBF5xH1uhZ+gUZaVwzEPT9VDlXH4irBiyborw/pgg8iKhn5k7LZKDXHYJoLHFw==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$uzU71o/qmgsaOv8Q2xtu9eDK0aaQpTxa7jb8xKeu90SxmBelgX4l."], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:20:06.833726"], ["updated_at", "2022-11-14 20:20:06.833726"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 372ms (ActiveRecord: 65.1ms)
+
+NameError (undefined local variable or method `user' for #<UsersController:0x00007f0cf5e1c248>):
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:20:27 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:20:27 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (26.7ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 241ms (Views: 240.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:20:28 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 17.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:20:38 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MrwtVCkRCVhaxgHxLnEigMrUamWsMhz5k7T/bgJCP2+7NKKNNhAQTHU0Q5auC70eFEX08quSjSFcJi7nslU7SQ==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$g6ZqojzGGHKvfAMpegjYYOCbNGZ/jbsGLQcRXgPD6UMhF6EMrcmO2"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:20:38.717384"], ["updated_at", "2022-11-14 20:20:38.717384"]]
+  [1m[36m (63.7ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 64.5ms)
+
+NoMethodError (undefined method `log_in' for #<UsersController:0x00007f7501e1b5e0>):
+  app/controllers/users_controller.rb:11:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.6ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:21:32 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:21:32 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 219ms (Views: 218.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:21:34 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 15.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:21:43 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Boj8YQB3U0Vyccmoy2vQgLxN6WcbcXoO3z+gz+3/OOSPAHO4H3ZKUV2Di89LEU8eYtx38BzR69YQrXFGXeg8wg==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$ZL8TPhDFTao.661U4M34i.6mqriLI/6l4e1YnPRHtH8kVIWLbUr0."], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:21:43.962213"], ["updated_at", "2022-11-14 20:21:43.962213"]]
+  [1m[36m (59.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 369ms (ActiveRecord: 60.2ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+  app/controllers/users_controller.rb:9:in `create'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.8ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:22:18 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MM7+5dXh1510ZyFaYZ3gA3mVYp1P5vNVEjcn46mji/q5RnE8yuDOiVuVYz3h53+dpwT8CkhGYo3dpfZqGbSP3A==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/6
+Completed 302 Found in 340ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/6" for 129.236.226.247 at 2022-11-14 20:22:18 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 129.236.226.247 at 2022-11-14 20:23:44 +0000
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:23:44 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 281ms (Views: 280.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.247 at 2022-11-14 20:23:45 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 17.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for 129.236.226.247 at 2022-11-14 20:23:54 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dmJJ1uynm3ztM5ztR4iFEHXsaal+xUrl8BVSh8Evf1f/6sYP86aCaMLB3orH8hqOq333Pnll2z0/h4MOcTh7cQ==", "user"=>{"email"=>"testing123@columbia.edu", "username"=>"testing123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing123"], ["password_digest", "$2a$12$FVGtW8RS.vyE7c3isBkA1eND8SOoAZKMtaadiU14jeoUhiYOdB4Ra"], ["email", "testing123@columbia.edu"], ["created_at", "2022-11-14 20:23:54.982072"], ["updated_at", "2022-11-14 20:23:54.982072"]]
+  [1m[36m (66.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/14
+Completed 302 Found in 402ms (ActiveRecord: 67.5ms)
+
+
+Started GET "/users/14" for 129.236.226.247 at 2022-11-14 20:23:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 14]]
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-14 20:23:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-14 20:23:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (57.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 74.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 129.236.226.247 at 2022-11-14 20:24:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.247 at 2022-11-14 20:24:10 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5S5BKHaqPs/O920Ut+ms3l73TSPq7JhbhouldULBNyNsps7xaasn2+EFL3M3kzNAgGbTtO1MCYNJGXT88tYzBQ==", "session"=>{"email"=>"testing123@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing123@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/2
+Completed 302 Found in 306ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 129.236.226.247 at 2022-11-14 20:24:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-14 20:24:36 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-14 20:24:36 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 129.236.226.247 at 2022-11-14 20:24:50 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-14 20:24:50 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.247 at 2022-11-14 20:24:54 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms)
