@@ -12,6 +12,7 @@ class EventsController < ApplicationController
     @events = Event.with_freebies(freebies_list, sort_by)
     @freebies_to_show_hash = freebies_hash
     @sort_by = sort_by
+    @user = User.find_by_id(session[:user_id])
     # remember the correct settings for next time
     session['freebies'] = freebies_list
     session['sort_by'] = @sort_by

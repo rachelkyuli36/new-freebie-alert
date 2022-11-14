@@ -1,6 +1,8 @@
 <!--  This file is app/views/events/index.html.erb -->
 <h2>All Events</h2>
 
+<%= link_to "My profile", user_path(@user), class: 'btn btn-primary' %>
+
 <%#  Part 2: Start here... %>
 
 <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
