@@ -1,4 +1,3 @@
-
 # title, event_date, release_date, date_posted_type
 
 events = [
@@ -9,4 +8,13 @@ events = [
 
 events.each do |event|
   Event.create!(event)
+end
+
+users = [
+  { username: 'testing', password: 'testing', email: 'testing@columbia.edu'},
+  { username: 'rchung', password: 'rchung', email: 'rchung@columbia.edu'}
+]
+
+users.each do |user|
+  User.create!(user)
 end
