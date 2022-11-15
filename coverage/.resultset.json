@@ -1,17 +1,6 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/new-freebie-alert/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
       "/home/codio/workspace/new-freebie-alert/app/controllers/events_controller.rb": {
         "lines": [
           1,
@@ -150,6 +139,17 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
@@ -159,16 +159,16 @@
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
           1,
           1,
           1,
           null,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null,
@@ -211,7 +211,7 @@
         ]
       }
     },
-    "timestamp": 1668536741
+    "timestamp": 1668537199
   },
   "RSpec": {
     "coverage": {

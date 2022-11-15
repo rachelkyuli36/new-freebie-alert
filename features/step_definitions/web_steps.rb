@@ -42,12 +42,7 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  if page_name == 'the FreebieAlert home page'
-    user = User.find_by(email: 'testing@columbia.edu')
-    visit events_path(user)
-  else
-    visit path_to(page_name)
-  end
+  visit path_to(page_name)
 end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
