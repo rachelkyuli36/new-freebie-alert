@@ -17,6 +17,11 @@
   <%= @event.description %>
 </p>
 
+<h3>More Info:</h3>
+<p id="description">
+  <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+</p>
+
 <div class="row">
   <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary col-2' %>
   <%= link_to 'Delete', event_path(@event), 'data-method': 'delete', 'data-confirm': 'Are you sure?', class: 'btn btn-danger col-2' %>

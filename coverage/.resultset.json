@@ -17,6 +17,7 @@
           9,
           9,
           9,
+          9,
           null,
           9,
           9,
@@ -98,6 +99,29 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/models/event.rb": {
         "lines": [
           1,
@@ -114,9 +138,81 @@
           null,
           null
         ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1667416624
+    "timestamp": 1668550418
   },
   "RSpec": {
     "coverage": {
@@ -127,6 +223,29 @@
         ]
       },
       "/home/codio/workspace/new-freebie-alert/app/helpers/events_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
@@ -144,6 +263,7 @@
           null,
           null,
           1,
+          0,
           0,
           0,
           0,
@@ -217,6 +337,78 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/models/event.rb": {
         "lines": [
           1,
@@ -235,6 +427,6 @@
         ]
       }
     },
-    "timestamp": 1667416618
+    "timestamp": 1668550425
   }
 }

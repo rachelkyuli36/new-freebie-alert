@@ -1,7 +1,8 @@
 <!--  This file is app/views/events/index.html.erb -->
 <h2>All Events</h2>
+<h3>Welcome, <%= session[:username] %></h3>
 
-<%= link_to "My profile", user_path(@user), class: 'btn btn-primary' %>
+<%= link_to "Sign out", login_path, class: 'btn btn-primary' %>
 
 <%#  Part 2: Start here... %>
 
