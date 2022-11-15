@@ -11580,3 +11580,1597 @@ Processing by EventsController#index as HTML
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (27.0ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 345ms (Views: 343.3ms | ActiveRecord: 0.2ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$BQTj/G1N8dZ43RQ68wQrYu7MYu0q7ELkp2r/rADTlM.c/bDXLZuVi"], ["created_at", "2022-11-15 18:15:05.716356"], ["updated_at", "2022-11-15 18:15:05.716356"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$a5j4SVLehJPiv5fJ30NuaewGsvd1uaDfkQCp5QbkaITmY3dCpwwSa"], ["created_at", "2022-11-15 18:15:05.720632"], ["updated_at", "2022-11-15 18:15:05.720632"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:15:05 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 284ms (Views: 283.2ms | ActiveRecord: 0.1ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$xxp6YoLFGBf2lB6IS3tsTOL4ISe9VdcFhkKQAnQkCG8YxptOC0Sfi"], ["created_at", "2022-11-15 18:17:52.798582"], ["updated_at", "2022-11-15 18:17:52.798582"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$n3iglgVjDunE5wJWNcWNbuO6Wb6RP3/PHYuyhIM.5JuKRmSFdFbM6"], ["created_at", "2022-11-15 18:17:52.802901"], ["updated_at", "2022-11-15 18:17:52.802901"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:17:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.4ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_flash.erb (1.0ms)
+Completed 200 OK in 318ms (Views: 316.8ms | ActiveRecord: 0.2ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$wylzYbB6RSCShmEXIYIbyue2g2eKoy9AEuhH1Sz0L8yrRh6K3J1Ni"], ["created_at", "2022-11-15 18:20:01.888920"], ["updated_at", "2022-11-15 18:20:01.888920"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$d/8/heCfAm8XJefd2qjIuuGD9l/IxzOgU.2VNQEsEqJ33hoCu7VkS"], ["created_at", "2022-11-15 18:20:01.893931"], ["updated_at", "2022-11-15 18:20:01.893931"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:20:01 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:21:54 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:21:54 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 281ms (Views: 279.8ms | ActiveRecord: 0.1ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$F1XDZCdSdNaMhKVxtjwuRemaXfj7TStQP.mji.QpMHkliZ2ST1bOa"], ["created_at", "2022-11-15 18:21:55.463689"], ["updated_at", "2022-11-15 18:21:55.463689"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$vvk/ISrhDkYPKKKXCRHsRuKZEFBWX/6XruEYwCI7nLPdUYZT59eom"], ["created_at", "2022-11-15 18:21:55.468004"], ["updated_at", "2022-11-15 18:21:55.468004"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:21:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_flash.erb (0.9ms)
+Completed 200 OK in 279ms (Views: 277.7ms | ActiveRecord: 0.2ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$66DCBmpOVTLMr4Mgpzqd2.Oxvmd40exOPOOLn6xDWSaUYI9KsR/R2"], ["created_at", "2022-11-15 18:22:51.712544"], ["updated_at", "2022-11-15 18:22:51.712544"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$ey7wSX7NJ.d1ALb..KhhrOy1zIaS/AgxBEjMBxNmUApTwlUm4epQW"], ["created_at", "2022-11-15 18:22:51.717968"], ["updated_at", "2022-11-15 18:22:51.717968"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:22:51 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:13 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:13 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 295ms (Views: 293.8ms | ActiveRecord: 0.1ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$46tnCl.B0851I0qr9d/h9uC2z26dkRlnvKvC8Yzvv5EGY5I3rHfju"], ["created_at", "2022-11-15 18:23:14.421427"], ["updated_at", "2022-11-15 18:23:14.421427"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$Mf1OhFolwxM6aMkRld/ttO3sVYhcTAR9UBDP.UDxobQ1GNl/m9OAC"], ["created_at", "2022-11-15 18:23:14.425131"], ["updated_at", "2022-11-15 18:23:14.425131"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:14 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_flash.erb (0.8ms)
+Completed 200 OK in 315ms (Views: 314.0ms | ActiveRecord: 0.1ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$uo/TqzYXWR6kBTVEZItrWOPDfGnfO2g5uEkSni7xWuk6HKs8W9lE6"], ["created_at", "2022-11-15 18:23:38.978074"], ["updated_at", "2022-11-15 18:23:38.978074"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$DQglDyrMDjxin3eDVhRCJ.KpaahTd7HkuYGiQ.s.Dz3o7gQKUDzam"], ["created_at", "2022-11-15 18:23:38.982668"], ["updated_at", "2022-11-15 18:23:38.982668"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:23:38 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:23:39 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:23:39 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:23:39 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:24:54 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 276ms (Views: 274.9ms | ActiveRecord: 0.2ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$jHcRKmDqumA6LdyClNH9buC04b6myqhIE/vgS4YLuYrUybFU3i3v."], ["created_at", "2022-11-15 18:24:55.460015"], ["updated_at", "2022-11-15 18:24:55.460015"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$mx4qTpwachtabANrett8ce4wdgSc3MnnloX87BCbhHC7ElrPN0F5u"], ["created_at", "2022-11-15 18:24:55.463631"], ["updated_at", "2022-11-15 18:24:55.463631"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 9ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:24:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (20.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Mochi Mingle"]]
+Started GET "/events/2/edit" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered events/edit.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_flash.erb (0.9ms)
+Completed 200 OK in 267ms (Views: 265.2ms | ActiveRecord: 0.2ms)
+Started PUT "/events/2" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "event"=>{"title"=>"Mochi Mingle", "freebie"=>"OTHER", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"20"}, "commit"=>"Update Event Info", "id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "freebie" = ? WHERE "events"."id" = ?[0m  [["freebie", "OTHER"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/events/2
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/events/2" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Mochi Mingle"]]
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["email", "testing@columbia.edu"], ["password_digest", "$2a$04$sYHnVPwXFfiWyU6agnMzdOijECRJwZQyEvU.kENbdQmkSfTDc37S6"], ["created_at", "2022-11-15 18:25:41.750741"], ["updated_at", "2022-11-15 18:25:41.750741"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["email", "rchung@columbia.edu"], ["password_digest", "$2a$04$iGJ2/7pNXKDV.aiKrluLy.bVhfQqSsH152BPsWcT81k6aSku5jjqC"], ["created_at", "2022-11-15 18:25:41.754188"], ["updated_at", "2022-11-15 18:25:41.754188"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Started GET "/login" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to http://www.example.com/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/users/1" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-19"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)[0m  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date") VALUES (?, ?, ?)  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Started GET "/events" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+Redirected to http://www.example.com/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/events?freebies[FOOD]=1&freebies[MERCH]=1&freebies[OTHER]=1&sort_by=id" for 127.0.0.1 at 2022-11-15 18:25:41 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered events/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
