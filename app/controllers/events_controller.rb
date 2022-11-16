@@ -48,7 +48,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation)
+    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image)
   end
 
   def force_index_redirect

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20221114192305) do
     t.date   "event_date"
     t.string "event_time"
     t.text   "affiliation"
+    t.text   "image"
   end
 
   create_table "users", force: :cascade do |t|
