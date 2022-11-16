@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    # @user = User.new
+    @user = User.new
   end
 
   def create
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     # redirect_to user_path(@user)
   end
 
+  # not implemented on our website
   # def show
   #   id = params[:id] 
   #   @user = User.find(id) 
