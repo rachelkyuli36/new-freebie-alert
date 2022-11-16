@@ -7159,3 +7159,76 @@ Processing by EventsController#edit as HTML
   Rendered events/edit.html.erb within layouts/application (2.5ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 160.39.210.147 at 2022-11-16 05:16:19 +0000
+
+
+Started GET "/login" for 160.39.210.147 at 2022-11-16 05:16:19 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 207ms (Views: 206.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 160.39.210.147 at 2022-11-16 05:16:34 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r1zSmQgn8MsQ6/aOh4Z7tCynNWNsBBsIr0fiAAhqDirxbRTZbRHfawmud8NPF9b59zP4TY32QTYshNBtekd94A==", "session"=>{"email"=>"rsl2159@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "rsl2159@columbia.edu"]]
+Redirected to https://milanmirage-floodfast-3000.codio.io/events
+Completed 302 Found in 258ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 160.39.210.147 at 2022-11-16 05:16:35 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 05:16:35 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/3" for 160.39.210.147 at 2022-11-16 05:16:37 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/3/edit" for 160.39.210.147 at 2022-11-16 05:16:40 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/edit.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/events/3" for 160.39.210.147 at 2022-11-16 05:18:41 +0000
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0p50tKW7eieoLT4rs2QQwYzBxPOzi1Zf5ZqswDE0yb+Mr7L0wI1Vh7Fov2Z79b2MV1UJ3VJ5DGFmWZ6tQxm6dQ==", "event"=>{"title"=>"Pojangmacha", "freebie"=>"FOOD", "event_date(1i)"=>"2022", "event_date(2i)"=>"11", "event_date(3i)"=>"3", "image"=>"https://lh3.googleusercontent.com/D_KeOAlkL7DOC4RxjVKDxr8a_Ii4T2pcxfAXjebnYgV7-NiIJ6o4M9mTjPoauK_9V6M=w2400"}, "commit"=>"Update Event Info", "id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "events" SET "image" = ? WHERE "events"."id" = ?  [["image", "https://lh3.googleusercontent.com/D_KeOAlkL7DOC4RxjVKDxr8a_Ii4T2pcxfAXjebnYgV7-NiIJ6o4M9mTjPoauK_9V6M=w2400"], ["id", 3]]
+  [1m[36m (58.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://milanmirage-floodfast-3000.codio.io/events/3
+Completed 302 Found in 61ms (ActiveRecord: 58.5ms)
+
+
+Started GET "/events/3" for 160.39.210.147 at 2022-11-16 05:18:41 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms)
