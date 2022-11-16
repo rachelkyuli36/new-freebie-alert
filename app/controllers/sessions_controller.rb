@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:username] = user.username
       log_in user
-      redirect_to user
+      redirect_to events_path
+      # redirect_to user
     else
       # Create an error message.
       flash[:warning] = 'Invalid email/password combination'
