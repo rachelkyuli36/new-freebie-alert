@@ -26,6 +26,7 @@
         <%= link_to 'Event Title', events_path({sort_by: 'title', freebies: @freebies_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
+      <th>Likes</th>
       <th>Type</th>
       <th>
         <%= link_to 'Event Date',
@@ -42,6 +43,9 @@
       <tr>
         <td>
           <%= event.title %>
+        </td>
+        <td>
+        <p><%= event.likes.count %> <%= (event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
         </td>
         <td>
           <%= event.freebie %>

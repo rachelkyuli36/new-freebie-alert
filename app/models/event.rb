@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+
+  has_many :likes, dependent: :destroy
   def self.all_freebies
     ['FOOD', 'MERCH', 'OTHER']
   end
