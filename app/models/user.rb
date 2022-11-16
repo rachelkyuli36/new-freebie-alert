@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    has_many :likes, dependent: :destroy
     has_secure_password
 
     def welcome
