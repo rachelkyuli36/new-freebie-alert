@@ -5190,3 +5190,220 @@ Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$CGwWlwKcdEC6421hpJEqSejqsuJCvwg8Km7OzWYXtIqAIOBj6Tj3u"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-16 00:44:54.761936"], ["updated_at", "2022-11-16 00:44:54.761936"]]
   [1m[35m (81.3ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 235ms (Views: 235.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+  [1m[36m (58.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (60.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (63.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (60.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (66.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (63.4ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (64.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (71.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (68.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (61.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (59.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (63.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (64.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$X5wIMWcN3yLazCmjP5OkNOvljbCLsXxocZuzABm29vbP2dM4gee3G"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-16 01:12:08.977511"], ["updated_at", "2022-11-16 01:12:08.977511"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$T21Hdj/ffK1t.JzSLJpHu.D2ddre.ZmfTj1pWArMPtDCPJcG/OEOy"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-16 01:12:09.352769"], ["updated_at", "2022-11-16 01:12:09.352769"]]
+  [1m[35m (64.1ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 01:12:18 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:12:18 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (31.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 262ms (Views: 261.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:26 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7pBM+AAxpSDb4dF1folGl0MzFJWyHcDXieMcjHWvt99QfllpZ2dmqva8vjfGHvb2FeITTbQ3IqIWZ7t2XHXwA==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 371ms (Views: 11.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:32 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E2KiUkJE/2ehvZdnGU3suiKbDEYkcgCPmzEr0Frv+An9mRoEB9mkaYkI4toTr7J7p8BIWURqqwZNTzlPskiRFg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events
+Completed 302 Found in 309ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:33 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:33 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:12:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cfmopr81zsISz6FUZ8vnTPxnTpwHmpp6luivx52AgVGfAhDw+qiVzDp61OltKbmNeTwKg2eCMfNAlr1YdSfoTg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events
+Completed 302 Found in 309ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1" for 129.236.226.230 at 2022-11-16 01:12:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:47 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:47 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2" for 129.236.226.230 at 2022-11-16 01:12:48 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:49 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:49 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/3" for 129.236.226.230 at 2022-11-16 01:12:50 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/3" for 129.236.226.230 at 2022-11-16 01:12:53 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.3ms)
