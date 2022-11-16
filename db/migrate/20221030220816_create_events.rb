@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration
       t.date :event_date
       t.string :event_time
       t.text :affiliation
+      t.text :image
     end
   end
 
