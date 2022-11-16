@@ -16,14 +16,4 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "welcome the user" do
-    it "should show user page" do
-      user = User.find_by(username: 'anna123')
-      user.should respond_to(:welcome)
-      expect(user).to receive(:welcome).and_return('Hi, anna123! Welcome to FreebieAlert!')
-      # get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123'}}
-      # user = User.find_by(username: 'anna123')
-      # expect(user).to receive(:welcome).and_return('Hi, anna123! Welcome to FreebieAlert')
-    end
-  end
 end
