@@ -4757,6 +4757,7 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (18.4ms)
   Rendered layouts/_flash.erb (0.4ms)
 Completed 200 OK in 154ms (Views: 154.1ms | ActiveRecord: 0.0ms)
+<<<<<<< HEAD
   [1m[36m (61.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
   [1m[35m (62.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
   [1m[36m (63.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
@@ -4840,10 +4841,81 @@ Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.3ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-15 23:06:25 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+  [1m[36m (100.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (69.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (69.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (64.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (65.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (60.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (64.9ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (65.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (65.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (65.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (64.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (66.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (67.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (69.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$3SJsoxoUlOsWen2iLbae6On6LX1atOYUaAwf7Y0L8dzqtmcloP56i"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-16 00:25:28.117017"], ["updated_at", "2022-11-16 00:25:28.117017"]]
+  [1m[36m (72.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$PqJiHxYbFq4IOydorZ6wkup.8VhNaterG0ejaqz/ER4d.Lr3w2UDS"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-16 00:25:28.533743"], ["updated_at", "2022-11-16 00:25:28.533743"]]
+  [1m[35m (66.4ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 00:28:30 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:28:30 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 256ms (Views: 255.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.236.226.230 at 2022-11-16 00:28:31 +0000
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 00:28:36 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aBdQqjH7ImvOrJsrmAvm8HXkONAaEP3ef3cvSXnewRjhn99zLvo7f+Fe2UwYcXluq3WmRx2wbAaw5f7AycnFPg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/1
+Completed 302 Found in 333ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/1" for 129.236.226.230 at 2022-11-16 00:28:36 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:28:37 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-15 23:06:25 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -4912,10 +4984,51 @@ Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-15 23:16:44 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:28:37 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:28:42 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 00:29:30 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abkklZJjDZg3TOxoBEfXyFaK+Iqcj4EAYsZ5iZHaNrTgMatMjWIUjBi+rg+EPUhWiBtmHZsvENitVKgAIc0ykg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/1
+Completed 302 Found in 324ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 129.236.226.230 at 2022-11-16 00:29:30 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:29:31 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-15 23:16:44 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -4966,10 +5079,35 @@ Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-15 23:19:22 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:29:31 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/3" for 129.236.226.230 at 2022-11-16 00:29:34 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:29:38 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-15 23:19:22 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5074,10 +5212,44 @@ Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-15 23:22:23 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:29:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1" for 129.236.226.230 at 2022-11-16 00:29:40 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/1" for 129.236.226.230 at 2022-11-16 00:29:46 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:29:52 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-15 23:22:23 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5234,10 +5406,126 @@ Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.3ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 02:10:06 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:29:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:29:57 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 129.236.226.230 at 2022-11-16 00:29:59 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 129.236.226.230 at 2022-11-16 00:30:05 +0000
+
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController):
+  actionpack (4.2.10) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.10) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.10) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.10) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.10) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.10) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.10) lib/rack/etag.rb:24:in `call'
+  rack (1.6.10) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.10) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.10) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.10) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/new" for 129.236.226.230 at 2022-11-16 00:30:19 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 27.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 129.236.226.230 at 2022-11-16 00:30:22 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KyQ3r5KCV+9Nn2EBlqJpMgGhuSuestedr7bbzXUXy1SirLh2jYNO+2JtI2YW2Pas3zAnvJkSRkVgJApExQDPcg==", "user"=>{"email"=>"123", "username"=>"123", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "123"], ["password_digest", "$2a$12$amXGCc4SgmXObV22iqMkSuWqK//B9ZB4tyPYsYA4KN0ZtOV/q8bKa"], ["email", "123"], ["created_at", "2022-11-16 00:30:22.991669"], ["updated_at", "2022-11-16 00:30:22.991669"]]
+  [1m[35m (64.8ms)[0m  commit transaction
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/3
+Completed 302 Found in 365ms (ActiveRecord: 65.3ms)
+
+
+Started GET "/users/3" for 129.236.226.230 at 2022-11-16 00:30:23 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:30:24 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 02:10:06 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5313,10 +5601,61 @@ Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.3ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 02:14:19 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:30:24 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:30:26 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 00:42:29 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:42:30 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 261ms (Views: 260.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 00:42:37 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bEFWNkFMi71cmsMXG5SwuQH30q39krEePx1xT2Jn+XflydnvXk2SqXNogXCb7i8n32ZMOvoyIMbwj6DG0nD9UQ==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/users/1
+Completed 302 Found in 336ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 129.236.226.230 at 2022-11-16 00:42:37 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:42:39 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 02:14:19 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5408,10 +5747,51 @@ Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 02:15:42 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:42:39 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:42:59 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date[0m
+  Rendered events/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:43:01 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 00:43:06 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ypWEUULJB013Lktmk0C3JDACeAIOGILYHSj4VvvbNvZDHQuIXcgeWVjcCQETOii67pPmlQm4EwDSuinfS8wy0A==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events
+Completed 302 Found in 297ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 00:43:07 +0000
+Processing by EventsController#index as HTML
+Redirected to https://aztecacademy-saharaforever-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 02:15:42 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5667,10 +6047,146 @@ Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 03:32:05 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 129.236.226.230 at 2022-11-16 00:43:07 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 00:43:09 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (78.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (69.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (77.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (77.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (65.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (75.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (77.9ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (76.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (78.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (66.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (66.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (79.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (73.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (83.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (84.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$byTk3Dhc1yoAxxioObj29OXrSmtXQk0Rm5u.pn/4kWJuxf7uLBb4K"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-16 00:44:54.377318"], ["updated_at", "2022-11-16 00:44:54.377318"]]
+  [1m[36m (70.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$CGwWlwKcdEC6421hpJEqSejqsuJCvwg8Km7OzWYXtIqAIOBj6Tj3u"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-16 00:44:54.761936"], ["updated_at", "2022-11-16 00:44:54.761936"]]
+  [1m[35m (81.3ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 235ms (Views: 235.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 129.236.226.230 at 2022-11-16 01:11:51 +0000
+  [1m[36m (58.8ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (60.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (63.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (60.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (66.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (63.4ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text) [0m
+  [1m[35m (61.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (64.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (71.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (68.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (61.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"]]
+  [1m[35m (59.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"]]
+  [1m[36m (63.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"]]
+  [1m[35m (64.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$X5wIMWcN3yLazCmjP5OkNOvljbCLsXxocZuzABm29vbP2dM4gee3G"], ["email", "testing@columbia.edu"], ["created_at", "2022-11-16 01:12:08.977511"], ["updated_at", "2022-11-16 01:12:08.977511"]]
+  [1m[36m (64.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$T21Hdj/ffK1t.JzSLJpHu.D2ddre.ZmfTj1pWArMPtDCPJcG/OEOy"], ["email", "rchung@columbia.edu"], ["created_at", "2022-11-16 01:12:09.352769"], ["updated_at", "2022-11-16 01:12:09.352769"]]
+  [1m[35m (64.1ms)[0m  commit transaction
+
+
+Started GET "/" for 129.236.226.230 at 2022-11-16 01:12:18 +0000
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:12:18 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (31.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 262ms (Views: 261.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:26 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k7pBM+AAxpSDb4dF1folGl0MzFJWyHcDXieMcjHWvt99QfllpZ2dmqva8vjfGHvb2FeITTbQ3IqIWZ7t2XHXwA==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 371ms (Views: 11.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:32 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E2KiUkJE/2ehvZdnGU3suiKbDEYkcgCPmzEr0Frv+An9mRoEB9mkaYkI4toTr7J7p8BIWURqqwZNTzlPskiRFg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events
+Completed 302 Found in 309ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:33 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 03:32:05 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5738,10 +6254,41 @@ Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 03:42:47 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:33 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 129.236.226.230 at 2022-11-16 01:12:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cfmopr81zsISz6FUZ8vnTPxnTpwHmpp6luivx52AgVGfAhDw+qiVzDp61OltKbmNeTwKg2eCMfNAlr1YdSfoTg==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events
+Completed 302 Found in 309ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 03:42:47 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -5817,10 +6364,35 @@ Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 03:44:34 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:42 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1" for 129.236.226.230 at 2022-11-16 01:12:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:47 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 03:44:34 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -6100,10 +6672,35 @@ Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 04:12:33 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:47 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  Rendered events/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2" for 129.236.226.230 at 2022-11-16 01:12:48 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:49 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 04:12:33 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -6215,10 +6812,44 @@ Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms)
 Started GET "/events" for 160.39.210.147 at 2022-11-16 04:19:16 +0000
 Processing by EventsController#index as HTML
 Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:49 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/3" for 129.236.226.230 at 2022-11-16 01:12:50 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events/3" for 129.236.226.230 at 2022-11-16 01:12:53 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 129.236.226.230 at 2022-11-16 01:12:57 +0000
+Processing by EventsController#index as HTML
+Redirected to https://culturedetect-transitcolor-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454
 Filter chain halted as :force_index_redirect rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.210.147 at 2022-11-16 04:19:16 +0000
 Processing by EventsController#index as HTML
   Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
@@ -6274,3 +6905,13 @@ Processing by EventsController#new as HTML
   Rendered events/new.html.erb within layouts/application (1.4ms)
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 7ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+=======
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 129.236.226.230 at 2022-11-16 01:12:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  Rendered events/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+>>>>>>> 735ad399760fd72d638b977a09258ebaea682454

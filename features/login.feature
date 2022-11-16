@@ -18,7 +18,7 @@ Scenario: successful login
     And I fill in "Email" with "testing@columbia.edu"
     And I fill in "Password" with "testing"
     And I press "Log in"
-    Then I should see "Hi, testing! Welcome to FreebieAlert"
+    Then I should see "Welcome, testing"
 
 Scenario: unsuccessful login
     Given a valid user
