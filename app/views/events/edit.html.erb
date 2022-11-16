@@ -7,8 +7,8 @@
   <%= label :event, :event_date, 'Event On', class: 'col-form-label'  %>
   <%= date_select :event, :event_date, {}, class: 'form-control col-2 d-inline' %>
   <br/>
-  <%= label :event, :image, 'Upload Image: Obtain direct image link from shareable google drive link', class: 'col-form-label' %>
-  <a href="https://www.labnol.org/embed/google/drive/">here</a>
+  <%= label :event, :image, 'Upload Image: Paste "direct image link" converted by this ', class: 'col-form-label' %>
+  <a href="https://www.labnol.org/embed/google/drive/">link</a>
   <%= text_field :event, 'image', class: 'form-control' %>
   <br/>
   <%= submit_tag 'Update Event Info', class: 'btn btn-primary' %>
