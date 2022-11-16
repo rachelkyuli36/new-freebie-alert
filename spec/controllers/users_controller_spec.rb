@@ -16,21 +16,11 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  # describe "delete user" do
-  #   it "should delete the user" do
-  #     get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123'}}
-  #     User.find_by(username: 'anna123').destroy
-  #     expect(response).to redirect_to login_path
-  #     expect(flash[:notice]).to match('Account anna123 deleted')
-  #   end
-  # end
-
-
-  # describe "GET #create" do
-  #   it "returns http success" do
-  #     get :create
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-
+  describe "welcome the user" do
+    it "should show user page" do
+      invitation = spy('invitattion')
+      invitation.welcome()
+      expect(invitation).to have_received(:welcome)
+    end
+  end
 end
