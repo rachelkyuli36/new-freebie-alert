@@ -10,6 +10,10 @@ Rottenpotatoes::Application.routes.draw do
 
   get 'sessions/new'
 
+  #citation: https://gorails.com/blog/how-to-add-a-page-to-your-rails-app
+  
+  #get "share", to: "events#share"
+
   resources :users, only: [:new, :create, :show, :destroy]
 
   resources :events

@@ -22,6 +22,12 @@ class EventsController < ApplicationController
     # default: render 'new' template
   end
 
+  def share
+    id = params[:id] # retrieve event ID from URI route
+    @event = Event.find(id) # look up event by unique ID
+    redirect_to share_path
+  end
+
   def create
     @event = Event.create!(event_params)
     flash[:notice] = "#{@event.title} was successfully created."
