@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-16T17:02:43+00:00">2022-11-16T17:02:43+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-16T23:04:25+00:00">2022-11-16T23:04:25+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  86.84%
+  87.39%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.65
+         3.5
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>114</b> relevant lines,
-    <span class="green"><b>99</b> lines covered</span> and
+    <b>119</b> relevant lines,
+    <span class="green"><b>104</b> lines covered</span> and
     <span class="red"><b>15</b> lines missed. </span>
     (<span class="yellow">
-  86.84%
+  87.39%
 </span>
 )
   </div>
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#74a072512be02cfc8faa8a5e7386deb33f9d0bac" class="src_link" title="app/controllers/events_controller.rb">app/controllers/events_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">73</td>
-            <td class="cell--number">44</td>
-            <td class="cell--number">44</td>
+            <td class="cell--number">80</td>
+            <td class="cell--number">49</td>
+            <td class="cell--number">49</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">7.02</td>
+            <td class="cell--number">6.33</td>
             
           </tr>
         
@@ -225,14 +225,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="yellow">
-  86.52%
+  87.23%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.94
+         3.74
        </span>
     </span> hits/line
     )
@@ -245,11 +245,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>89</b> relevant lines,
-    <span class="green"><b>77</b> lines covered</span> and
+    <b>94</b> relevant lines,
+    <span class="green"><b>82</b> lines covered</span> and
     <span class="red"><b>12</b> lines missed. </span>
     (<span class="yellow">
-  86.52%
+  87.23%
 </span>
 )
   </div>
@@ -286,11 +286,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#74a072512be02cfc8faa8a5e7386deb33f9d0bac" class="src_link" title="app/controllers/events_controller.rb">app/controllers/events_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">73</td>
-            <td class="cell--number">44</td>
-            <td class="cell--number">44</td>
+            <td class="cell--number">80</td>
+            <td class="cell--number">49</td>
+            <td class="cell--number">49</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">7.02</td>
+            <td class="cell--number">6.33</td>
             
           </tr>
         
@@ -879,8 +879,8 @@
     
 
     <div class="t-line-summary">
-      <b>44</b> relevant lines.
-      <span class="green"><b>44</b> lines covered</span> and
+      <b>49</b> relevant lines.
+      <span class="green"><b>49</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1156,46 +1156,46 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="25">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def create</code>
+            <code class="ruby">  # not yet implemented on website</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="26">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="26">
+            
             
 
             
 
-            <code class="ruby">    @event = Event.create!(event_params)</code>
+            <code class="ruby">  # def share</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="27">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="27">
+            
             
 
             
 
-            <code class="ruby">    flash[:notice] = &quot;#{@event.title} was successfully created.&quot;</code>
+            <code class="ruby">  #   id = params[:id] # retrieve event ID from URI route</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="28">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="28">
+            
             
 
             
 
-            <code class="ruby">    redirect_to events_path</code>
+            <code class="ruby">  #   @event = Event.find(id) # look up event by unique ID</code>
           </li>
         </div>
       
@@ -1206,7 +1206,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  #   redirect_to share_path</code>
           </li>
         </div>
       
@@ -1217,34 +1217,67 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="31">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">  def edit</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="32">
+          <li class="covered" data-hits="1" data-linenumber="31">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @event = Event.find params[:id]</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="covered" data-hits="2" data-linenumber="32">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="33">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @event = Event.create!(event_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="34">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    flash[:notice] = &quot;#{@event.title} was successfully created.&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to events_path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -1255,46 +1288,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="35">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">  def update</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="36">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @event = Event.find params[:id]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="37">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @event.update_attributes!(event_params)</code>
           </li>
         </div>
       
@@ -1305,18 +1305,18 @@
 
             
 
-            <code class="ruby">    flash[:notice] = &quot;#{@event.title} was successfully updated.&quot;</code>
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="39">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="39">
+            
             
 
             
 
-            <code class="ruby">    redirect_to event_path(@event)</code>
+            <code class="ruby">    @event = Event.find params[:id]</code>
           </li>
         </div>
       
@@ -1332,8 +1332,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
-            
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
             
 
             
@@ -1349,7 +1349,7 @@
 
             
 
-            <code class="ruby">  def destroy</code>
+            <code class="ruby">  def update</code>
           </li>
         </div>
       
@@ -1360,7 +1360,7 @@
 
             
 
-            <code class="ruby">    @event = Event.find(params[:id])</code>
+            <code class="ruby">    @event = Event.find params[:id]</code>
           </li>
         </div>
       
@@ -1371,7 +1371,7 @@
 
             
 
-            <code class="ruby">    @event.destroy</code>
+            <code class="ruby">    @event.update_attributes!(event_params)</code>
           </li>
         </div>
       
@@ -1382,18 +1382,18 @@
 
             
 
-            <code class="ruby">    flash[:notice] = &quot;Event &#39;#{@event.title}&#39; deleted.&quot;</code>
+            <code class="ruby">    flash[:notice] = &quot;#{@event.title} was successfully updated.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="46">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    redirect_to events_path</code>
+            <code class="ruby">    redirect_to event_path(@event)</code>
           </li>
         </div>
       
@@ -1409,8 +1409,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
-            
+          <li class="covered" data-hits="1" data-linenumber="48">
+            <span class="hits">1</span>
             
 
             
@@ -1426,7 +1426,7 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def destroy</code>
           </li>
         </div>
       
@@ -1437,23 +1437,45 @@
 
             
 
-            <code class="ruby">  def event_params</code>
+            <code class="ruby">    @event = Event.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="51">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="2" data-linenumber="51">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image)</code>
+            <code class="ruby">    @event.destroy</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="covered" data-hits="2" data-linenumber="52">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    flash[:notice] = &quot;Event &#39;#{@event.title}&#39; deleted.&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to events_path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -1464,8 +1486,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
             
 
             
@@ -1475,57 +1497,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="54">
+          <li class="covered" data-hits="2" data-linenumber="56">
             <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  def force_index_redirect</code>
+            <code class="ruby">  private</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="55">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="3" data-linenumber="57">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    if !params.key?(:freebies) || !params.key?(:sort_by)</code>
+            <code class="ruby">  def event_params</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="56">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="2" data-linenumber="58">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">      flash.keep</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="57">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">      url = events_path(sort_by: sort_by, freebies: freebies_hash)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="58">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">      redirect_to url</code>
+            <code class="ruby">    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image)</code>
           </li>
         </div>
       
@@ -1536,24 +1536,13 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="60">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
             
 
             
@@ -1563,35 +1552,46 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="62">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="19" data-linenumber="61">
+            <span class="hits">19</span>
             
 
             
 
-            <code class="ruby">  def freebies_list</code>
+            <code class="ruby">  def force_index_redirect</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="38" data-linenumber="63">
-            <span class="hits">38</span>
+          <li class="covered" data-hits="8" data-linenumber="62">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">    params[:freebies]&amp;.keys || session[:freebies] || Event.all_freebies</code>
+            <code class="ruby">    if !params.key?(:freebies) || !params.key?(:sort_by)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="covered" data-hits="8" data-linenumber="63">
+            <span class="hits">8</span>
             
+
+            
+
+            <code class="ruby">      flash.keep</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="64">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      url = events_path(sort_by: sort_by, freebies: freebies_hash)</code>
           </li>
         </div>
       
@@ -1602,13 +1602,90 @@
 
             
 
+            <code class="ruby">      redirect_to url</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="68">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="66">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="39" data-linenumber="69">
+            <span class="hits">39</span>
+            
+
+            
+
+            <code class="ruby">  def freebies_list</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">    params[:freebies]&amp;.keys || session[:freebies] || Event.all_freebies</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="72">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="71" data-linenumber="73">
+            <span class="hits">71</span>
             
 
             
@@ -1618,8 +1695,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="70" data-linenumber="67">
-            <span class="hits">70</span>
+          <li class="never" data-hits="" data-linenumber="74">
+            
             
 
             
@@ -1629,7 +1706,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -1640,8 +1717,8 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
-            
+          <li class="covered" data-hits="1" data-linenumber="76">
+            <span class="hits">1</span>
             
 
             
@@ -1651,8 +1728,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="70">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="29" data-linenumber="77">
+            <span class="hits">29</span>
             
 
             
@@ -1662,8 +1739,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="28" data-linenumber="71">
-            <span class="hits">28</span>
+          <li class="never" data-hits="" data-linenumber="78">
+            
             
 
             
@@ -1673,7 +1750,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="79">
             
             
 
@@ -1684,7 +1761,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="80">
             
             
 
