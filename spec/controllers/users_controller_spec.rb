@@ -16,11 +16,4 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "welcome the user" do
-    it "should show user page" do
-      invitation = spy('invitattion')
-      invitation.welcome()
-      expect(invitation).to have_received(:welcome)
-    end
-  end
 end
