@@ -13,5 +13,6 @@ Feature: Add an event post
    And I fill in "Title" with "Beach Ball Giveaway at Ferris"
    And I select "MERCH" from "Type"
    And I fill in "Time of Event" with "3 pm"
+   And I fill in "Image" with "https://lh3.googleusercontent.com/D_KeOAlkL7DOC4RxjVKDxr8a_Ii4T2pcxfAXjebnYgV7-NiIJ6o4M9mTjPoauK_9V6M=w2400"
    And I press "Save Changes"
    Then I should see "Beach Ball Giveaway at Ferris"
