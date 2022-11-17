@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/new-freebie-alert/app/controllers/events_controller.rb": {
+      "/home/codio/workspace/test/app/controllers/events_controller.rb": {
         "lines": [
           1,
           1,
@@ -85,7 +85,7 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/controllers/application_controller.rb": {
+      "/home/codio/workspace/test/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -94,25 +94,25 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/helpers/application_helper.rb": {
+      "/home/codio/workspace/test/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/helpers/events_helper.rb": {
+      "/home/codio/workspace/test/app/helpers/events_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/helpers/likes_helper.rb": {
+      "/home/codio/workspace/test/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/helpers/sessions_helper.rb": {
+      "/home/codio/workspace/test/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           1,
@@ -129,13 +129,13 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/helpers/users_helper.rb": {
+      "/home/codio/workspace/test/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/models/event.rb": {
+      "/home/codio/workspace/test/app/models/event.rb": {
         "lines": [
           1,
           null,
@@ -157,7 +157,7 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/models/user.rb": {
+      "/home/codio/workspace/test/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -169,7 +169,7 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/models/like.rb": {
+      "/home/codio/workspace/test/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -177,7 +177,7 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/controllers/sessions_controller.rb": {
+      "/home/codio/workspace/test/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -206,7 +206,7 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/controllers/likes_controller.rb": {
+      "/home/codio/workspace/test/app/controllers/likes_controller.rb": {
         "lines": [
           0,
           0,
@@ -243,7 +243,7 @@
         "branches": {
         }
       },
-      "/home/codio/workspace/new-freebie-alert/app/controllers/users_controller.rb": {
+      "/home/codio/workspace/test/app/controllers/users_controller.rb": {
         "lines": [
           0,
           0,
@@ -281,7 +281,7 @@
         }
       }
     },
-    "timestamp": 1668644504
+    "timestamp": 1668646709
   },
   "RSpec": {
     "coverage": {
@@ -494,6 +494,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           null,
@@ -561,6 +562,6 @@
         ]
       }
     },
-    "timestamp": 1668644654
+    "timestamp": 1668650176
   }
 }

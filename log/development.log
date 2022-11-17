@@ -12353,3 +12353,327 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (53.5ms)
   Rendered layouts/_flash.erb (0.4ms)
 Completed 200 OK in 277ms (Views: 230.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/1" for 160.39.131.161 at 2022-11-17 00:57:46 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/show.html.erb within layouts/application (59.3ms)
+  Rendered layouts/_flash.erb (32.4ms)
+Completed 200 OK in 290ms (Views: 252.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events" for 160.39.131.161 at 2022-11-17 00:57:49 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 00:57:49 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 25.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:01:35 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 216ms (Views: 216.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 160.39.131.161 at 2022-11-17 01:01:43 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 20.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 160.39.131.161 at 2022-11-17 01:01:52 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cnr5s1sPIdymaP5fkHhhTiU8M+yN2yo0fMW5BSPBQZnpeYLhW8OKk1RGp1I/Up6Q/ybHoa6Kgny/bZv9HCuJFQ==", "user"=>{"email"=>"ylee0719@gmail.com", "username"=>"youngseo", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "youngseo"], ["password_digest", "$2a$12$OXW8oW7t37RN2BqOKdlNsuvljH3rQoeykYoK5rRP83TD1sHkg.WEO"], ["email", "ylee0719@gmail.com"], ["created_at", "2022-11-17 01:01:52.301513"], ["updated_at", "2022-11-17 01:01:52.301513"]]
+  [1m[36m (56.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events
+Completed 302 Found in 307ms (ActiveRecord: 57.1ms)
+
+
+Started GET "/events" for 160.39.131.161 at 2022-11-17 01:01:52 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:01:52 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (23.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 66.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:02:07 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 160.39.131.161 at 2022-11-17 01:02:15 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J1Kd2Yp6U573N6e6DGlvLmL16f57giOavmobg8vkSp28UeaLirb40QUZ/rejQ5DwuO8ds1jTi9J9wjl79A6CEQ==", "session"=>{"email"=>"ylee0719@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ylee0719@gmail.com"]]
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events
+Completed 302 Found in 336ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 160.39.131.161 at 2022-11-17 01:02:15 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:02:15 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:43:57 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (58.1ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 372ms (Views: 317.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:47:02 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (41.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 205ms (Views: 168.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:47:03 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 160.39.131.161 at 2022-11-17 01:47:05 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 160.39.131.161 at 2022-11-17 01:47:11 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mnk5B/DoqLNoZ214QNjLXN4Ux7KfVEwamK8OKCCHGmIBekJV8CQD/JpJNHXv8jSCBA4z/7wF5FJbByzQH23S7g==", "user"=>{"email"=>"yl4652@columbia.edu", "username"=>"ysl", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "ysl"], ["password_digest", "$2a$12$tKUshQgNEhSXDxdzuU52O.izDeNGqJUiN01DSj3W.NYG9yeNiwjkC"], ["email", "yl4652@columbia.edu"], ["created_at", "2022-11-17 01:47:12.123223"], ["updated_at", "2022-11-17 01:47:12.123223"]]
+  [1m[36m (67.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events
+Completed 302 Found in 299ms (ActiveRecord: 67.7ms)
+
+
+Started GET "/events" for 160.39.131.161 at 2022-11-17 01:47:12 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:47:12 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:47:29 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_flash.erb (0.5ms)
+Completed 200 OK in 240ms (Views: 240.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 160.39.131.161 at 2022-11-17 01:47:31 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 12.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 160.39.131.161 at 2022-11-17 01:47:41 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8FB0u++mtijd9sCSqaQoeSoIdvvZa8ciBF6cc6hOuLYwjqA73Ixl1FZgg/ljG9/PrLVlsw0B1RLuViJ8Uvybg==", "user"=>{"email"=>"yl4652@columbia.edu", "username"=>"youngseolee", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "youngseolee"], ["password_digest", "$2a$12$p/ZbtyPfqGIXXaRIakTakOGZSgI6qeOaYNHxTIO/ZjCm8K5O/mMj2"], ["email", "yl4652@columbia.edu"], ["created_at", "2022-11-17 01:47:42.051607"], ["updated_at", "2022-11-17 01:47:42.051607"]]
+  [1m[36m (61.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events
+Completed 302 Found in 294ms (ActiveRecord: 61.5ms)
+
+
+Started GET "/events" for 160.39.131.161 at 2022-11-17 01:47:42 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.131.161 at 2022-11-17 01:47:42 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 53.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:47:44 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 160.39.131.161 at 2022-11-17 01:47:53 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UxqRmcPIm4SiHulxDe3GmFOfZkJp0qOuIG4dbB4AWgDIGerLwwQwy1AwsHyixzlGiYWSD0qDC+bjxj+UIeqSjA==", "session"=>{"email"=>"yl4652@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "yl4652@columbia.edu"]]
+Redirected to https://sierracity-exceptdepend-3000.codio.io/login
+Completed 302 Found in 239ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:47:53 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 160.39.131.161 at 2022-11-17 01:47:57 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 160.39.131.161 at 2022-11-17 01:48:40 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1r9pOrZ8z+0/0pjzAHMX1GmUmHxu7wqy8Cdq6nmIPjlNvBJotrBkos38wf6vWegKs45sMU2+ovozj0gSRmL2tQ==", "user"=>{"email"=>"adsfj@gmail.com", "username"=>"hello", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "hello"], ["password_digest", "$2a$12$NMBiv/0D7u2eePAMkvCU7.o2EN.ZCzJG92tZtQWZCJ9zp0FVQoExm"], ["email", "adsfj@gmail.com"], ["created_at", "2022-11-17 01:48:41.204308"], ["updated_at", "2022-11-17 01:48:41.204308"]]
+  [1m[36m (54.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://sierracity-exceptdepend-3000.codio.io/login
+Completed 302 Found in 295ms (ActiveRecord: 55.0ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:48:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:51:30 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 160.39.131.161 at 2022-11-17 01:51:31 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 160.39.131.161 at 2022-11-17 01:51:41 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DZ4Onl6SQSCQ3P7IIJKAJ69norZJcY6ShGqX56KXmniWnXXMXl7qb2Lyp8WPuH/5dX1W+2ogJtpHwrUfnX1S9A==", "user"=>{"email"=>"hello@gmail.com", "username"=>"account", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "account"], ["password_digest", "$2a$12$cvQFUk4wBX/vyJqd8m4fDe8O5K8yXP2inuO/SVFfL/CzJtkuV3Jsu"], ["email", "hello@gmail.com"], ["created_at", "2022-11-17 01:51:41.281689"], ["updated_at", "2022-11-17 01:51:41.281689"]]
+  [1m[35m (70.6ms)[0m  commit transaction
+Redirected to https://sierracity-exceptdepend-3000.codio.io/login
+Completed 302 Found in 310ms (ActiveRecord: 71.0ms)
+
+
+Started GET "/login" for 160.39.131.161 at 2022-11-17 01:51:41 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 17.3ms | ActiveRecord: 0.0ms)

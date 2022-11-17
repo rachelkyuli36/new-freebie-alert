@@ -11,7 +11,7 @@ RSpec.describe UsersController, type: :controller do
   describe "create new user" do
     it "should create a new" do
       get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123'}}
-      expect(response).to redirect_to events_path
+      expect(response).to redirect_to login_path
       User.find_by(username: 'anna123').destroy
     end
   end
