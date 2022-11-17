@@ -4,10 +4,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    session[:user_id] = @user.id
+    # session[:user_id] = @user.id
+    if User.find_by(email: user_params[:email])
+      flash[:warning] = "Email is already associated with another account. Please try creating another account."
+    elsif User.find_by(username: user_params[:username])
+      flash[:warning] = "Username is already associated with another account. Please try creating another account."
+    else
+      @user = User.create(user_params)
+      flash[:notice] = "Login with your new account!"
+    end
     redirect_to login_path
-    flash[:notice] = "Login with your new account!"
     # redirect_to user_path(@user)
   end
 
