@@ -37,10 +37,10 @@ Box URL button on top to run the app
 https://gentle-ridge-98936.herokuapp.com
 
 ## Github repo link
+https://github.com/rachelkyuli36/new-freebie-alert/blob/main/README.md
 
 ## Notes:
 Currently in the process of implementing the share link feature, but ran into problems with logging in and accessing shared link. So, it that code is commented out for now and will be working for our next iterations
 
 Our next iteration, we also plan to eliminate the need to convert into direct image link and condense the feature into an upload file. However, we are still in the process of figuring out how to do that without needing the store the image files directly in our repo. 
 
-https://github.com/rachelkyuli36/new-freebie-alert/blob/main/README.md 
