@@ -2,19 +2,11 @@ class LikesController < ApplicationController
     before_action :find_event
     before_action :find_like, only: [:destroy]
     def create
-        if already_liked?
-            flash[:notice] = "You can't like more than once"
-        else
-            @event.likes.create(user_id: User.find_by_id(session[:user_id]).id)
-        end
+        @event.likes.create(user_id: User.find_by_id(session[:user_id]).id)
         redirect_to event_path(@event)
     end
     def destroy
-        if !(already_liked?)
-            flash[:notice] = "Cannot unlike"
-        else
-            @like.destroy
-        end
+        @like.destroy
         redirect_to event_path(@event)
         end
     private
