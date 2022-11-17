@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to events_path
+    redirect_to login_path
+    flash[:notice] = "Login with your new account!"
     # redirect_to user_path(@user)
   end
 
