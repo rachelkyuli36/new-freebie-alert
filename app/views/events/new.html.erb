@@ -14,7 +14,7 @@
   <br/>
   <%= label :event, :image, 'Upload Image: Obtain direct image link from shareable google drive link', class: 'col-form-label' %>
   <a href="https://www.labnol.org/embed/google/drive/" target="_blank">here</a>
-  <%= text_field :event, 'image', class: 'form-control' %>
+  <%= text_field :event, :image, class: 'form-control' %>
   <br/>
   <%= submit_tag 'Save Changes', class: 'btn btn-primary' %>
   <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>

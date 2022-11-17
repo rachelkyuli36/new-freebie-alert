@@ -83,3 +83,7 @@ end
 Then /the type of "(.*)" should be "(.*)"/ do |event, type|
   expect Event.find_by_title(event).freebie == type
 end
+
+Then /the image of "(.*)" should be "(.*)"/ do |event, link|
+  expect Event.find_by_title(event).image == link
+end
