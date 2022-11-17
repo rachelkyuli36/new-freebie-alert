@@ -18,3 +18,7 @@ users = [
 users.each do |user|
   User.create!(user)
 end
+
+Like.create(user: User.first(), event: Event.first())
+Like.create(user: User.first(), event: Event.last())
+Like.create(user: User.last(), event: Event.last())
