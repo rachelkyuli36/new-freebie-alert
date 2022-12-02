@@ -1,0 +1,30 @@
+<!--  app/views/events/share.html.erb -->
+<h2>Details about <em><%= @event.title %></em></h2>
+
+<ul id="details">
+  <li>
+    freebie:
+    <%= @event.freebie %>
+  </li>
+  <li>
+    Taking place on:
+    <%= @event.event_date.strftime("%B %d, %Y") %>
+  </li>
+</ul>
+<p><%= @event.likes.count %> <%= (@event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+
+<h3>Description:</h3>
+<p id="description">
+  <%= @event.description %>
+</p>
+
+<h3>More Info:</h3>
+<p id="image">
+
+  <img src= <%= @event.image %> alt="No image found" style="width:300px;height:300px;">
+</p>
+
+<div class="row">
+  <%= link_to 'Log In or Create an Account to See Our Full Site', edit_event_path(@event), class: 'btn btn-primary col-2' %>
+</div>

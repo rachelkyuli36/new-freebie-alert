@@ -8,3 +8,4 @@ rottenpotatoes/lib/tasks/
 rottenpotatoes/log/
 rottenpotatoes/tmp/
 rottenpotatoes/vendor/bundle
+rottenpotatoes/tmp

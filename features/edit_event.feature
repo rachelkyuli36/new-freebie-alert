@@ -17,3 +17,10 @@ Feature: Edit an event post
    And I select "OTHER" from "Type"
    And I press "Update Event"
    Then the type of "Mochi Mingle" should be "OTHER"
+
+ Scenario: change image of existing event
+   When I go to the edit page for "Mochi Mingle"
+   And I fill in "Image" with "https://lh3.googleusercontent.com/D_KeOAlkL7DOC4RxjVKDxr8a_Ii4T2pcxfAXjebnYgV7-NiIJ6o4M9mTjPoauK_9V6M=w2400"
+   And I press "Update Event"
+   Then the image of "Mochi Mingle" should be "https://lh3.googleusercontent.com/D_KeOAlkL7DOC4RxjVKDxr8a_Ii4T2pcxfAXjebnYgV7-NiIJ6o4M9mTjPoauK_9V6M=w2400"
+  

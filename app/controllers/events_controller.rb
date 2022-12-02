@@ -12,6 +12,7 @@ class EventsController < ApplicationController
     @events = Event.with_freebies(freebies_list, sort_by)
     @freebies_to_show_hash = freebies_hash
     @sort_by = sort_by
+    @user = User.find_by_id(session[:user_id])
     # remember the correct settings for next time
     session['freebies'] = freebies_list
     session['sort_by'] = @sort_by
@@ -20,6 +21,13 @@ class EventsController < ApplicationController
   def new
     # default: render 'new' template
   end
+
+  # not yet implemented on website
+  # def share
+  #   id = params[:id] # retrieve event ID from URI route
+  #   @event = Event.find(id) # look up event by unique ID
+  #   redirect_to share_path
+  # end
 
   def create
     @event = Event.create!(event_params)
@@ -47,7 +55,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation)
+    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image)
   end
 
   def force_index_redirect

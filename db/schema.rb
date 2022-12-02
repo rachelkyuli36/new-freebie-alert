@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221030220816) do
+ActiveRecord::Schema.define(version: 20221116063947) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,25 @@ ActiveRecord::Schema.define(version: 20221030220816) do
     t.date   "event_date"
     t.string "event_time"
     t.text   "affiliation"
+    t.text   "image"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "likes", ["event_id"], name: "index_likes_on_event_id"
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "email"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

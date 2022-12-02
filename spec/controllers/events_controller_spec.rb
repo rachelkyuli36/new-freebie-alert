@@ -36,7 +36,7 @@ describe EventsController, :type => :controller do
         end
     end
 
-    before (:all) do
+    after (:all) do
         if !Event.where(:title => 'Frich Giveaway').empty?
             Event.find_by_title('Frich Giveaway').destroy
         end
