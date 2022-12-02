@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20221116063947) do
 
   create_table "events", force: :cascade do |t|
+    t.string "owner"
     t.string "title"
     t.string "freebie"
     t.text   "description"

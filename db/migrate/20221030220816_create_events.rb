@@ -1,6 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def up
     create_table :events do |t|
+      t.string :owner
       t.string :title
       t.string :freebie
       t.text :description
