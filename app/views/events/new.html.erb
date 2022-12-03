@@ -12,7 +12,7 @@
   <%= label :event, :event_time, 'Time of Event', class: 'col-form-label' %>
   <%= text_field :event, :event_time, class: 'form-control col-2 d-inline', required: true %><br/>
   <%= label :event, :owner, 'Owner of Event', class: 'col-form-label' %>
-  <%= select :event, :owner, [current_user.username], {}, {class: 'form-control col-1', required: true} %>
+  <%= select :event, :owner, [current_user.username], {}, {class: 'form-control col-1'}%>
   <br/>
   <%= label :event, :image, 'Upload Image: Obtain direct image link from shareable google drive link', class: 'col-form-label' %>
   <a href="https://www.labnol.org/embed/google/drive/" target="_blank">here</a>

@@ -11,7 +11,7 @@
     <%= @event.event_date.strftime("%B %d, %Y") %>
   </li>
   <li>
-    owner:
+    owner: 
     <%= @event.owner %>
   </li>
 </ul>
@@ -23,12 +23,13 @@
   <%= button_to 'Like', event_likes_path(@event), method: :post %>
 <% end %>
 
+<!--
 <h3>Description:</h3>
 <p id="description">
-  <%= @event.description %>
-</p>
+  <%# @event.description %>
+</p> -->
 
-<h3>More Info:</h3>
+<!--<h3>More Info:</h3>-->
 <p id="image">
 
   <img src= <%= @event.image %> alt="No image found" style="width:300px;height:300px;">
