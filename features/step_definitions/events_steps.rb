@@ -1,12 +1,15 @@
-# Add a declarative step here for populating the DB with movies.
-
 Given /the following events exist/ do |events_table|
   events_table.hashes.each do |event|
     # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
     Event.create(:title => event['title'], :freebie => event['freebie'], :event_date => event['event_date'])
   end
-  #pending "Fill in this step in movie_steps.rb"
+end
+
+Given /I am logged in with "([^"]*)":(.*) and "([^"]*)":(.*)/ do |email, user_email, password, user_password|
+  fill_in(email, :with => user_email)
+  fill_in(password, :with => user_password)
+  click_button("Log in")
+  @current_user = User.find_by(email: user_email)
 end
 
 Then /(.*) seed events should exist/ do | n_seeds |
