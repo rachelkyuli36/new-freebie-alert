@@ -7,8 +7,12 @@ class UsersController < ApplicationController
     # session[:user_id] = @user.id
     if User.find_by(email: user_params[:email])
       flash[:warning] = "Email is already associated with another account. Please try creating another account."
+    
     elsif User.find_by(username: user_params[:username])
       flash[:warning] = "Username is already associated with another account. Please try creating another account."
+
+    elsif !("@columbia.edu".in? user_params[:email]) && !("@barnard.edu".in? user_params[:email])
+      flash[:warning] = "Email is not valid. Please try creating another account with a columbia/barnard email."
     else
       @user = User.create(user_params)
       flash[:notice] = "Login with your new account!"
