@@ -636,3 +636,244 @@ Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476
 
 
 Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:00:30 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (38.7ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 274ms (Views: 230.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (35.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:11 +0000
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:32 +0000
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 07:02:49 +0000
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 07:04:04 +0000
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:04:49 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/users/new.html.erb:14: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class: button, f.submit "Create Acc...
+...                         ^~~~~~
+/home/codio/workspace/new-freebie-alert/app/views/users/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '.' or &. or :: or '['
+...end=( class: button, f.submit "Create Account" );@output_buf...
+...                              ^):
+  app/views/users/new.html.erb:14: syntax error, unexpected tLABEL
+  app/views/users/new.html.erb:14: syntax error, unexpected tSTRING_BEG, expecting '.' or &. or :: or '['
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.0ms)
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:05:13 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/new-freebie-alert/app/views/users/new.html.erb:14: syntax error, unexpected tLABEL
+...;@output_buffer.append=( class: 'button', f.submit "Create A...
+...                         ^~~~~~
+/home/codio/workspace/new-freebie-alert/app/views/users/new.html.erb:14: syntax error, unexpected ',', expecting ')'
+...uffer.append=( class: 'button', f.submit "Create Account" );...
+...                              ^):
+  app/views/users/new.html.erb:14: syntax error, unexpected tLABEL
+  app/views/users/new.html.erb:14: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.3ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+
+
+Started POST "/login" for 141.157.209.3 at 2022-12-05 07:05:41 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DsnPQ63DFHrO/XrVSrNHauzcWg7KRKeJXQKRvjRbPXs+N4Ma82bjy312uyQSe0fWg47eb3GZrTZnsMyKqt74vA==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", ""]]
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 141.157.209.3 at 2022-12-05 07:05:46 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jq4Y77SKj+HJaFjzytAJuLqXFClC5JA+BX/Kul4F2eAWUFS26i94UHrjmQKSGAkE1cWQSPk5moE/zZeOwIAcJw==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "testing@columbia.edu"]]
+Redirected to https://leonidlicense-companyjuly-3000.codio.io/events
+Completed 302 Found in 296ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 141.157.209.3 at 2022-12-05 07:05:47 +0000
+Processing by EventsController#index as HTML
+Redirected to https://leonidlicense-companyjuly-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=event_date" for 141.157.209.3 at 2022-12-05 07:05:47 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"event_date"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY event_date
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  Rendered events/index.html.erb within layouts/application (22.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 141.157.209.3 at 2022-12-05 07:05:51 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
