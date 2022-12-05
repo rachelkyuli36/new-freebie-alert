@@ -1,4 +1,6 @@
 <!--  app/views/events/share.html.erb -->
+<h1></h1>
+<div class = "serif">
 <h2>Details about <em><%= @event.title %></em></h2>
 
 <ul id="details">
@@ -14,17 +16,12 @@
 <p><%= @event.likes.count %> <%= (@event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
 
-<h3>Description:</h3>
-<p id="description">
-  <%= @event.description %>
-</p>
-
-<h3>More Info:</h3>
 <p id="image">
 
   <img src= <%= @event.image %> alt="No image found" style="width:300px;height:300px;">
 </p>
 
 <div class="row">
-  <%= link_to 'Log In or Create an Account to See Our Full Site', login_path, class: 'btn btn-primary col-2' %>
+  <%= link_to 'Log In or Create an Account to See Our Full Site', login_path, class: 'btn btn-primary col-2 button' %>
+</div>
 </div>
