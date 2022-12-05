@@ -1,4 +1,7 @@
 <!--  This file is app/views/events/index.html.erb -->
+<!--Citations:
+https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-examples/
+-->
 <h2>All Events</h2>
 <h3>Welcome, <%= session[:username] %></h3>
 
@@ -19,7 +22,7 @@
   <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary' %>
 <% end %>
 
-<table class="table table-striped col-md-12" id="events">
+<table class="table table-borderless col-md-12" id="events">
   <thead>
     <tr>
       <th>

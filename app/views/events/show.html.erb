@@ -40,7 +40,7 @@
     <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary col-2' %>
     <%= link_to 'Delete', event_path(@event), 'data-method': 'delete', 'data-confirm': 'Are you sure?', class: 'btn btn-danger col-2' %>
   <% end %>
-  <%# link_to 'Share', share_path(@event), class: 'btn btn-primary col-2' %>
+  <!-- <%= link_to 'Share', share_path(@event), class: 'btn btn-primary col-2' %> -->
   <!--Sources:
   https://stackoverflow.com/questions/14251193/auto-copy-to-the-clipboard-when-a-button-is-clicked-in-rails-3
 
@@ -57,19 +57,20 @@ https://stackoverflow.com/questions/17243200/how-to-call-a-controller-method-fro
 https://stackoverflow.com/questions/22937676/how-do-i-call-a-javascript-function-from-an-html-erb 
 -->
 
-  <!--<button class = 'btn btn-primary col-2', id = 'share' onclick = "shareFunction()"> Copy Shareable Link to Clipboard </button>-->
+  <button class = 'btn btn-primary col-2', id = 'share' onclick = "shareFunction()"> Copy Shareable Link to Clipboard </button>
   <%= link_to 'Back to event list', events_path, class: 'btn btn-primary col-2' %>
 </div>
 
-<!--
+
 <script type = "text/javascript">
   function shareFunction(){
     //Citations: 
     //https://stackoverflow.com/questions/49618618/copy-current-url-to-clipboard
     //https://www.w3schools.com/jsref/jsref_replace.asp 
+    // want format like https://leonidlicense-companyjuly-3000.codio.io/share/1 
     var dummy = document.createElement('input'),
     text = window.location.href;
-    text = text.replace("events","events/share");
+    text = text.replace("events","share");
     document.body.appendChild(dummy);
     dummy.value = text;
     dummy.select();
@@ -77,4 +78,3 @@ https://stackoverflow.com/questions/22937676/how-do-i-call-a-javascript-function
     document.body.removeChild(dummy);
   };
 </script>
--->
