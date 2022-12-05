@@ -296,3 +296,343 @@ Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476
 
 
 Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:52:09 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:53:56 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 215ms (Views: 214.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:56:24 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/application.self-5d66987613fb2f5fc304addb2a7526e74f323a948a2706bfde57bf627f995680.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:25 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/application.self-80d5f6afcef023bd3763387adc4b734208826027f4e89721713fc10298df95b8.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:40 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:56:47 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:23 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 32ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:57:32 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:08 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:17 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:23 +0000
+
+
+Started GET "/login" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/application.self-bb67a318f86f4b99e34494221879aa781698682be7f041d338a6b0bd76f7a4c1.css?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/users.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/likes.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 141.157.209.3 at 2022-12-05 06:58:36 +0000
