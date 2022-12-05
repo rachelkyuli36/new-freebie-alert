@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+   font-family: 'Milk Kids';
+   src: url('./assets/MilkKids.otf')
+}
+h2{
+    font-family: 'Milk Kids';
+}
+ .heart {
+  display:inline-block;
+  width: 200px; 
+  aspect-ratio: 1;
+  border-image: radial-gradient(red 69%,#0000 70%) 84.5% fill/100%;
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
+}

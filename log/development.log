@@ -20043,3 +20043,161 @@ Processing by EventsController#index as HTML
   Rendered events/index.html.erb within layouts/application (5.3ms)
   Rendered layouts/_flash.erb (0.0ms)
 Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (59.0ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) [0m
+  [1m[35m (66.9ms)[0m  CREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (60.3ms)[0m  CREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+[0m
+  [1m[35m (61.0ms)[0m  CREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")
+  [1m[36m (58.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (64.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (68.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (61.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221203204716')[0m
+  [1m[35m (68.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (78.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (66.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221116063947')
+  [1m[36m (64.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) [0m
+  [1m[35m (55.0ms)[0m  CREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (77.8ms)[0m  CREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+[0m
+  [1m[35m (75.9ms)[0m  CREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")
+  [1m[36m (80.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (86.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (81.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (67.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221203204716')[0m
+  [1m[35m (65.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221030220816')
+  [1m[36m (66.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221114192305')[0m
+  [1m[35m (64.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221116063947')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "rchung"], ["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"], ["image", "https://lh4.googleusercontent.com/-tVQehw282ah4VX9vUQ-hMi7t1fa9W8Sg08-v5lZP9vvyH6hJVy6ovIOQ91VAfCZA6M=w2400"]]
+  [1m[35m (69.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)  [["owner", "rchung"], ["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"], ["image", "https://lh5.googleusercontent.com/C75sNxWCzMEl-FIVYfD0O7KK1QfT9GhhVY4wlljW99UBY7qqS26GxAtjqJ2vQKFPLOU=w2400"]]
+  [1m[36m (58.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "ruthl"], ["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"], ["image", "https://lh4.googleusercontent.com/E_lzmeTuTaeKiHipPjfI4w3QtWd-FNe9nj6XgI1r16NUTOKyrTvJcCj09Vl_w2C4IW4=w2400"]]
+  [1m[35m (57.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'testing' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'testing@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$11CbHQTL92bPq/fgo2tLRO80mDyRpbqXncXowy/78qod3AG6AWrBe"], ["email", "testing@columbia.edu"], ["created_at", "2022-12-05 00:08:05.573479"], ["updated_at", "2022-12-05 00:08:05.573479"]]
+  [1m[36m (60.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'rchung' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rchung@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$Iao56xjXAoLm8KWhvfwQd.9qiB4Id8wySJnwDBw5GxBoy6sS2Sa8m"], ["email", "rchung@columbia.edu"], ["created_at", "2022-12-05 00:08:05.964204"], ["updated_at", "2022-12-05 00:08:05.964204"]]
+  [1m[35m (98.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'ruthl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ruthl@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "ruthl"], ["password_digest", "$2a$12$iSnmbKYgp9yPmJRn25B1P.PpivPV5FhkY.U8PPy9G6DOXZ6X2hZ9y"], ["email", "ruthl@columbia.edu"], ["created_at", "2022-12-05 00:08:06.425861"], ["updated_at", "2022-12-05 00:08:06.425861"]]
+  [1m[36m (71.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2022-12-05 00:08:06.520143"], ["updated_at", "2022-12-05 00:08:06.520143"]]
+  [1m[35m (57.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-05 00:08:06.582627"], ["updated_at", "2022-12-05 00:08:06.582627"]]
+  [1m[36m (63.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 3], ["created_at", "2022-12-05 00:08:06.649108"], ["updated_at", "2022-12-05 00:08:06.649108"]]
+  [1m[35m (59.9ms)[0m  commit transaction
+
+
+Started GET "/" for 160.39.130.146 at 2022-12-05 00:08:12 +0000
+
+
+Started GET "/login" for 160.39.130.146 at 2022-12-05 00:08:13 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (39.8ms)
+  Rendered layouts/_flash.erb (0.7ms)
+Completed 200 OK in 751ms (Views: 750.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f762b8312fdb0b84488c131a2ef0c886cac9855cb80cbaf76b5043f64e051a55.css?body=1" for 160.39.130.146 at 2022-12-05 00:08:14 +0000
+
+
+Started POST "/login" for 160.39.130.146 at 2022-12-05 00:08:16 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yWpnQurpKzbylGtMUclcAvnr4ok5Wugw+dA1KUHf6uhwftc376h7gKnanE+vCdO7FAihUWn8fLSB7Zc0j5XgAw==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events
+Completed 302 Found in 338ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/events" for 160.39.130.146 at 2022-12-05 00:08:17 +0000
+Processing by EventsController#index as HTML
+Redirected to https://sierracity-exceptdepend-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.130.146 at 2022-12-05 00:08:17 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (63.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 115ms (Views: 105.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/assets/MilkKids.otf" for 160.39.130.146 at 2022-12-05 00:08:17 +0000
+
+ActionController::RoutingError (No route matches [GET] "/assets/assets/MilkKids.otf"):
+  actionpack (4.2.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.10) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.10) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.10) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.10) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.10) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.10) lib/rails/engine.rb:518:in `call'
+  railties (4.2.10) lib/rails/application.rb:165:in `call'
+  rack (1.6.10) lib/rack/lock.rb:17:in `call'
+  rack (1.6.10) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.10) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.6.0/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (75.8ms)
