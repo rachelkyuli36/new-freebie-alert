@@ -1,0 +1,115 @@
+
+
+Started GET "/" for 160.39.211.53 at 2022-12-05 15:14:51 +0000
+
+
+Started GET "/login" for 160.39.211.53 at 2022-12-05 15:14:51 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 188ms (Views: 187.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 160.39.211.53 at 2022-12-05 15:14:51 +0000
+
+
+Started GET "/assets/application.self-cf00c54d6688f563677ba7120cc08cc0707d1a71925cd8b1ea2b5a9bdef24f48.css?body=1" for 160.39.211.53 at 2022-12-05 15:14:51 +0000
+
+
+Started GET "/users/new" for 160.39.211.53 at 2022-12-05 15:14:57 +0000
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 35.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for 160.39.211.53 at 2022-12-05 15:15:09 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M2sO7azY4pur9gXqU88iRbdFUCuvemGRjWxhrJ6nTEbuiPBjkZmT58MdpjraJaRr4/fZT92jg9us76+y0CuVAg==", "user"=>{"email"=>"doggy@columbia.edu", "username"=>"ff", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "doggy@columbia.edu"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "ff"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'ff' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'doggy@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "ff"], ["password_digest", "$2a$12$YpHQVtx43CLcaF2EgiqHVurPTqrenO/0gPNhTvH7V4q53/BeAxNZ."], ["email", "doggy@columbia.edu"], ["created_at", "2022-12-05 15:15:09.720896"], ["updated_at", "2022-12-05 15:15:09.720896"]]
+  [1m[36m (69.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://milanmirage-floodfast-3000.codio.io/login
+Completed 302 Found in 311ms (ActiveRecord: 70.6ms)
+
+
+Started GET "/login" for 160.39.211.53 at 2022-12-05 15:15:09 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 160.39.211.53 at 2022-12-05 15:15:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Dx1P59+JsMtLrEd/R4brk2B9eO+/S1mPQlbtrIjhHQt34uxoj9Xv0XFEs109J2AGTN8h8wkzywcipWo/K9dMA==", "session"=>{"email"=>"doggy@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "doggy@columbia.edu"]]
+Redirected to https://milanmirage-floodfast-3000.codio.io/events
+Completed 302 Found in 231ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 160.39.211.53 at 2022-12-05 15:15:17 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.211.53 at 2022-12-05 15:15:17 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 160.39.211.53 at 2022-12-05 15:15:21 +0000
+Processing by EventsController#index as HTML
+Redirected to https://milanmirage-floodfast-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.211.53 at 2022-12-05 15:15:21 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 160.39.211.53 at 2022-12-05 15:19:43 +0000
+
+
+Started GET "/login" for 160.39.211.53 at 2022-12-05 15:19:43 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 175ms (Views: 175.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-bcb0922d0c95cdfeef27f719ab1d7389af1b1a25710ff2d5cae2b17b39c4378f.css?body=1" for 160.39.211.53 at 2022-12-05 15:19:44 +0000
+
+
+Started GET "/login" for 160.39.211.53 at 2022-12-05 15:20:00 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-beed6339d5d26a119c05ad73c7b5440d6e7659b1c6e81be7820ab03bb0e6a79f.css?body=1" for 160.39.211.53 at 2022-12-05 15:20:01 +0000
