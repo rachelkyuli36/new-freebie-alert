@@ -48,7 +48,8 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
           <%= event.title %>
         </td>
         <td>
-         <div class="heart" style="width:30px"></div> <%= event.likes.count %>
+          <span style="color:red">♥</span> <%= event.likes.count %>
+         <!--<div class="heart" style="width:30px"></div>--> <%# event.likes.count %>
         </td>
         <td>
           <%= event.freebie %>
