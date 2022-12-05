@@ -2,10 +2,12 @@
 <!--Citations:
 https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-examples/
 -->
-<h2>All Events</h2>
-<h3>Welcome, <%= session[:username] %></h3>
+<h1></h1>
+<h2 class = "sans_serif">All Events</h2>
+<h5 class="sans_serif grey">Welcome, <%= session[:username] %></h5>
 
-<%= link_to "Sign out", login_path, class: 'btn btn-primary' %>
+<div class = "serif">
+<%= link_to "Sign out", login_path, class: 'btn btn-primary button' %>
 
 <%#  Part 2: Start here... %>
 
@@ -19,7 +21,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
         class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary' %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary button' %>
 <% end %>
 
 <table class="table table-borderless col-md-12" id="events">
@@ -48,7 +50,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
           <%= event.title %>
         </td>
         <td>
-          <span style="color:red">♥</span> <%= event.likes.count %>
+          <span class="green">♥</span> <%= event.likes.count %>
          <!--<div class="heart" style="width:30px"></div>--> <%# event.likes.count %>
         </td>
         <td>
@@ -70,4 +72,6 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning' %>
+<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning button' %>
+
+</div>
