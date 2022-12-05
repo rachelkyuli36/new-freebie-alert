@@ -1,11 +1,17 @@
-<h1>Create Account Page</h1>
+<h1></h1>
+<div class = "serif">
+<h2>Create Account Page</h2>
 
 <%= form_for @user do |f| %>
+    <div class ="grey">
     <%= f.label :email %>
     <%= f.text_field :email %><br>
     <%= f.label :username %>
     <%= f.text_field :username %><br>
     <%= f.label :password %>
     <%= f.password_field :password %><br>
+    </div>
     <%= f.submit "Create Account" %>
+    </div>
 <% end %>
+</div>

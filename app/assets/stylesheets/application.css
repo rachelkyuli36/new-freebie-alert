@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+.serif{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.sans_serif{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.green{
+  color: darkseagreen
+}
+
+.grey{
+  color: darkgrey
+}
+
+.header{
+  margin-top: 0px!important;
+  margin-bottom: 0px!important;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
+}
+
+.button{
+  background-color: darkseagreen;
+  color: white;
+  border-color: darkseagreen;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.grey_button{
+  background-color:darkgray;
+  color: white;
+  border-color: darkgrey;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+ /* .heart {
+  display:inline-block;
+  width: 200px; 
+  aspect-ratio: 1;
+  border-image: radial-gradient(red 69%,#0000 70%) 84.5% fill/100%;
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
+} */

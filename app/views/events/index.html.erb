@@ -1,8 +1,13 @@
 <!--  This file is app/views/events/index.html.erb -->
-<h2>All Events</h2>
-<h3>Welcome, <%= session[:username] %></h3>
+<!--Citations:
+https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-examples/
+-->
+<h1></h1>
+<h2 class = "sans_serif">All Events</h2>
+<h5 class="sans_serif grey">Welcome, <%= session[:username] %></h5>
 
-<%= link_to "Sign out", login_path, class: 'btn btn-primary' %>
+<div class = "serif">
+<%= link_to "Sign out", login_path, class: 'btn btn-primary button' %>
 
 <%#  Part 2: Start here... %>
 
@@ -16,17 +21,17 @@
         class: 'form-check-input' %>
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary' %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary button' %>
 <% end %>
 
-<table class="table table-striped col-md-12" id="events">
+<table class="table table-borderless col-md-12" id="events">
   <thead>
     <tr>
       <th>
         <%= link_to 'Event Title', events_path({sort_by: 'title', freebies: @freebies_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
-      <th>Likes</th>
+      <th> </th>
       <th>Type</th>
       <th>
         <%= link_to 'Event Date',
@@ -45,7 +50,8 @@
           <%= event.title %>
         </td>
         <td>
-        <p><%= event.likes.count %> <%= (event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+          <span class="green">♥</span> <%= event.likes.count %>
+         <!--<div class="heart" style="width:30px"></div>--> <%# event.likes.count %>
         </td>
         <td>
           <%= event.freebie %>
@@ -66,4 +72,6 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning' %>
+<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning button' %>
+
+</div>
