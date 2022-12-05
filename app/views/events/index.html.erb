@@ -29,7 +29,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
         <%= link_to 'Event Title', events_path({sort_by: 'title', freebies: @freebies_to_show_hash}),
                       id: 'title_header', class: ('bg-warning hilite' if @sort_by == 'title') %>
       </th>
-      <th>Likes</th>
+      <th> </th>
       <th>Type</th>
       <th>
         <%= link_to 'Event Date',
@@ -48,7 +48,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
           <%= event.title %>
         </td>
         <td>
-        <p><%= event.likes.count %> <%= (event.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+         <div class="heart" style="width:30px"></div> <%= event.likes.count %>
         </td>
         <td>
           <%= event.freebie %>
