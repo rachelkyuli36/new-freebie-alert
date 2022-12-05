@@ -13,12 +13,28 @@
  *= require_tree .
  *= require_self
  */
-@font-face {
-   font-family: 'Milk Kids';
-   src: url('./assets/MilkKids.otf')
+
+.serif{
+  font-family: 'Times New Roman', Times, serif;
 }
-h2{
-    font-family: 'Milk Kids';
+
+.sans_serif{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.green{
+  color: lightseagreen
+}
+
+.grey{
+  color: darkgrey
+}
+
+.header{
+  margin-top: 0px!important;
+  margin-bottom: 0px!important;
+  padding-top: 0px!important;
+  padding-bottom: 0px!important;
 }
 
  /* .heart {
