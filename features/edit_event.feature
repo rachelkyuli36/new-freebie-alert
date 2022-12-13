@@ -12,6 +12,15 @@ Feature: Edit an event post
   | Mochi Mingle                 | FOOD    | 2022-11-20 |
   | Pojangmacha                  | FOOD    | 2022-11-03 |
 
+  Given the following users exist:
+  | username | email                | password |
+  | testing  | testing@columbia.edu | testing  |
+  | rchung   | rchung@columbia.edu  | rchung   |
+
+  Given I am on the login page
+  And I am logged in with "Email":rchung@columbia.edu and "Password":rchung
+  And I am on the FreebieAlert home page
+
  Scenario: change event date of existing event
    When I go to the edit page for "Mochi Mingle"
    And I select "OTHER" from "Type"

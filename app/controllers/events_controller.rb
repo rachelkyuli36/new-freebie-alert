@@ -23,11 +23,11 @@ class EventsController < ApplicationController
   end
 
   # not yet implemented on website
-  # def share
-  #   id = params[:id] # retrieve event ID from URI route
-  #   @event = Event.find(id) # look up event by unique ID
-  #   redirect_to share_path
-  # end
+  def share
+    id = params[:id] # retrieve event ID from URI route
+    @event = Event.find(id) # look up event by unique ID
+    #redirect_to share_path
+  end
 
   def create
     @event = Event.create!(event_params)
@@ -55,7 +55,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image)
+    params.require(:event).permit(:title, :freebie, :event_date, :event_time, :affiliation, :image, :owner)
   end
 
   def force_index_redirect

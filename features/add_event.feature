@@ -4,9 +4,15 @@ Feature: Add an event post
    So that I can add an event post
    I want to be able to create a new event post
 
- Background: I am on the home page 
+ Background: I am logged in
+  Given the following users exist:
+  | username | email                | password |
+  | testing  | testing@columbia.edu | testing  |
+  | rchung   | rchung@columbia.edu  | rchung   |
 
-  Given I am on the FreebieAlert home page
+  Given I am on the login page
+  And I am logged in with "Email":rchung@columbia.edu and "Password":rchung
+  And I am on the FreebieAlert home page
 
  Scenario: change event date of existing event
    When I follow "Add new event"

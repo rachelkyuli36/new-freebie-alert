@@ -4,7 +4,12 @@ Feature: Delete an event
   So that I can edit an event
   I want to be able to change the information of a posted event
 
-Background: events have been added to database
+Background: events have been added to database and am logged in
+
+   Given the following users exist:
+  | username | email                | password |
+  | testing  | testing@columbia.edu | testing  |
+  | rchung   | rchung@columbia.edu  | rchung   |
 
   Given the following events exist:
   | title                        | freebie  | event_date |
@@ -12,7 +17,9 @@ Background: events have been added to database
   | Mochi Mingle                 | FOOD    | 2022-11-20 |
   | Pojangmacha                  | FOOD    | 2022-11-03 |
   
-  And  I am on the FreebieAlert home page
+  Given I am on the login page
+  And I am logged in with "Email":rchung@columbia.edu and "Password":rchung
+  And I am on the FreebieAlert home page
   Then 3 seed events should exist
 
 Scenario: change event date of existing event

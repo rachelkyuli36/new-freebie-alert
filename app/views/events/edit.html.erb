@@ -1,16 +1,20 @@
-<h2>Edit Existing Event</h2>
+<h1></h1>
+<div class="serif">
+<h2 class="grey">Edit Existing Event</h2>
 <%= form_tag event_path(@event), :method => :put do %>
   <%= label :event, :title, 'Title', class: 'col-form-label' %>
   <%= text_field :event, 'title', class: 'form-control' %>
   <%= label :event, :freebie, 'Type', class: 'col-form-label'  %>
   <%= select :event, :freebie, ['FOOD', 'MERCH', 'OTHER'], {}, {class: 'form-control col-1'} %>
   <%= label :event, :event_date, 'Event On', class: 'col-form-label'  %>
-  <%= date_select :event, :event_date, {}, class: 'form-control col-2 d-inline' %>
-  <br/>
+  <%= date_select :event, :event_date, {}, class: 'form-control col-2 d-inline' %><br/>
+  <%= label :event, :owner, 'Owner of Event', class: 'col-form-label' %>
+  <%= select :event, :owner, [current_user.username], {}, {class: 'form-control col-1'}%>
   <%= label :event, :image, 'Upload Image: Paste "direct image link" converted by this ', class: 'col-form-label' %>
   <a href="https://www.labnol.org/embed/google/drive/">link</a>
   <%= text_field :event, 'image', class: 'form-control' %>
   <br/>
-  <%= submit_tag 'Update Event Info', class: 'btn btn-primary' %>
-  <%= link_to 'Cancel', events_path, class: 'btn btn-secondary' %>
+  <%= submit_tag 'Update Event Info', class: 'btn btn-primary button' %>
+  <%= link_to 'Cancel', events_path, class: 'btn btn-secondary grey_button' %>
 <% end %>
+</div>

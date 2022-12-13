@@ -12,7 +12,7 @@ Rottenpotatoes::Application.routes.draw do
 
   #citation: https://gorails.com/blog/how-to-add-a-page-to-your-rails-app
   
-  #get "share", to: "events#share"
+  get '/share/:id', to: 'events#share', as: 'share'
 
   resources :users, only: [:new, :create, :show, :destroy]
 
