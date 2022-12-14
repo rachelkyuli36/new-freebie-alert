@@ -16,6 +16,12 @@ Rottenpotatoes::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :destroy]
 
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
+
   resources :events
   # map '/' to be a redirect to '/movies'
   # root :to => redirect('/events')

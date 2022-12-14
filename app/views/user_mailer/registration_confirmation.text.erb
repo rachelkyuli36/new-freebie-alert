@@ -1,0 +1,6 @@
+<div>
+   <h5 class="sans_serif grey">Hi <%= @user.username %>,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <%= link_to "Confirm email", confirm_email_user_path(@user.confirm_token) %>
+</div>
