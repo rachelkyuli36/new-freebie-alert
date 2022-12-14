@@ -7,9 +7,9 @@ Feature: Delete an event
 Background: events have been added to database and am logged in
 
    Given the following users exist:
-  | username | email                | password |
-  | testing  | testing@columbia.edu | testing  |
-  | rchung   | rchung@columbia.edu  | rchung   |
+  | username | email                | password | email_confirmed |
+  | testing  | testing@columbia.edu | testing  | true            |
+  | rchung   | rchung@columbia.edu  | rchung   | true            |
 
   Given the following events exist:
   | title                        | freebie  | event_date |

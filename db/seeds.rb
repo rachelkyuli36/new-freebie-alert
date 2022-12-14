@@ -11,9 +11,9 @@ events.each do |event|
 end
 
 users = [
-  { username: 'testing', password: 'testing', email: 'testing@columbia.edu'},
-  { username: 'rchung', password: 'rchung', email: 'rchung@columbia.edu'},
-  { username: 'ruthl', password: 'ruthl', email: 'ruthl@columbia.edu'}
+  { username: 'testing', password: 'testing', email: 'testing@columbia.edu', email_confirmed: true},
+  { username: 'rchung', password: 'rchung', email: 'rchung@columbia.edu', email_confirmed: true},
+  { username: 'ruthl', password: 'ruthl', email: 'ruthl@columbia.edu', email_confirmed: true}
 ]
 
 users.each do |user|
