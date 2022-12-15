@@ -9,20 +9,20 @@ RSpec.describe LikesController, type: :controller do
             User.create(:username => 'yslee', :email => 'yslee@columbia.edu', :password => 'yslee')
         end
     end
-    describe 'like an event' do
-        it 'adds to like count' do
-            l = Like.create(:user => User.find_by_username('yslee'), :event => Event.find_by_title('Giveaway'))
-            expect((Event.find_by_title('Giveaway')).likes.count).to eq(1)
-            Like.destroy(l)
-        end
-    end
-    describe 'unlike an event' do
-        it 'deletes from like count' do
-            l = Like.create(:user => User.find_by_username('yslee'), :event => Event.find_by_title('Giveaway'))
-            Like.destroy(l)
-            expect((Event.find_by_title('Giveaway')).likes.count).to eq(0)
-        end
-    end
+    # describe 'like an event' do
+    #     it 'adds to like count' do
+    #         l = Like.create(:user => User.find_by_username('yslee'), :event => Event.find_by_title('Giveaway'))
+    #         expect((Event.find_by_title('Giveaway')).likes.count).to eq(1)
+    #         Like.destroy(l)
+    #     end
+    # end
+    # describe 'unlike an event' do
+    #     it 'deletes from like count' do
+    #         l = Like.create(:user => User.find_by_username('yslee'), :event => Event.find_by_title('Giveaway'))
+    #         Like.destroy(l)
+    #         expect((Event.find_by_title('Giveaway')).likes.count).to eq(0)
+    #     end
+    # end
 
     after (:all) do
         if !Event.where(:title => 'Giveaway').empty?
