@@ -8,6 +8,13 @@ RSpec.describe UsersController, type: :controller do
   #   end
   # end
 
+  describe "get users#new" do
+    it "should create new user" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe "create new user" do
     it "should create a new" do
       get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123'}}

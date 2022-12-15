@@ -7702,3 +7702,554 @@ Processing by EventsController#show as HTML
   Rendered events/show.html.erb within layouts/application (84.5ms)
   Rendered layouts/_flash.erb (0.5ms)
 Completed 200 OK in 290ms (Views: 262.0ms | ActiveRecord: 2.4ms)
+  [1m[36m (65.1ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (62.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (56.2ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (57.7ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (54.1ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (55.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (53.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (52.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (53.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (52.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (59.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (62.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (58.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (68.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (57.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36m (55.2ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (56.9ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (59.8ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (55.8ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (70.5ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (67.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (62.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (64.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (64.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (60.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (61.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (62.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (66.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (64.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (63.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "rchung"], ["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"], ["image", "https://lh4.googleusercontent.com/-tVQehw282ah4VX9vUQ-hMi7t1fa9W8Sg08-v5lZP9vvyH6hJVy6ovIOQ91VAfCZA6M=w2400"]]
+  [1m[35m (84.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)  [["owner", "rchung"], ["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"], ["image", "https://lh5.googleusercontent.com/C75sNxWCzMEl-FIVYfD0O7KK1QfT9GhhVY4wlljW99UBY7qqS26GxAtjqJ2vQKFPLOU=w2400"]]
+  [1m[36m (60.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "ruthl"], ["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"], ["image", "https://lh4.googleusercontent.com/E_lzmeTuTaeKiHipPjfI4w3QtWd-FNe9nj6XgI1r16NUTOKyrTvJcCj09Vl_w2C4IW4=w2400"]]
+  [1m[35m (62.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'testing' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'testing@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$7t175jqiDEUo4uoSiaaEOObOnVPrgQnVs4OtQzHoPACH8APd6aAgu"], ["email", "testing@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:00:01.123595"], ["updated_at", "2022-12-15 18:00:01.123595"], ["confirm_token", "lTnMAzsDSLXf7USJwBCChw"]]
+  [1m[36m (82.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'rchung' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rchung@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$Wsn3mxdmi1qoqzAHjNDogOaxMIGblLZ5Uxcov41O0FFnGkBtNLbrG"], ["email", "rchung@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:00:01.514486"], ["updated_at", "2022-12-15 18:00:01.514486"], ["confirm_token", "3ebxO_L0ICVxV7hx6iACjw"]]
+  [1m[35m (68.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'ruthl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ruthl@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "ruthl"], ["password_digest", "$2a$12$ZYHoIOILWgyMf3FFl0GxMOS8KyOASu3Yz6TxWeEKNOlR0DryZrqhW"], ["email", "ruthl@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:00:01.886153"], ["updated_at", "2022-12-15 18:00:01.886153"], ["confirm_token", "a4AtbpAeuKbag1vqRUlbOQ"]]
+  [1m[36m (72.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2022-12-15 18:00:01.974497"], ["updated_at", "2022-12-15 18:00:01.974497"]]
+  [1m[35m (72.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 18:00:02.064594"], ["updated_at", "2022-12-15 18:00:02.064594"]]
+  [1m[36m (76.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 3], ["created_at", "2022-12-15 18:00:02.143955"], ["updated_at", "2022-12-15 18:00:02.143955"]]
+  [1m[35m (67.1ms)[0m  commit transaction
+
+
+Started GET "/" for 160.39.157.39 at 2022-12-15 18:00:11 +0000
+
+
+Started GET "/login" for 160.39.157.39 at 2022-12-15 18:00:11 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (32.2ms)
+  Rendered layouts/_flash.erb (0.6ms)
+Completed 200 OK in 290ms (Views: 289.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 160.39.157.39 at 2022-12-15 18:00:12 +0000
+
+
+Started GET "/assets/comments.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for 160.39.157.39 at 2022-12-15 18:00:12 +0000
+
+
+Started POST "/login" for 160.39.157.39 at 2022-12-15 18:00:17 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rv3ZehRA1JeSn7pNZSUy2vHmWpuT338ZI/ZHTZEjorUco06c6yVk5W/0GdOC0pYlsg1uVQYwnj7+8tz2a4iTRA==", "session"=>{"email"=>"rchung@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "rchung@columbia.edu"]]
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events
+Completed 302 Found in 768ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/events" for 160.39.157.39 at 2022-12-15 18:00:18 +0000
+Processing by EventsController#index as HTML
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.157.39 at 2022-12-15 18:00:18 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (75.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 114ms (Views: 100.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:20 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mLike Load (0.2ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (86.1ms)
+  Rendered events/show.html.erb within layouts/application (130.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 176ms (Views: 173.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events/1/comments" for 160.39.157.39 at 2022-12-15 18:00:28 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XaD4rVeZV7WKTp2jtITt6+HWsrTPBJ4JF12bGMHsvzoH/m9LqPznx3clPj1Tc0kUoj2Gelrrfy7KWQCjO0eOyw==", "comment"=>{"name"=>"r", "comment"=>"sounds fun!"}, "commit"=>"Leave a reply", "event_id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("name", "comment", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "r"], ["comment", "sounds fun!"], ["event_id", 1], ["created_at", "2022-12-15 18:00:28.551058"], ["updated_at", "2022-12-15 18:00:28.551058"]]
+  [1m[36m (55.1ms)[0m  [1mcommit transaction[0m
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events/1
+Completed 302 Found in 59ms (ActiveRecord: 55.6ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:28 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  Rendered comments/_comment.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (3.1ms)
+  Rendered events/show.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events/1/comments" for 160.39.157.39 at 2022-12-15 18:00:36 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t/gezDNIEZE1mutButmA+JHqhreZT6VSop5QNuOBniLtpokqzC2h48jxSN9dLiQH0gGyeQygRHV/msuNGSqv0w==", "comment"=>{"name"=>"r", "comment"=>"love to see it!"}, "commit"=>"Leave a reply", "event_id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("name", "comment", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "r"], ["comment", "love to see it!"], ["event_id", 1], ["created_at", "2022-12-15 18:00:36.333319"], ["updated_at", "2022-12-15 18:00:36.333319"]]
+  [1m[35m (59.1ms)[0m  commit transaction
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events/1
+Completed 302 Found in 63ms (ActiveRecord: 59.6ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:36 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered comments/_comment.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (4.3ms)
+  Rendered events/show.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 160.39.157.39 at 2022-12-15 18:00:38 +0000
+Processing by EventsController#index as HTML
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.157.39 at 2022-12-15 18:00:38 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:39 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered comments/_comment.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (2.8ms)
+  Rendered events/show.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 160.39.157.39 at 2022-12-15 18:00:40 +0000
+Processing by EventsController#index as HTML
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.157.39 at 2022-12-15 18:00:40 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 160.39.157.39 at 2022-12-15 18:00:42 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 160.39.157.39 at 2022-12-15 18:00:46 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yq3zqyZ2JPbGqHfDpT5vwKVc6FA3n/Ci/xOcOM5VrR+Q82RN2ROUhDvD1F1Cycs/5rfcnqJwEYUiFweDNP6c7g==", "session"=>{"email"=>"testing@columbia.edu", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "testing@columbia.edu"]]
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events
+Completed 302 Found in 600ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 160.39.157.39 at 2022-12-15 18:00:47 +0000
+Processing by EventsController#index as HTML
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.157.39 at 2022-12-15 18:00:47 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:49 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  Rendered comments/_comment.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (2.7ms)
+  Rendered events/show.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events/1/comments" for 160.39.157.39 at 2022-12-15 18:00:53 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+8ww+7vkC7ZDPCL44qo0qTRDYumBRpPjKsMvQxKis1OhkqcdRIG7xL5XgWYFXZBWd6hWJxSpcsT3x7T46AmCog==", "comment"=>{"name"=>"t", "comment"=>"yay"}, "commit"=>"Leave a reply", "event_id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("name", "comment", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "t"], ["comment", "yay"], ["event_id", 1], ["created_at", "2022-12-15 18:00:53.556912"], ["updated_at", "2022-12-15 18:00:53.556912"]]
+  [1m[36m (64.6ms)[0m  [1mcommit transaction[0m
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events/1
+Completed 302 Found in 69ms (ActiveRecord: 65.0ms)
+
+
+Started GET "/events/1" for 160.39.157.39 at 2022-12-15 18:00:53 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?  [["event_id", 1]]
+  Rendered comments/_comment.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (2.6ms)
+  Rendered events/show.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 160.39.157.39 at 2022-12-15 18:00:55 +0000
+Processing by EventsController#index as HTML
+Redirected to https://pegasuslicense-electragong-3000.codio.io/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id" for 160.39.157.39 at 2022-12-15 18:00:55 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."freebie" IN ('FOOD', 'MERCH', 'OTHER')  ORDER BY id
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  Rendered events/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 160.39.157.39 at 2022-12-15 18:00:56 +0000
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (56.1ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (56.9ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (55.7ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (79.6ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (64.5ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (63.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (63.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (62.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (58.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (58.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (59.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (67.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (62.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (61.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (61.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36m (61.3ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (64.2ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (62.7ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (67.1ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (64.3ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (61.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (72.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (60.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (59.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (61.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (60.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (63.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (60.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (61.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (60.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "rchung"], ["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"], ["image", "https://lh4.googleusercontent.com/-tVQehw282ah4VX9vUQ-hMi7t1fa9W8Sg08-v5lZP9vvyH6hJVy6ovIOQ91VAfCZA6M=w2400"]]
+  [1m[35m (62.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)  [["owner", "rchung"], ["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"], ["image", "https://lh5.googleusercontent.com/C75sNxWCzMEl-FIVYfD0O7KK1QfT9GhhVY4wlljW99UBY7qqS26GxAtjqJ2vQKFPLOU=w2400"]]
+  [1m[36m (59.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "ruthl"], ["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"], ["image", "https://lh4.googleusercontent.com/E_lzmeTuTaeKiHipPjfI4w3QtWd-FNe9nj6XgI1r16NUTOKyrTvJcCj09Vl_w2C4IW4=w2400"]]
+  [1m[35m (65.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'testing' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'testing@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$GLgGGlAM8.eH8r5uEE1TZOJ.j4oX90p9mQ7DTBMl2DQmSFRqBGcv."], ["email", "testing@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:01:08.120982"], ["updated_at", "2022-12-15 18:01:08.120982"], ["confirm_token", "oV0v4cCSkrtpBbkL5H0Lkg"]]
+  [1m[36m (64.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'rchung' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rchung@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$LRhpbTQlsd5ECAcwH0s.L.sKcCOk0HRDsPDjSuo1e3a/Fe81/4Jqe"], ["email", "rchung@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:01:08.484854"], ["updated_at", "2022-12-15 18:01:08.484854"], ["confirm_token", "MWQWWQYf8cHJo5hwoEfT5Q"]]
+  [1m[35m (60.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'ruthl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ruthl@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "ruthl"], ["password_digest", "$2a$12$7tvDRD562zI2PzYaF5IeR./uCxnugk5Lqc7srp5NnOsC9mwGMgBR."], ["email", "ruthl@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:01:08.841272"], ["updated_at", "2022-12-15 18:01:08.841272"], ["confirm_token", "J-kUbHmWj2qQSZe0RYZNFA"]]
+  [1m[36m (62.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2022-12-15 18:01:08.916688"], ["updated_at", "2022-12-15 18:01:08.916688"]]
+  [1m[35m (67.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 18:01:08.987083"], ["updated_at", "2022-12-15 18:01:08.987083"]]
+  [1m[36m (63.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 3], ["created_at", "2022-12-15 18:01:09.053748"], ["updated_at", "2022-12-15 18:01:09.053748"]]
+  [1m[35m (67.6ms)[0m  commit transaction
+  [1m[36m (62.4ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (61.0ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (68.8ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (64.2ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (62.2ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (62.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (62.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (72.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (65.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (59.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (57.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (56.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (59.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (56.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (63.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36m (61.1ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "event_id" integer) [0m
+  [1m[35m (58.8ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "freebie" varchar, "description" text, "event_date" date, "event_time" varchar, "affiliation" text, "image" text, "owner" varchar) 
+  [1m[36m (62.9ms)[0m  [1mCREATE TABLE "likes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (68.3ms)[0m  [1mCREATE  INDEX "index_likes_on_event_id" ON "likes" ("event_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_event_id' AND type='index'
+
+  [1m[36m (66.3ms)[0m  [1mCREATE  INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (66.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email_confirmed" boolean DEFAULT 'f', "confirm_token" varchar) 
+  [1m[36m (62.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (65.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (63.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113751')
+  [1m[36m (59.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221030220816')[0m
+  [1m[35m (59.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221114192305')
+  [1m[36m (60.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221116063947')[0m
+  [1m[35m (60.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221203204716')
+  [1m[36m (58.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20221213051930')[0m
+  [1m[35m (61.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221215113653')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "rchung"], ["title", "Waterbottles on Lerner Ramps"], ["freebie", "MERCH"], ["event_date", "2020-10-20"], ["event_time", "6:00-7:00PM"], ["affiliation", "CCSC"], ["image", "https://lh4.googleusercontent.com/-tVQehw282ah4VX9vUQ-hMi7t1fa9W8Sg08-v5lZP9vvyH6hJVy6ovIOQ91VAfCZA6M=w2400"]]
+  [1m[35m (72.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)  [["owner", "rchung"], ["title", "Mochi Mingle"], ["freebie", "FOOD"], ["event_date", "2022-11-20"], ["event_time", "4:00-5:00PM"], ["affiliation", "TASA"], ["image", "https://lh5.googleusercontent.com/C75sNxWCzMEl-FIVYfD0O7KK1QfT9GhhVY4wlljW99UBY7qqS26GxAtjqJ2vQKFPLOU=w2400"]]
+  [1m[36m (61.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("owner", "title", "freebie", "event_date", "event_time", "affiliation", "image") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["owner", "ruthl"], ["title", "Pojangmacha"], ["freebie", "FOOD"], ["event_date", "2022-11-03"], ["event_time", "5:30-8:30PM"], ["affiliation", "KSA"], ["image", "https://lh4.googleusercontent.com/E_lzmeTuTaeKiHipPjfI4w3QtWd-FNe9nj6XgI1r16NUTOKyrTvJcCj09Vl_w2C4IW4=w2400"]]
+  [1m[35m (65.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'testing' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'testing@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "testing"], ["password_digest", "$2a$12$S0yMScsb.JKf0OQf8X68Kemis2.faPiMuElFbLROJAdw0fsvFtNwO"], ["email", "testing@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:04:07.506220"], ["updated_at", "2022-12-15 18:04:07.506220"], ["confirm_token", "ddQIsFQoj9gi-d-r3v1oFQ"]]
+  [1m[36m (68.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'rchung' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'rchung@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "rchung"], ["password_digest", "$2a$12$nNSrgVg4g40uftnE008TXeZrNxBp0d9uzxRIaY1T7BMxw7n.lAG4i"], ["email", "rchung@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:04:07.942535"], ["updated_at", "2022-12-15 18:04:07.942535"], ["confirm_token", "9YpnoeAByQoXlkbgX7Gtew"]]
+  [1m[35m (100.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'ruthl' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ruthl@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["username", "ruthl"], ["password_digest", "$2a$12$7CGC89M6d83aZ3YXF.4uU.PmAvP.t5/I5HX7cogSIwAg6MC7SkDNy"], ["email", "ruthl@columbia.edu"], ["email_confirmed", "t"], ["created_at", "2022-12-15 18:04:08.357881"], ["updated_at", "2022-12-15 18:04:08.357881"], ["confirm_token", "gNCi3ZJsZwIK0wgU8-3zIg"]]
+  [1m[36m (66.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 1], ["created_at", "2022-12-15 18:04:08.439844"], ["updated_at", "2022-12-15 18:04:08.439844"]]
+  [1m[35m (63.9ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 18:04:08.507166"], ["updated_at", "2022-12-15 18:04:08.507166"]]
+  [1m[36m (64.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events"  ORDER BY "events"."id" DESC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["event_id", 3], ["created_at", "2022-12-15 18:04:08.574680"], ["updated_at", "2022-12-15 18:04:08.574680"]]
+  [1m[35m (60.6ms)[0m  commit transaction
