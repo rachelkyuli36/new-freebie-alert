@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.6.6'
 gem 'rails', '4.2.10'
 gem 'bcrypt'
+gem 'simple_form'
 
 # for Heroku deployment 
 group :development, :test do

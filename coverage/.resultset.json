@@ -343,6 +343,12 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/helpers/events_helper.rb": {
         "lines": [
           1,
@@ -374,6 +380,33 @@
       },
       "/home/codio/workspace/new-freebie-alert/app/helpers/users_helper.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
           1,
           null
         ]
@@ -462,15 +495,6 @@
           null
         ]
       },
-      "/home/codio/workspace/new-freebie-alert/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
       "/home/codio/workspace/new-freebie-alert/app/controllers/likes_controller.rb": {
         "lines": [
           1,
@@ -538,7 +562,7 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -603,6 +627,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           1,
@@ -615,14 +640,6 @@
           null,
           0,
           null,
-          null
-        ]
-      },
-      "/home/codio/workspace/new-freebie-alert/app/models/like.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null
         ]
       },
@@ -654,6 +671,21 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/new-freebie-alert/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/mailers/user_mailer.rb": {
         "lines": [
           1,
@@ -667,6 +699,6 @@
         ]
       }
     },
-    "timestamp": 1671124623
+    "timestamp": 1671128826
   }
 }
