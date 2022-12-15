@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :controller do
     it "should create a new" do
       get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123'}}
       expect(response).to redirect_to login_path
-      expect(flash[:notice]).to match('Login with your new account!')
+      expect(flash[:notice]).to match('Please confirm your email address to continue')
       User.find_by(username: 'anna123').destroy
     end
   end
@@ -23,7 +23,6 @@ RSpec.describe UsersController, type: :controller do
       get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna234@columbia.edu', :password => 'anna123'}}
       expect(response).to redirect_to login_path
       expect(flash[:warning]).to match('Username is already associated with another account. Please try creating another account.')
-      User.find_by(username: 'anna123').destroy
     end
   end
 
@@ -33,7 +32,21 @@ RSpec.describe UsersController, type: :controller do
       get :create, {:user => {:id => 20, :username => 'anna234', :email => 'anna123@columbia.edu', :password => 'anna123'}}
       expect(response).to redirect_to login_path
       expect(flash[:warning]).to match('Email is already associated with another account. Please try creating another account.')
-      User.find_by(username: 'anna123').destroy
+    end
+  end
+
+  describe "try to create new user with invalid email" do
+    it "should give error message" do
+      get :create, {:user => {:id => 20, :username => 'anna123', :email => 'anna123@gmail.com', :password => 'anna123'}}
+      get :create, {:user => {:id => 20, :username => 'anna234', :email => 'anna123@gmail.com', :password => 'anna123'}}
+      expect(response).to redirect_to login_path
+      expect(flash[:warning]).to match('Email is not valid. Please try creating another account with a columbia/barnard email.')
+    end
+  end
+
+  after (:all) do
+    if !User.where(:username => 'anna123').empty?
+      User.find_by_username('anna123').destroy
     end
   end
 

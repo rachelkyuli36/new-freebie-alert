@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
     validates :email, uniqueness: true
     before_create :confirmation_token
 
-    def welcome
-        "Hi, #{self.username}! Welcome to FreebieAlert"
-    end
+    # def welcome
+    #     "Hi, #{self.username}! Welcome to FreebieAlert"
+    # end
 
     def email_activate
         self.email_confirmed = true

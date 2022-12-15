@@ -10,6 +10,13 @@ describe EventsController, :type => :controller do
         end
     end
 
+    describe 'see all events' do
+        it 'should show the homepage' do
+            get :index
+            # expect(response).to redirect_to events_path
+        end
+    end
+
     describe 'create new event' do
         it 'should create a new event' do
           get :create, {:event => {:id => 13, :title => 'Pepper Spray on Low', :freebie => 'OTHER', :event_date => '2022-11-17', :event_time => '12:00-2:00PM'}}
@@ -22,6 +29,7 @@ describe EventsController, :type => :controller do
     describe 'destroying an event' do
         it 'redirects to home page after event is destroyed' do
             Event.create(:id => 12, :title => 'Stickers in Mudd', :freebie => 'OTHER', :event_date => '2022-09-20')
+            get :show, {:id => 12}
             get :destroy, {:id => 12}
             expect(response).to redirect_to('/events')
         end
