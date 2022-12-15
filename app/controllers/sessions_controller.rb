@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if !user
+    if !user || !user.authenticate(params[:session][:password])
       flash[:warning] = 'Invalid email/password combination'
       render 'new'
     elsif user && user.authenticate(params[:session][:password]) && user.email_confirmed

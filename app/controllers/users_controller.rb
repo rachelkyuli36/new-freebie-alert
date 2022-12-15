@@ -40,14 +40,15 @@ class UsersController < ApplicationController
   # end
 
   def confirm_email
-    user = User.find_by_confirm_token(user_params[:email])
+    # user = User.find_by_confirm_token(user_params[:email])
+    user = User.find_by_confirm_token(params[:email])
     if user
       user.email_activate
       flash[:notice] = "Welcome to FreebieAlert! Your email has been confirmed. Please sign in to continue."
-      redirect_to login
+      redirect_to login_path
     else
       flash[:warning] = "Sorry. User does not exist"
-      redirect_to login
+      redirect_to login_path
     end
 end
   

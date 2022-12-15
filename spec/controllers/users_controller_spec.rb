@@ -44,6 +44,16 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "confirm email" do
+    it "confirms registered user" do
+        User.create(:id => 21, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123')
+        controller.params['email'] = User.find_by_id(21).email
+        get :confirm_email, id: 21
+        expect(response).to redirect_to login_path
+        # expect(flash[:notice]).to match("Welcome to FreebieAlert! Your email has been confirmed. Please sign in to continue.")
+     end
+  end  
+
   after (:all) do
     if !User.where(:username => 'anna123').empty?
       User.find_by_username('anna123').destroy
