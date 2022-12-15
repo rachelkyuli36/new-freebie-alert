@@ -69,8 +69,8 @@ Rottenpotatoes::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => freebiealertgroup12@gmail.com,
-    :password             => freebiealert!!,
+    :user_name            => 'freebiealertgroup12@gmail.com',
+    :password             => 'freebiealert!!',
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
