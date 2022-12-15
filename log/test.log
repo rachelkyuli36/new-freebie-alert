@@ -20555,3 +20555,2289 @@ Redirected to http://test.host/login
 Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (62.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (53.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (55.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  [1m[35m (56.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (63.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'yslee' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'yslee@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "yslee"], ["email", "yslee@columbia.edu"], ["password_digest", "$2a$04$fmD5xUqBJdxc2flU.G6R4edi58NUtvdmeEMPp2tH9wrC9oLVBeAP6"], ["created_at", "2022-12-15 05:36:27.065836"], ["updated_at", "2022-12-15 05:36:27.065836"], ["confirm_token", "eD185NnJ_6Ca1P-JoHSDtw"]]
+  [1m[35m (58.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:36:27.148408"], ["updated_at", "2022-12-15 05:36:27.148408"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:36:27.155560"], ["updated_at", "2022-12-15 05:36:27.155560"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.2ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (62.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$JLvqMm07nQAu5X4EE3UGXe5xJ7mnQ01kJIw7omOJHAFr.wID9dbd6"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:27.239958"], ["updated_at", "2022-12-15 05:36:27.239958"], ["confirm_token", "j_1sucq_lKmZxpPaSjL1xg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.5ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 198.8ms
+
+Sent mail to anna123@columbia.edu (8.6ms)
+Date: Thu, 15 Dec 2022 05:36:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab25b6e73c_e82b1b13ce5974536c4@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/j_1sucq_lKmZxpPaSjL1xg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 222ms (ActiveRecord: 0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$MgBjR149wG9gzitBwZEUBeKmdtAQeBxTMpioYh3D5AK9R5uFuVGO6"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:27.470274"], ["updated_at", "2022-12-15 05:36:27.470274"], ["confirm_token", "njHD1IlDtpM0vBJSZHjmOg"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.0ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.0ms
+
+Sent mail to anna123@columbia.edu (3.1ms)
+Date: Thu, 15 Dec 2022 05:36:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab25b74733_e82b1b13ce5974537a8@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/njHD1IlDtpM0vBJSZHjmOg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$ov7OjZQM/BZljH1ObIac9.F4sgD5bGp.GomVyWTUa2rxldr1BS5qW"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:27.492908"], ["updated_at", "2022-12-15 05:36:27.492908"], ["confirm_token", "cnQTLbY--f-aWGfxe0tDmw"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (1.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.3ms
+
+Sent mail to anna123@columbia.edu (2.6ms)
+Date: Thu, 15 Dec 2022 05:36:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab25b7a00f_e82b1b13ce597453828@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/cnQTLbY--f-aWGfxe0tDmw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 17ms (ActiveRecord: 0.5ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (60.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (55.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 4]]
+  [1m[35m (56.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 5]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 5]]
+  [1m[35m (55.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (55.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:36:59.500790"], ["updated_at", "2022-12-15 05:36:59.500790"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:36:59.519730"], ["updated_at", "2022-12-15 05:36:59.519730"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Giveaway"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 6]]
+  [1m[36m (51.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$MBFJ4F7zy3TJ1Pdykyqj/Oj/Lz2d7fzRtkPHeTFkMPQSwpn6mxLZy"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:59.599685"], ["updated_at", "2022-12-15 05:36:59.599685"], ["confirm_token", "lSS6bMpCeO7Qd6P2WE7Fjg"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (1.7ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 194.1ms
+
+Sent mail to anna123@columbia.edu (9.1ms)
+Date: Thu, 15 Dec 2022 05:36:59 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab27bc5182_ea2ab30a6b79608656f@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/lSS6bMpCeO7Qd6P2WE7Fjg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 222ms (ActiveRecord: 0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$0qQZovJmZc8G5vbFGIOQgOFEAD5ar6XVZaOnSZrBR3RCQN7pGV1HW"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:59.825576"], ["updated_at", "2022-12-15 05:36:59.825576"], ["confirm_token", "MS0eTfYD5n_TdAbwLe4uIw"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.3ms
+
+Sent mail to anna123@columbia.edu (3.9ms)
+Date: Thu, 15 Dec 2022 05:36:59 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab27bcb12f_ea2ab30a6b79608663a@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/MS0eTfYD5n_TdAbwLe4uIw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 15ms (ActiveRecord: 0.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$fwoY7Th6EHMmorGN30KE2e62L1s9fGGerM0Md482wWEXjno7IeiPm"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:36:59.849618"], ["updated_at", "2022-12-15 05:36:59.849618"], ["confirm_token", "HPVET9SXsWbSKXPIkBBmhg"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.5ms
+
+Sent mail to anna123@columbia.edu (3.4ms)
+Date: Thu, 15 Dec 2022 05:36:59 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab27bd111c_ea2ab30a6b796086767@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/HPVET9SXsWbSKXPIkBBmhg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 17ms (ActiveRecord: 0.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (64.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (53.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (57.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  [1m[35m (57.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (59.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'yslee' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'yslee@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "yslee"], ["email", "yslee@columbia.edu"], ["password_digest", "$2a$04$jGEEGksUOqlcHMmfKCWed.aQLQMQCpWz2ySa1fBUqtoh9W9//LCPO"], ["created_at", "2022-12-15 05:40:24.948145"], ["updated_at", "2022-12-15 05:40:24.948145"], ["confirm_token", "E3cTm3xu9K2xGQUf493DwQ"]]
+  [1m[35m (57.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:40:25.016218"], ["updated_at", "2022-12-15 05:40:25.016218"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:40:25.023935"], ["updated_at", "2022-12-15 05:40:25.023935"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (57.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$.6/A2.2yOZuvRkakLIBL9..9bEd.CanyG1MpiPR/5nZQSAKxm1fgG"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:25.116533"], ["updated_at", "2022-12-15 05:40:25.116533"], ["confirm_token", "KSas4W5RTiRENIrGEIMwuQ"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.7ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 193.2ms
+
+Sent mail to anna123@columbia.edu (9.0ms)
+Date: Thu, 15 Dec 2022 05:40:25 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab3494edcc_1162af56f62395c85211@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/KSas4W5RTiRENIrGEIMwuQ/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 215ms (ActiveRecord: 0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$Cx2ogavgATSi.odqJw.CuO03j/yqBHU98JXpLPH6JsONA6N5uYNHy"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:25.340730"], ["updated_at", "2022-12-15 05:40:25.340730"], ["confirm_token", "-GMwgspDihFh739M7iO7RA"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.1ms
+
+Sent mail to anna123@columbia.edu (2.9ms)
+Date: Thu, 15 Dec 2022 05:40:25 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab349549f3_1162af56f62395c85361@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/-GMwgspDihFh739M7iO7RA/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$Fj16/n7BYD3hpwNTzjOMtOmMIDNY4gYNXdCC03L5TNAheUeuJ.8mK"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:25.362899"], ["updated_at", "2022-12-15 05:40:25.362899"], ["confirm_token", "Nu1ljqpa5Sk3KlNZ9qYsIw"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 3.2ms
+
+Sent mail to anna123@columbia.edu (3.4ms)
+Date: Thu, 15 Dec 2022 05:40:25 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab3495a48f_1162af56f62395c85489@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/Nu1ljqpa5Sk3KlNZ9qYsIw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (68.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (60.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 4]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 4]]
+  [1m[35m (55.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 5]]
+  [1m[35m (57.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (63.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:40:42.591715"], ["updated_at", "2022-12-15 05:40:42.591715"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:40:42.610414"], ["updated_at", "2022-12-15 05:40:42.610414"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Giveaway"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 6]]
+  [1m[36m (56.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$gy9SMQW5F369C8btEihG8uSZNTQnd0WGst.Tc0mQpS719bVCFOPJu"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:42.695267"], ["updated_at", "2022-12-15 05:40:42.695267"], ["confirm_token", "CazOAZs6_KOKYfRJK9yikg"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (1.5ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 194.2ms
+
+Sent mail to anna123@columbia.edu (9.4ms)
+Date: Thu, 15 Dec 2022 05:40:42 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab35adc60a_1182ab50823796c4873a@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/CazOAZs6_KOKYfRJK9yikg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 222ms (ActiveRecord: 0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$QDU/RFsmZc2WRe8NWdd9KeUxSavq8V7XkF2ohl6HgDOqzJvmJ29i6"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:42.921058"], ["updated_at", "2022-12-15 05:40:42.921058"], ["confirm_token", "_Nbq83M9D78PB5JC1uaSlg"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.2ms
+
+Sent mail to anna123@columbia.edu (2.9ms)
+Date: Thu, 15 Dec 2022 05:40:42 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab35ae264f_1182ab50823796c4886f@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/_Nbq83M9D78PB5JC1uaSlg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$bPh1O1yCsK2eXwyV0uxOcO/MRp7kdgfzdcNIEn0kWZjVqsGnEgIRi"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:40:42.944005"], ["updated_at", "2022-12-15 05:40:42.944005"], ["confirm_token", "fRwFCE2BmOyl_9mNOJf1ag"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.2ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.2ms
+
+Sent mail to anna123@columbia.edu (3.5ms)
+Date: Thu, 15 Dec 2022 05:40:42 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab35ae82ec_1182ab50823796c4894@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/fRwFCE2BmOyl_9mNOJf1ag/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (63.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (57.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 1]]
+  [1m[35m (61.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 2]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 2]]
+  [1m[35m (55.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (56.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'yslee' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'yslee@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "yslee"], ["email", "yslee@columbia.edu"], ["password_digest", "$2a$04$pCMGf9FgTUnKELnQLDkbX.37Mh2Wqj2JTgvAtgShoeJ3zFSnv5wMS"], ["created_at", "2022-12-15 05:50:43.556070"], ["updated_at", "2022-12-15 05:50:43.556070"], ["confirm_token", "4uyyZIWgkv5l6oal-RKp6A"]]
+  [1m[35m (57.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:50:43.637244"], ["updated_at", "2022-12-15 05:50:43.637244"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 3], ["created_at", "2022-12-15 05:50:43.644163"], ["updated_at", "2022-12-15 05:50:43.644163"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (54.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"anna123@columbie.edu", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$qPNvHkdjemzLUoBcq3rnsO1DbU1q0xwdgIp1.urwiCRPe7gk5L9Ne"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:50:43.721796"], ["updated_at", "2022-12-15 05:50:43.721796"], ["confirm_token", "P59QXlzZ0CNWDE5N1J1lVw"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.5ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 198.7ms
+
+Sent mail to anna123@columbia.edu (9.1ms)
+Date: Thu, 15 Dec 2022 05:50:43 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab5b3e403a_12e2ada543b195c96462@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/P59QXlzZ0CNWDE5N1J1lVw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 221ms (ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$TorCcfGEhkoQFPJxjOr9Ie9/NqISsuQY.nDmcTeZgxhcUfUJJz/w2"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:50:43.951981"], ["updated_at", "2022-12-15 05:50:43.951981"], ["confirm_token", "DHemKmerEVmbepHwC158dw"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.4ms
+
+Sent mail to anna123@columbia.edu (3.3ms)
+Date: Thu, 15 Dec 2022 05:50:43 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab5b3ea19e_12e2ada543b195c96526@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/DHemKmerEVmbepHwC158dw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 1.7ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$6WlTOAyDbnQ7N9YmWdidmeREMOd2nB7OHMcRNjUlZGAMnJquh44TC"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:50:43.975199"], ["updated_at", "2022-12-15 05:50:43.975199"], ["confirm_token", "iu0Yqh7AZqWqeyAujE4dVw"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 3.1ms
+
+Sent mail to anna123@columbia.edu (3.1ms)
+Date: Thu, 15 Dec 2022 05:50:43 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab5b3efcdc_12e2ada543b195c96628@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/iu0Yqh7AZqWqeyAujE4dVw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (63.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (58.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 4]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 4]]
+  [1m[35m (74.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 5]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 5]]
+  [1m[35m (64.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (68.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:54:48.212547"], ["updated_at", "2022-12-15 05:54:48.212547"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 6], ["created_at", "2022-12-15 05:54:48.231770"], ["updated_at", "2022-12-15 05:54:48.231770"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Giveaway"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 6]]
+  [1m[36m (53.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbie.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbie.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$etgDWuKoGXQFfSnHLh5jwOhMKZxxJ0lr9Qv6uQrIIHWWe6TvblMaq"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:54:48.316114"], ["updated_at", "2022-12-15 05:54:48.316114"], ["confirm_token", "NC1Ha-fl8-Wdar2T3qCJTw"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.7ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 194.4ms
+
+Sent mail to anna123@columbia.edu (9.2ms)
+Date: Thu, 15 Dec 2022 05:54:48 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab6a87fcfc_1302abfb17bb970746@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/NC1Ha-fl8-Wdar2T3qCJTw/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 221ms (ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$w2sek2lkDUgHe8oXPxORnuO4jV.oHXgtC.tgpquyKyQKo5L7clvSK"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:54:48.541581"], ["updated_at", "2022-12-15 05:54:48.541581"], ["confirm_token", "qx63eEpZuupHKK7DLcpw4w"]]
+  [1m[35m (0.7ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (0.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.2ms
+
+Sent mail to anna123@columbia.edu (3.7ms)
+Date: Thu, 15 Dec 2022 05:54:48 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab6a885bcd_1302abfb17bb970756b@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/qx63eEpZuupHKK7DLcpw4w/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$ullZ3Kah0xHTu.AGynizq.YquJqqKVAPnT8bf4e9hyx5s2egwkN8S"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:54:48.564626"], ["updated_at", "2022-12-15 05:54:48.564626"], ["confirm_token", "JTe-OlPcJ9zya5bEjFVs7w"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.9ms
+
+Sent mail to anna123@columbia.edu (3.3ms)
+Date: Thu, 15 Dec 2022 05:54:48 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab6a88ba47_1302abfb17bb970761f@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/JTe-OlPcJ9zya5bEjFVs7w/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 16ms (ActiveRecord: 1.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (62.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (62.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 9]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 7]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 7]]
+  [1m[35m (54.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 8]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 8]]
+  [1m[35m (56.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (64.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 9], ["created_at", "2022-12-15 05:58:27.492350"], ["updated_at", "2022-12-15 05:58:27.492350"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 9], ["created_at", "2022-12-15 05:58:27.511809"], ["updated_at", "2022-12-15 05:58:27.511809"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 9]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Giveaway"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 9]]
+  [1m[36m (68.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("id", "username", "email", "password_digest", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 20], ["username", "anna123"], ["email", "anna123@columbia.edu"], ["password_digest", "$2a$04$IUYlXQjml9qd2E1.M0Z1LeK09Vdpg5.ClrKo3pcInLFS20Fdktooa"], ["email_confirmed", "t"], ["created_at", "2022-12-15 05:58:27.612146"], ["updated_at", "2022-12-15 05:58:27.612146"], ["confirm_token", "oZZ7Jjn1TIaRqTDZd0Ligg"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 20]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$FjgQAwe3YnzBtTx.BM289./grmF9L7GBPLYU4X1DkIEpNgNpZ7KDm"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:58:27.627862"], ["updated_at", "2022-12-15 05:58:27.627862"], ["confirm_token", "dYbAbouAFDJTO8gaJE4Oog"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (1.6ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 196.0ms
+
+Sent mail to anna123@columbia.edu (8.8ms)
+Date: Thu, 15 Dec 2022 05:58:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab783cc735_1332ada4539f96433dd@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/dYbAbouAFDJTO8gaJE4Oog/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 218ms (ActiveRecord: 0.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$wCebdr/5tWysU0RPc5bg6OibjL2NxANoPE4PVdylfZHhuAs5EdP6e"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:58:27.853667"], ["updated_at", "2022-12-15 05:58:27.853667"], ["confirm_token", "PaOfgJ7UQPf7agd4fRoh7A"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.5ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.3ms
+
+Sent mail to anna123@columbia.edu (3.7ms)
+Date: Thu, 15 Dec 2022 05:58:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab783d1f3c_1332ada4539f96434c3@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/PaOfgJ7UQPf7agd4fRoh7A/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$sM.v3jcohXZHVp3X6y1bUehQJ58AE9dw48TVyNYwl5src78X3BUEy"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:58:27.876264"], ["updated_at", "2022-12-15 05:58:27.876264"], ["confirm_token", "7yUDvTFbvTwLJ23PFjrp_w"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.4ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.4ms
+
+Sent mail to anna123@columbia.edu (3.3ms)
+Date: Thu, 15 Dec 2022 05:58:27 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab783d7dd4_1332ada4539f964354e@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/7yUDvTFbvTwLJ23PFjrp_w/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "anna123"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Frich Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "Frich Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[36m (58.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "WiCS Tabling"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)  [["title", "WiCS Tabling"], ["freebie", "FOOD"], ["event_date", "2022-09-07"], ["event_time", "10:00-11:00AM"], ["affiliation", "WiCS"]]
+  [1m[36m (57.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+Redirected to http://test.host/events?freebies%5BFOOD%5D=1&freebies%5BMERCH%5D=1&freebies%5BOTHER%5D=1&sort_by=id
+Filter chain halted as :force_index_redirect rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"id"=>"13", "title"=>"Pepper Spray on Low", "freebie"=>"OTHER", "event_date"=>"2022-11-17", "event_time"=>"12:00-2:00PM"}}
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("title", "freebie", "event_date", "event_time") VALUES (?, ?, ?, ?)  [["title", "Pepper Spray on Low"], ["freebie", "OTHER"], ["event_date", "2022-11-17"], ["event_time", "12:00-2:00PM"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Pepper Spray on Low"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 12]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 12]]
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered events/show.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+Processing by EventsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("id", "title", "freebie", "event_date") VALUES (?, ?, ?, ?)[0m  [["id", 12], ["title", "Stickers in Mudd"], ["freebie", "OTHER"], ["event_date", "2022-09-20"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by EventsController#update as HTML
+  Parameters: {"event"=>{"title"=>"Stickers at Mudd"}, "id"=>"12"}
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "events" SET "title" = ? WHERE "events"."id" = ?[0m  [["title", "Stickers at Mudd"], ["id", 12]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/events/12
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Frich Giveaway"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Frich Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 10]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 10]]
+  [1m[35m (66.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "WiCS Tabling"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "WiCS Tabling"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 11]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "events" WHERE "events"."id" = ?[0m  [["id", 11]]
+  [1m[35m (67.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE "events"."title" = ?[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "freebie", "event_date", "event_time", "affiliation") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Giveaway"], ["freebie", "FOOD"], ["event_date", "2022-12-02"], ["event_time", "9:00AM-5:00PM"], ["affiliation", "Frich"]]
+  [1m[35m (61.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."username" = ?[0m  [["username", "yslee"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "yslee"]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["user_id", 1], ["event_id", 12], ["created_at", "2022-12-15 05:59:57.988127"], ["updated_at", "2022-12-15 05:59:57.988127"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1  [["title", "Giveaway"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "yslee"]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "likes" ("user_id", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["event_id", 12], ["created_at", "2022-12-15 05:59:58.009021"], ["updated_at", "2022-12-15 05:59:58.009021"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."event_id" = ?  [["event_id", 12]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "events" WHERE "events"."title" = ?  [["title", "Giveaway"]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."title" = ? LIMIT 1[0m  [["title", "Giveaway"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."event_id" = ?[0m  [["event_id", 12]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "events" WHERE "events"."id" = ?  [["id", 12]]
+  [1m[36m (53.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SessionsController#new as HTML
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("id", "username", "email", "password_digest", "email_confirmed", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 20], ["username", "anna123"], ["email", "anna123@columbia.edu"], ["password_digest", "$2a$04$Vj9D64RxVqxbNceip/EoYe92Vei8FAqLXv.kIlSZq/7EUcFzZCk5a"], ["email_confirmed", "t"], ["created_at", "2022-12-15 05:59:58.090920"], ["updated_at", "2022-12-15 05:59:58.090920"], ["confirm_token", "ccbp6Ia8quSf9toOzSmv-g"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 20]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("id", "username", "email", "password_digest", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?, ?)  [["id", 20], ["username", "anna123"], ["email", "anna123@columbia.edu"], ["password_digest", "$2a$04$N0o3n/.ZZtFnHrYD2mjji.o6ra0srRDk0f.UO6bXGiLH3IO9hGZym"], ["created_at", "2022-12-15 05:59:58.102743"], ["updated_at", "2022-12-15 05:59:58.102743"], ["confirm_token", "CaTSjPFG-5JrHk0vDDWUlw"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+  Rendered sessions/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 20]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 20]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$Iw02ZQbNH3vUhAI2ayDRV.10zhSjAkMfMrmF85cZX9lCUwxkeZa9K"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:59:58.116385"], ["updated_at", "2022-12-15 05:59:58.116385"], ["confirm_token", "u810JHR_1NMsi2Gf4rAsNg"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (1.7ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 198.3ms
+
+Sent mail to anna123@columbia.edu (8.2ms)
+Date: Thu, 15 Dec 2022 05:59:58 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab7de4ff07_1352aab920cb968572d4@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/u810JHR_1NMsi2Gf4rAsNg/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 219ms (ActiveRecord: 0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1[0m  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "anna123"], ["password_digest", "$2a$04$8zHereJ3li8otX.wLbLM/OLSfsCvdmXvgIfcEs2.2aTHlrf4FQeai"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:59:58.343916"], ["updated_at", "2022-12-15 05:59:58.343916"], ["confirm_token", "I2GQ-FiTDM2MTWnMDKEy-A"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.7ms
+
+Sent mail to anna123@columbia.edu (3.1ms)
+Date: Thu, 15 Dec 2022 05:59:58 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab7de5586a_1352aab920cb9685731c@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/I2GQ-FiTDM2MTWnMDKEy-A/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna234@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna234@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@columbia.edu"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'anna123' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'anna123@columbia.edu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password_digest", "email", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?, ?)  [["username", "anna123"], ["password_digest", "$2a$04$S85qx6uBHFtLq671YF9qRefcKDnEtZbkRDAz5wZS4x88t5c5pJd06"], ["email", "anna123@columbia.edu"], ["created_at", "2022-12-15 05:59:58.366317"], ["updated_at", "2022-12-15 05:59:58.366317"], ["confirm_token", "WHdQLaFh2vLT9HDl4a_Oig"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered user_mailer/registration_confirmation.text.erb (0.3ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 2.3ms
+
+Sent mail to anna123@columbia.edu (3.4ms)
+Date: Thu, 15 Dec 2022 05:59:58 +0000
+From: freebiealertgroup12@gmail.com
+To: anna123@columbia.edu
+Message-ID: <639ab7de5b5f1_1352aab920cb96857426@pegasuslicense-electragong.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<div>
+   <h5 class="sans_serif grey">Hi anna123,</h5> 
+   <p> Thanks for registering! To confirm your registration click the URL below.</p>
+   
+   <a href="/users/WHdQLaFh2vLT9HDl4a_Oig/confirm_email">Confirm email</a>
+</div>
+Redirected to http://test.host/login
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@columbia.edu", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "anna123@columbia.edu"]]
+Redirected to http://test.host/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna123", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna123"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"id"=>"20", "username"=>"anna234", "email"=>"anna123@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: id
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "anna123@gmail.com"]]
+Unpermitted parameter: id
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT 1  [["username", "anna234"]]
+Unpermitted parameter: id
+Unpermitted parameter: id
+Redirected to http://test.host/login
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."username" = ?  [["username", "anna123"]]
