@@ -3,7 +3,7 @@
 https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-examples/
 -->
 <h1></h1>
-<h2 class = "sans_serif">All Events</h2>
+<h2 class = "sans_serif">Upcoming Events</h2>
 <h5 class="sans_serif grey">Welcome, <%= session[:username] %></h5>
 
 <div class = "serif">
@@ -47,7 +47,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     </tr>
   </thead>
   <tbody>
-    <% @events.each do |event| %>
+    <% @upcoming_events.each do |event| %>
       <tr>
         <td>
           <%= event.title %>
@@ -75,5 +75,52 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     <% end %>
   </tbody>
 </table>
+<h1></h1>
+<h4 class = "sans_serif spaced grey">Past Events</h4>
+
+<table class="table-success table-borderless col-md-12" id="old_events">
+  <thead>
+    <tr>
+      <th class: ('bg-warning hilite' if @sort_by == 'title')> Event Title</th>
+      <th> </th>
+      <th>Type</th>
+      <th class: ('bg-warning hilite' if @sort_by == 'event_date')> Event Date</th>
+      <th>Time</th>
+      <th>Affiliation</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @past_events.each do |event| %>
+      <tr>
+        <td>
+          <%= event.title %>
+        </td>
+        <td>
+          <span class="green">♥</span> <%= event.likes.count %>
+         <!--<div class="heart" style="width:30px"></div>--> <%# event.likes.count %>
+        </td>
+        <td>
+          <%= event.freebie %>
+        </td>
+        <td>
+          <%= event.event_date %>
+        </td>
+        <td>
+          <%= event.event_time %>
+        </td>
+        <td>
+          <%= event.affiliation %>
+        </td>
+        <td>
+          <%= link_to "More about #{event.title}", event_path(event) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 
 </div>

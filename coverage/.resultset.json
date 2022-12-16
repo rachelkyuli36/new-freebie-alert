@@ -59,6 +59,12 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/helpers/events_helper.rb": {
         "lines": [
           1,
@@ -106,6 +112,8 @@
           null,
           null,
           1,
+          15,
+          15,
           15,
           15,
           15,
@@ -184,6 +192,7 @@
           null,
           1,
           1,
+          1,
           23,
           null,
           null,
@@ -196,6 +205,24 @@
           null,
           null,
           15,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          15,
+          15,
+          15,
+          null,
+          null,
+          1,
+          15,
+          15,
+          15,
+          null,
           null,
           null
         ]
@@ -254,6 +281,13 @@
           null
         ]
       },
+      "/home/codio/workspace/new-freebie-alert/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/home/codio/workspace/new-freebie-alert/app/controllers/likes_controller.rb": {
         "lines": [
           0,
@@ -282,9 +316,29 @@
         ],
         "branches": {
         }
+      },
+      "/home/codio/workspace/new-freebie-alert/app/controllers/comments_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1671150505
+    "timestamp": 1671230098
   },
   "RSpec": {
     "coverage": {
