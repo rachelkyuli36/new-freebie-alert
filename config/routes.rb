@@ -6,6 +6,7 @@ Rottenpotatoes::Application.routes.draw do
   # get 'users/create'
   resources :events do
     resources :likes
+    resources :comments
   end
 
   get 'sessions/new'
@@ -15,6 +16,12 @@ Rottenpotatoes::Application.routes.draw do
   get '/share/:id', to: 'events#share', as: 'share'
 
   resources :users, only: [:new, :create, :show, :destroy]
+
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
 
   resources :events
   # map '/' to be a redirect to '/movies'

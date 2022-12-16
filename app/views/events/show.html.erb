@@ -37,6 +37,18 @@
   <img src= <%= @event.image %> alt="No image found" style="width:300px;height:300px;">
 </p>
 
+<section class="section comments">
+    <div class="container">
+        <h2 class="subtitle is-5"><strong><%= @event.comments.count %></strong> Comments</h2>
+        <%= render @event.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Leave a reply</h3>
+             <%= render 'comments/form' %>
+        </div>
+    </div>
+</section>
+
 <div class="row">
   <% if @event.owner == current_user.username %>
     <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary col-2 button' %>

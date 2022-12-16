@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -13,10 +14,14 @@ class UsersController < ApplicationController
 
     elsif !("@columbia.edu".in? user_params[:email]) && !("@barnard.edu".in? user_params[:email])
       flash[:warning] = "Email is not valid. Please try creating another account with a columbia/barnard email."
+
     else
       @user = User.create(user_params)
-      flash[:notice] = "Login with your new account!"
+      UserMailer.registration_confirmation(@user).deliver
+      # flash[:notice] = "Login with your new account!"
+      flash[:notice] = "Please confirm your email address to continue"
     end
+
     redirect_to login_path
     # redirect_to user_path(@user)
   end
@@ -33,9 +38,21 @@ class UsersController < ApplicationController
   #   flash[:notice] = "User '#{@user.username}' deleted."
   #   redirect_to login_path
   # end
+
+  def confirm_email
+    # user = User.find_by_confirm_token(user_params[:email])
+    user = User.find_by_confirm_token(params[:email])
+    if user
+      user.email_activate
+      flash[:notice] = "Welcome to FreebieAlert! Your email has been confirmed. Please sign in to continue."
+      redirect_to login_path
+    else
+      flash[:warning] = "Sorry. User does not exist"
+      redirect_to login_path
+    end
+end
   
   private
-  
   def user_params
     params.require(:user).permit(:username, :password, :email)
   end
