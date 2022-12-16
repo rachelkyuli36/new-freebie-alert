@@ -16,6 +16,15 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
+  describe "successful login" do
+    it "redirects to events page" do
+      User.create(:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123')
+      post :create, session: {:email => 'anna123@columbia.edu', :password => 'anna123'}
+      expect(response).to redirect_to events_path
+      User.find_by_username('anna123').destroy
+    end
+  end
+
   # describe "login with valid and confirmed email/password" do
   #   it "successfully logs in" do
   #     User.create(:id => 20, :username => 'anna123', :email => 'anna123@columbia.edu', :password => 'anna123', :email_confirmed => true)
