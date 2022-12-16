@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     validates :username, uniqueness: true
     validates :email, uniqueness: true
 
-    def welcome
-        "Hi, #{self.username}! Welcome to FreebieAlert"
-    end
+    # def welcome
+    #     "Hi, #{self.username}! Welcome to FreebieAlert"
+    # end
 end
