@@ -54,7 +54,7 @@ end
 
 Then /I should see all the events/ do
   # Make sure that all the movies in the app are visible in the table
-  expect(page).to have_selector("tr", count: Event.count + 1)
+  expect(page).to have_selector("tr", count: Event.count + 2)
 end
 
 ### Utility Steps Just for this assignment.

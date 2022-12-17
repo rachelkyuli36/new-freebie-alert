@@ -10,6 +10,18 @@ describe EventsController, :type => :controller do
         end
     end
 
+    describe 'get upcoming' do 
+      it 'should find no upcoming_events' do 
+        expect Event.upcoming(Event.where(:title => 'WiCS Tabling')).nil?
+      end
+    end
+
+    describe 'get past' do 
+      it 'should find a past event' do 
+        expect !Event.past(Event.where(:title => 'WiCS Tabling')).empty?
+      end
+    end
+
     describe 'see all events' do
         it 'should show the homepage' do
             get :index#, params: {"freebies"=>{"FOOD"=>"1", "MERCH"=>"1", "OTHER"=>"1"}, "sort_by"=>"id"}
