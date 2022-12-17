@@ -83,6 +83,10 @@ Then /the event date of "(.*)" should be "(.*)"/ do |t, d|
   expect Event.find_by_title(t).event_date == d
 end
 
+Then /the like count of "(.*)" should be "(.*)"/ do |t, l|
+  expect Event.find_by_title(t).likes.count == l
+end
+
 Then /the type of "(.*)" should be "(.*)"/ do |event, type|
   expect Event.find_by_title(event).freebie == type
 end
