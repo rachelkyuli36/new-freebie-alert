@@ -1,0 +1,339 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/codio/workspace/dec17/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          8,
+          8,
+          null,
+          7,
+          7,
+          7,
+          7,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/events_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/likes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          1,
+          7,
+          null,
+          null,
+          1,
+          11,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/events_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          7,
+          7,
+          null,
+          null,
+          null,
+          1,
+          19,
+          19,
+          19,
+          19,
+          19,
+          19,
+          19,
+          null,
+          19,
+          19,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          3,
+          null,
+          null,
+          1,
+          36,
+          17,
+          17,
+          17,
+          null,
+          null,
+          null,
+          1,
+          74,
+          null,
+          null,
+          1,
+          142,
+          null,
+          null,
+          1,
+          55,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/models/event.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          29,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          19,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          19,
+          19,
+          19,
+          null,
+          null,
+          1,
+          19,
+          19,
+          19,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null,
+          1,
+          null,
+          3,
+          1,
+          null,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null
+        ]
+      },
+      "/home/codio/workspace/dec17/app/controllers/likes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          1,
+          1,
+          0,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1671324454
+  }
+}
