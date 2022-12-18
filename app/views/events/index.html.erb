@@ -3,11 +3,10 @@
 https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-examples/
 -->
 <h1></h1>
-<h2 class = "sans_serif">All Events</h2>
+<h2 class = "sans_serif">Upcoming Events</h2>
 <h5 class="sans_serif grey">Welcome, <%= session[:username] %></h5>
 
 <div class = "serif">
-<%= link_to "Sign out", login_path, class: 'btn btn-primary button' %>
 
 <%#  Part 2: Start here... %>
 
@@ -15,16 +14,20 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
   <%= hidden_field_tag 'sort_by', @sort_by %>
   Include:
   <% @all_freebies.each do |freebie| %>
-    <div class="form-check  form-check-inline">
-      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+    <div class="form-check  form-check ">
       <%= check_box_tag "freebies[#{freebie}]", '1', (@freebies_to_show_hash.include?(freebie)),
-        class: 'form-check-input' %>
+        class: 'form-check-input', type:"checkbox" %>
+      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+      
     </div>
   <% end %>
-  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary button' %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-success button' %>
+  <%= link_to 'Add new event', new_event_path, class: 'btn btn-success button' %>
+  <%= link_to "Sign out", login_path, class: 'btn btn-success button' %>
+
 <% end %>
 
-<table class="table table-borderless col-md-12" id="events">
+<table class="table-success table-borderless col-md-12" id="events">
   <thead>
     <tr>
       <th>
@@ -44,7 +47,7 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     </tr>
   </thead>
   <tbody>
-    <% @events.each do |event| %>
+    <% @upcoming_events.each do |event| %>
       <tr>
         <td>
           <%= event.title %>
@@ -72,6 +75,52 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning button' %>
+<h1></h1>
+<h4 class = "sans_serif spaced grey">Past Events</h4>
+
+<table class="table-success table-borderless col-md-12" id="old_events">
+  <thead>
+    <tr>
+      <th class: ('bg-warning hilite' if @sort_by == 'title')> Event Title</th>
+      <th> </th>
+      <th>Type</th>
+      <th class: ('bg-warning hilite' if @sort_by == 'event_date')> Event Date</th>
+      <th>Time</th>
+      <th>Affiliation</th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @past_events.each do |event| %>
+      <tr>
+        <td>
+          <%= event.title %>
+        </td>
+        <td>
+          <span class="green">♥</span> <%= event.likes.count %>
+         <!--<div class="heart" style="width:30px"></div>--> <%# event.likes.count %>
+        </td>
+        <td>
+          <%= event.freebie %>
+        </td>
+        <td>
+          <%= event.event_date %>
+        </td>
+        <td>
+          <%= event.event_time %>
+        </td>
+        <td>
+          <%= event.affiliation %>
+        </td>
+        <td>
+          <%= link_to "More about #{event.title}", event_path(event) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 
 </div>

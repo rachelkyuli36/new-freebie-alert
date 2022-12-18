@@ -27,3 +27,11 @@ Scenario: unsuccessful login
     And I fill in "Password" with "random"
     And I press "Log in"
     Then I should see "Invalid email/password combination"
+
+Scenario: create new account
+    And I follow "Sign up now!"
+    And I fill in "Email" with "random@columbia.edu"
+    And I fill in "Username" with "random"
+    And I fill in "Password" with "random"
+    And I press "Create Account"
+    Then I should see "Login with your new account!"
