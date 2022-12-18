@@ -24,5 +24,6 @@ Background: events have been added to database and am logged in
 
 Scenario: change event date of existing event
   When I go to the show page for "Mochi Mingle"
+  Then I should see "Delete"
   And I follow "Delete"
   Then I should see "Event 'Mochi Mingle' deleted."

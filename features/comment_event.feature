@@ -28,3 +28,13 @@ Scenario: Add comment to an existing event
   And I press "Leave a reply"
   Then I should see "so excited!"
   Then I should see "1 Comments"
+
+Scenario: Delete comment from an event
+  When I go to the show page for "Mochi Mingle"
+  And I fill in "Name" with "Youngseo"
+  And I fill in "Comment" with "so excited!"
+  And I press "Leave a reply"
+  Then I should see "so excited!"
+  Then I should see "Delete"
+  And I follow "Delete"
+  Then I should see "0 Comments"
