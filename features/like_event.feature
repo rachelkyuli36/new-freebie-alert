@@ -25,4 +25,11 @@ Background: events have been added to database and am logged in
 Scenario: Add like to an existing event
   When I go to the show page for "Mochi Mingle"
   And I press "Like"
+  Then I should see "1 Like"
+
+Scenario: Add like to an existing event
+  When I go to the show page for "Mochi Mingle"
+  And I press "Like"
+  And I press "Unlike"
+  Then I should see "0 Likes"
   
