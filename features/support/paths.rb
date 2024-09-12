@@ -19,7 +19,9 @@ module NavigationHelpers
       event_path(Event.find_by(title: $1).id)
     when /^the edit page for "(.*)"$/
       edit_event_path(Event.find_by(title: $1).id)
-
+    when /^the create new account page$/
+      new_user_path
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -54,7 +54,7 @@ end
 
 Then /I should see all the events/ do
   # Make sure that all the movies in the app are visible in the table
-  expect(page).to have_selector("tr", count: Event.count + 1)
+  expect(page).to have_selector("tr", count: Event.count + 2)
 end
 
 ### Utility Steps Just for this assignment.
@@ -81,6 +81,10 @@ end
 
 Then /the event date of "(.*)" should be "(.*)"/ do |t, d|
   expect Event.find_by_title(t).event_date == d
+end
+
+Then /the like count of "(.*)" should be "(.*)"/ do |t, l|
+  expect Event.find_by_title(t).likes.count == l
 end
 
 Then /the type of "(.*)" should be "(.*)"/ do |event, type|

@@ -6,6 +6,7 @@ Rottenpotatoes::Application.routes.draw do
   # get 'users/create'
   resources :events do
     resources :likes
+    resources :comments
   end
 
   get 'sessions/new'

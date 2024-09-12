@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   def index
     @all_freebies = Event.all_freebies
     @events = Event.with_freebies(freebies_list, sort_by)
+    @upcoming_events = Event.upcoming(@events)
+    @past_events = Event.past(@events)
     @freebies_to_show_hash = freebies_hash
     @sort_by = sort_by
     @user = User.find_by_id(session[:user_id])
