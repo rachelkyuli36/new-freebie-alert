@@ -13,9 +13,9 @@ Feature: Edit an event post
   | Pojangmacha                  | FOOD    | 2022-11-03 |
 
   Given the following users exist:
-  | username | email                | password |
-  | testing  | testing@columbia.edu | testing  |
-  | rchung   | rchung@columbia.edu  | rchung   |
+  | username | email                | password | email_confirmed |
+  | testing  | testing@columbia.edu | testing  | true            |
+  | rchung   | rchung@columbia.edu  | rchung   | true            |
 
   Given I am on the login page
   And I am logged in with "Email":rchung@columbia.edu and "Password":rchung

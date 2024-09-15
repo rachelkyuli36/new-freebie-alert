@@ -3,7 +3,7 @@
     <%= form_tag '/login' do %>
         Username: <%= text_field_tag :username %><br>
         Password: <%= password_field_tag :password %><br>
-        <%= submit_tag "Log In" %>
+        <%= submit_tag "Log In", class: 'btn btn-success' %>
     <% end %>
-    <%= link_to 'Create New Account', new_user_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Create New Account', new_user_path, class: 'btn btn-success' %>
 </div>

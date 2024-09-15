@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221203204716) do
+ActiveRecord::Schema.define(version: 20221215113751) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "name"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "event_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -38,8 +46,10 @@ ActiveRecord::Schema.define(version: 20221203204716) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
   end
 
 end

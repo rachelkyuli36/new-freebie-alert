@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+ class EventsController < ApplicationController
   before_action :force_index_redirect, only: [:index]
 
   def show

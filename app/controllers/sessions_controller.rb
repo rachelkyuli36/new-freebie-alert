@@ -6,17 +6,23 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    if !user || !user.authenticate(params[:session][:password])
+      flash[:warning] = 'Invalid email/password combination'
+      render 'new'
+    elsif user && user.authenticate(params[:session][:password]) && user.email_confirmed
       # Log the user in and redirect to the user's show page.
       session[:user_id] = user.id
       session[:username] = user.username
       log_in user
       redirect_to events_path
       # redirect_to user
-    else
+    elsif !user.email_confirmed
       # Create an error message.
-      flash[:warning] = 'Invalid email/password combination'
+      flash[:warning] = "Please activate your account by following the instructions in the account confirmation email you received to proceed"
       render 'new'
+    # else
+    #   flash[:warning] = 'Invalid email/password combination'
+    #   render 'new'
     end
   end
 

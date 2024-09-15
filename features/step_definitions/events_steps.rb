@@ -6,10 +6,11 @@ Given /the following events exist/ do |events_table|
 end
 
 Given /I am logged in with "([^"]*)":(.*) and "([^"]*)":(.*)/ do |email, user_email, password, user_password|
+  visit("/sessions/new")
   fill_in(email, :with => user_email)
   fill_in(password, :with => user_password)
-  click_button("Log in")
   @current_user = User.find_by(email: user_email)
+  click_button("Log in")
 end
 
 Then /(.*) seed events should exist/ do | n_seeds |

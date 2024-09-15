@@ -4,27 +4,33 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
 -->
 <h1></h1>
 <h2 class = "sans_serif">All Events</h2>
-<h5 class="sans_serif grey">Welcome, <%= session[:username] %></h5>
+<h5 class="sans_serif grey">Welcome, <%= session[:username] %>!!!</h5>
 
 <div class = "serif">
-<%= link_to "Sign out", login_path, class: 'btn btn-primary button' %>
 
 <%#  Part 2: Start here... %>
 
 <%= form_tag events_path, method: :get, id: 'freebies_form' do %>
   <%= hidden_field_tag 'sort_by', @sort_by %>
-  Include:
+  Filter by:
+  <div>
   <% @all_freebies.each do |freebie| %>
-    <div class="form-check  form-check-inline">
-      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+    <div class="form-check form-check">
       <%= check_box_tag "freebies[#{freebie}]", '1', (@freebies_to_show_hash.include?(freebie)),
-        class: 'form-check-input' %>
+        class: 'form-check-input', type:"checkbox" %>
+      <%= label_tag "freebies[#{freebie}]", freebie, class: 'form-check-label' %>
+    
     </div>
+    
   <% end %>
-  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-primary button' %>
+  <%= submit_tag 'Refresh', id: 'freebies_submit', class: 'btn btn-success button' %>
+  <%= link_to 'Add new event', new_event_path, class: 'btn btn-success button' %>
+  <%= link_to "Sign out", login_path, class: 'btn btn-success button' %>
+  </div>
+  
 <% end %>
 
-<table class="table table-borderless col-md-12" id="events">
+<table class="table-success table-borderless col-md-12" id="events">
   <thead>
     <tr>
       <th>
@@ -72,6 +78,6 @@ https://flatlogic.com/blog/bootstrap-table-guide-and-best-bootstrap-table-exampl
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Add new event', new_event_path, class: 'btn btn-warning button' %>
+
 
 </div>
